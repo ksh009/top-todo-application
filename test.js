@@ -25,7 +25,6 @@ class TodoList {
 			throw new Error('Cannot delete default project');
 		}
 		this.projects.splice(index, 1);
-		// Run test here to check what happens after deletion
 		if (this.currentProjectIndex >= index) {
 			this.currentProjectIndex -= 1;
 		}
