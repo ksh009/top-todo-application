@@ -35,10 +35,12 @@ class TodoList {
 	}
 
 	setCurrentProject(index) {
+		//*
 		this.currentProjectIndex = index;
 	}
 
 	addTodoToCurrentProject(todo) {
+		//*
 		const currentProject = this.getCurrentProject();
 		currentProject.todos.push(todo);
 	}
@@ -73,4 +75,39 @@ console.log('todoList After set project', todoList);
     projects: [ { name: 'Default', todos: [] }, { name: 'Work', todos: [] } ],
     currentProjectIndex: 1
   }
+*/
+
+// Create a new Todo instance and add it to the current project
+const todo = new Todo(
+	'Finish report',
+	'Complete the final report for the Q1 project',
+	'2023-06-01',
+	'High'
+);
+todoList.addTodoToCurrentProject(todo);
+console.log('todoList add todo to current project todo list', todoList);
+/* Output
+  todoList add todo to current project todo list TodoList {
+    projects: [ { name: 'Default', todos: [] }, { name: 'Work', todos: [Array] } ],
+    currentProjectIndex: 1
+  }
+*/
+
+// Get the current project
+const currentProject = todoList.getCurrentProject(1);
+console.log('Get the current project based on index', currentProject);
+/* Output
+  Project Todo array {
+  name: 'Work',
+  todos: [
+    Todo {
+      title: 'Finish report',
+      description: 'Complete the final report for the Q1 project',
+      dueDate: '2023-06-01',
+      priority: 'High',
+      notes: [],
+      checklist: []
+    }
+  ]
+}
 */
