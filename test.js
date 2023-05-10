@@ -31,6 +31,7 @@ class TodoList {
 	}
 
 	getCurrentProject() {
+		//*
 		return this.projects[this.currentProjectIndex];
 	}
 
@@ -84,7 +85,14 @@ const todo = new Todo(
 	'2023-06-01',
 	'High'
 );
+const todo2 = new Todo(
+	'Quarterly report',
+	'Quarterly report 2023',
+	'2023-01-01',
+	'Medium'
+);
 todoList.addTodoToCurrentProject(todo);
+todoList.addTodoToCurrentProject(todo2);
 console.log('todoList add todo to current project todo list', todoList);
 /* Output
   todoList add todo to current project todo list TodoList {
