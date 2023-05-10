@@ -105,17 +105,29 @@ console.log('todoList add todo to current project todo list', todoList);
 const currentProject = todoList.getCurrentProject(1);
 console.log('Get the current project based on index', currentProject);
 /* Output
-  Project Todo array {
-  name: 'Work',
-  todos: [
-    Todo {
-      title: 'Finish report',
-      description: 'Complete the final report for the Q1 project',
-      dueDate: '2023-06-01',
-      priority: 'High',
-      notes: [],
-      checklist: []
+  {
+    name: 'Work',
+    todos: [
+      Todo {
+        title: 'Finish report',
+        description: 'Complete the final report for the Q1 project',
+        dueDate: '2023-06-01',
+        priority: 'High',
+        notes: [],
+        checklist: []
+      },
+      Todo {
+          title: 'Quarterly report',
+          description: 'Quarterly report 2023',
+          dueDate: '2023-01-01',
+          priority: 'Medium',
+          notes: [],
+          checklist: []
+        }
+      ]
     }
-  ]
-}
 */
+
+// Remove Todo from current project
+todoList.removeTodoFromCurrentProject(1);
+console.log('Removed todo from current project', currentProject);
