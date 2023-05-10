@@ -21,12 +21,20 @@ class TodoList {
 	}
 
 	removeProject(index) {
+		/*
+      Note that index will be dynamic based on "onClick" so no need to check if index is > than array.length
+    */
 		if (index === 0) {
 			throw new Error('Cannot delete default project');
 		}
 		this.projects.splice(index, 1);
+		console.log('INSIDE CLASS projects updated', this.projects);
 		if (this.currentProjectIndex >= index) {
 			this.currentProjectIndex -= 1;
+			console.log(
+				'INSIDE CLASS currentProjectIndex decremented',
+				this.currentProjectIndex
+			);
 		}
 	}
 
@@ -47,6 +55,7 @@ class TodoList {
 	}
 
 	removeTodoFromCurrentProject(index) {
+		//*
 		const currentProject = this.getCurrentProject();
 		currentProject.todos.splice(index, 1);
 	}
@@ -57,6 +66,7 @@ const todoList = new TodoList();
 
 // Add a new project
 todoList.addProject('Work');
+todoList.addProject('Play');
 console.log('todoList After add', todoList);
 /* Output
   todoList After add TodoList {
@@ -69,7 +79,7 @@ console.log('todoList After add', todoList);
   - Could even prompt user after add if they could like to set as current project 
 */
 // // Set the current project to the newly created project
-todoList.setCurrentProject(1);
+todoList.setCurrentProject(2);
 console.log('todoList After set project', todoList);
 /* Output
   todoList After set project TodoList {
@@ -131,3 +141,28 @@ console.log('Get the current project based on index', currentProject);
 // Remove Todo from current project
 todoList.removeTodoFromCurrentProject(1);
 console.log('Removed todo from current project', currentProject);
+/*
+    Removed todo from current project {
+      name: 'Work',
+      todos: [
+        Todo {
+          title: 'Finish report',
+          description: 'Complete the final report for the Q1 project',
+          dueDate: '2023-06-01',
+          priority: 'High',
+          notes: [],
+          checklist: []
+        }
+      ]
+    }
+*/
+
+// Remove a project from todo list
+todoList.removeProject(1);
+console.log('Remove work project', todoList);
+/*
+    Remove work project TodoList {
+      projects: [ { name: 'Default', todos: [] }, { name: 'Play', todos: [Array] } ],
+      currentProjectIndex: 1
+    }
+*/
