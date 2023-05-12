@@ -170,12 +170,23 @@
 					</div>
 				</div>
 			</div>
-			<form id="add-project-form">
-				<h2>Add Project</h2>
-				<label for="project-name">Project Name:</label>
-				<input type="text" id="project-name" name="project-name" />
-				<button type="submit">Add</button>
-			</form>
+			<div class="form-container">
+                <form action="project_data.md" method="post">
+                    <h1>Add New Project</h1>
+                    <label for="project_name">Project Name</label>
+                    <input type="text" name="project_name" id="project_name">
+                    <label for="priority">Priority</label>
+                    <input type="radio" name="priority" value="high" id="priority_high">
+                    <label for="priority_high">High</label>
+                    <input type="radio" name="priority" value="medium" id="priority_medium">
+                    <label for="priority_medium">Medium</label>
+                    <input type="radio" name="priority" value="low" id="priority_low">
+                    <label for="priority_low">Low</label>
+                    <label for="project_description">Project Description</label>
+                    <textarea name="project_description" id="project_description"></textarea>
+                    <input type="submit" value="Create Project">
+                  </form>
+            </div>
 			<div class="todo-list">
 				<h2>Todo List</h2>
 				<ul>

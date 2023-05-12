@@ -153,6 +153,11 @@ input:focus {
 	width: 100%;
 	margin-top: 18px;
 }
+
+.main-container .buttons-container button {
+	margin-top: 3px;
+}
+
 .main-container .card {
 	/* border: 1px solid; */
 	/* border-color: var(--border-color-primary); */
@@ -164,36 +169,6 @@ input:focus {
 }
 .main-container .card h3 {
 	margin-top: 0;
-}
-.main-container form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-top: 20px;
-	box-shadow: var(--box-shadow-col-alt);
-	background: var(--component-color);
-	color: var(--text-color);
-}
-.main-container form label {
-	margin-bottom: 5px;
-}
-/* form input[type='text'] {
-	padding: 5px;
-	margin-bottom: 10px;
-	border: 1px solid;
-    border-color: var(--text-color);
-} */
-/* form button[type='submit'] {
-	padding: 5px 10px;
-	background-color: #4caf50;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-} */
-.main-container .todo-list {
-	margin-top: 20px;
-	color: var(--text-color);
 }
 
 .filter-menu {
@@ -352,19 +327,56 @@ input:focus {
 	margin-right: 10px;
 } */
 
+/* Add Project modal form */
+.main-container .form-container {
+	margin-top: 45px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.main-container .form-container form {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	box-shadow: var(--box-shadow-col-alt);
+	background: var(--component-color);
+	color: var(--text-color);
+	padding: 27px 18px;
+}
+.main-container form label {
+	margin-bottom: 5px;
+}
+
+.main-container .todo-list {
+	margin-top: 20px;
+	color: var(--text-color);
+}
+
 /* Animations */
 @keyframes wobble {
 	0% {
 		transform: scale(1);
 	}
-	25% {
-		transform: scale(1.025, 0.975);
+	15% {
+		transform: scale(1.015, 0.985);
 	}
-	50% {
-		transform: scale(0.975, 1.025);
+	30% {
+		transform: scale(0.985, 1.015);
+	}
+	45% {
+		transform: scale(1.005, 0.995);
+	}
+	60% {
+		transform: scale(0.995, 1.005);
 	}
 	75% {
-		transform: scale(1.015, 0.985);
+		transform: scale(1.0025, 0.9975);
+	}
+	90% {
+		transform: scale(0.9975, 1.0025);
 	}
 	100% {
 		transform: scale(1);
