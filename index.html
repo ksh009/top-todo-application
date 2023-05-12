@@ -68,11 +68,11 @@
 					<hr class="project-hr" />
 					<div class="project-body">
 						<p class="project-description">
-							Vivamus varius vestibulum augue.
-							Donec eget est ut velit vestibulum aliquet. Suspendisse non
-							sagittis mauris. Sed imperdiet mi sit amet erat auctor aliquet.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-							volutpat orci et congue blandit. 
+							Vivamus varius vestibulum augue. Donec eget est ut velit
+							vestibulum aliquet. Suspendisse non sagittis mauris. Sed imperdiet
+							mi sit amet erat auctor aliquet. Lorem ipsum dolor sit amet,
+							consectetur adipiscing elit. Maecenas volutpat orci et congue
+							blandit.
 						</p>
 					</div>
 					<div class="project-footer">
@@ -91,10 +91,10 @@
 					<hr class="project-hr" />
 					<div class="project-body">
 						<p class="project-description">
-							Donec eget est ut velit vestibulum aliquet., consectetur adipiscing elit. Maecenas
-							volutpat orci et congue blandit. Vivamus varius vestibulum augue.
-							 Suspendisse non
-							sagittis mauris. Vivamus varius vestibulum augue.
+							Donec eget est ut velit vestibulum aliquet., consectetur
+							adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus
+							varius vestibulum augue. Suspendisse non sagittis mauris. Vivamus
+							varius vestibulum augue.
 						</p>
 					</div>
 					<div class="project-footer">
@@ -102,7 +102,7 @@
 						<button class="delete-project">Delete Project</button>
 					</div>
 				</div>
-                <div class="project-card">
+				<div class="project-card">
 					<div class="project-header">
 						<h3 class="project-name">Default Project</h3>
 						<span class="project-stats"
@@ -135,11 +135,11 @@
 					<hr class="project-hr" />
 					<div class="project-body">
 						<p class="project-description">
-							Vivamus varius vestibulum augue.
-							Donec eget est ut velit vestibulum aliquet. Suspendisse non
-							sagittis mauris. Sed imperdiet mi sit amet erat auctor aliquet.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-							volutpat orci et congue blandit. 
+							Vivamus varius vestibulum augue. Donec eget est ut velit
+							vestibulum aliquet. Suspendisse non sagittis mauris. Sed imperdiet
+							mi sit amet erat auctor aliquet. Lorem ipsum dolor sit amet,
+							consectetur adipiscing elit. Maecenas volutpat orci et congue
+							blandit.
 						</p>
 					</div>
 					<div class="project-footer">
@@ -158,10 +158,10 @@
 					<hr class="project-hr" />
 					<div class="project-body">
 						<p class="project-description">
-							Donec eget est ut velit vestibulum aliquet., consectetur adipiscing elit. Maecenas
-							volutpat orci et congue blandit. Vivamus varius vestibulum augue.
-							 Suspendisse non
-							sagittis mauris. Vivamus varius vestibulum augue.
+							Donec eget est ut velit vestibulum aliquet., consectetur
+							adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus
+							varius vestibulum augue. Suspendisse non sagittis mauris. Vivamus
+							varius vestibulum augue.
 						</p>
 					</div>
 					<div class="project-footer">
@@ -171,22 +171,38 @@
 				</div>
 			</div>
 			<div class="form-container">
-                <form action="project_data.md" method="post">
-                    <h1>Add New Project</h1>
-                    <label for="project_name">Project Name</label>
-                    <input type="text" name="project_name" id="project_name">
-                    <label for="priority">Priority</label>
-                    <input type="radio" name="priority" value="high" id="priority_high">
-                    <label for="priority_high">High</label>
-                    <input type="radio" name="priority" value="medium" id="priority_medium">
-                    <label for="priority_medium">Medium</label>
-                    <input type="radio" name="priority" value="low" id="priority_low">
-                    <label for="priority_low">Low</label>
-                    <label for="project_description">Project Description</label>
-                    <textarea name="project_description" id="project_description"></textarea>
-                    <input type="submit" value="Create Project">
-                  </form>
-            </div>
+				<form action="#" method="post">
+					<h1>Add New Project</h1>
+					<label for="project_name">Project Name</label>
+					<input type="text" name="project_name" id="project_name" />
+
+					<label for="project_description">Project Description</label>
+					<textarea
+						name="project_description"
+						id="project_description"
+					></textarea>
+					<label for="priority">Priority</label>
+					<div class="priority-levels-container">
+						<input
+							type="radio"
+							name="priority"
+							value="high"
+							id="priority_high"
+						/>
+						<label class="priority-high" for="priority_high">High</label>
+						<input
+							type="radio"
+							name="priority"
+							value="medium"
+							id="priority_medium"
+						/>
+						<label class="priority-medium" for="priority_medium">Medium</label>
+						<input type="radio" name="priority" value="low" id="priority_low" />
+						<label class="priority-low" for="priority_low">Low</label>
+					</div>
+					<button type="submit">CREATE PROJECT</button>
+				</form>
+			</div>
 			<div class="todo-list">
 				<h2>Todo List</h2>
 				<ul>

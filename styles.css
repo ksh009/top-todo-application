@@ -35,6 +35,7 @@ a {
 	--component-color: #27293d;
 	--text-color: #ffffff;
 	--border-radius: 15px;
+	--border-radius-alt: 5px;
 	--border-color-primary: #ccc;
 	--box-shadow-col: rgb(0 0 0 / 16%) 0px 0px 6px, rgb(0 0 0 / 23%) 0px 0px 6px;
 	--box-shadow-col-alt: 0 1px 20px 0 rgb(0 0 0 / 10%);
@@ -71,8 +72,8 @@ input {
 	margin-bottom: 10px;
 	border: 1px solid;
 	/* border-color: var(--border-color-primary); */
-	background-color: var(--text-color);
-	color: var(--bg-color);
+	background-color: var(--bg-color);
+	color: var(--text-color);
 }
 
 input:focus {
@@ -345,11 +346,63 @@ input:focus {
 	background: var(--component-color);
 	color: var(--text-color);
 	padding: 27px 18px;
-}
-.main-container form label {
-	margin-bottom: 5px;
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow-col-alt);
 }
 
+.main-container .form-container form button {
+	margin: 18px 18px 9px 18px;
+}
+
+.main-container .form-container form h1 {
+	font-size: 27px;
+	font-weight: normal;
+	color: var(--text-color);
+}
+
+.main-container .form-container form label {
+	margin: 9px 0 9px 0;
+}
+
+.main-container .form-container form textarea {
+	color: var(--border-color-primary);
+	border-radius: var(--border-radius-alt);
+	border-color: var(--bg-color);
+	background-color: var(--bg-color);
+	height: 18rem;
+}
+
+.main-container .form-container form input {
+	color: var(--border-color-primary);
+	border-radius: var(--border-radius-alt);
+	border-color: var(--bg-color);
+}
+
+.main-container form .priority-levels-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 55% 0 0;
+}
+
+.main-container form .priority-levels-container label {
+	margin: 0px 0 9px 0;
+}
+
+.main-container form .priority-levels-container .priority-high {
+	color: red;
+}
+
+.main-container form .priority-levels-container .priority-medium {
+	color: orange;
+}
+
+.main-container form .priority-levels-container .priority-low {
+	color: yellow;
+}
+
+/* Todo list */
 .main-container .todo-list {
 	margin-top: 20px;
 	color: var(--text-color);
