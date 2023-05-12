@@ -43,14 +43,12 @@ button {
 }
 
 :root {
-	--primary-color: #1992d4;
-	--secondary-color: #f0b429;
-	--tertiary-color: #e2e8f0;
-	--main-text-color: #000000;
-	--secondary-text-color: #ffffff;
-	--input-focus-border-color: #2e5bdb;
-	--input-error-border-color: #d16868;
-	--box-shadow-color: #e8e9e9;
+	--primary-color: #1d8cf8;
+	--primary-color-hover: #3f99f2;
+	--primary-color-active: #007dfa;
+	--bg-color: #1e1e2f;
+	--component-color: #27293d;
+	--text-color: #ffffff;
 }
 .nav {
 	position: relative;
@@ -102,6 +100,7 @@ button {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 3%;
 }
 .grid {
 	display: grid;
