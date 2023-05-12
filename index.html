@@ -4,6 +4,11 @@
 		<meta charset="UTF-8" />
 		<title>Todo Application</title>
 		<link rel="stylesheet" href="styles.css" />
+		<!-- <script src="https://use.fontawesome.com/da01f0bbb4.js"></script> -->
+		<link
+			href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<header class="nav-container">
@@ -20,24 +25,87 @@
 		<main class="main-container">
 			<div class="buttons-container">
 				<button id="add-project-btn">+ Add Project</button>
-				<div class="filter-menu">
-					<select name="filter">
-						<option value="all">All</option>
-						<option value="high">High</option>
-						<option value="medium">Medium</option>
-						<option value="low">Low</option>
-					</select>
+				<div class="filter-menu font-awesome">
+                    <select class="far">
+                        <option class="far">All</option>
+                        <option class="far high">&#xf111 High</option>
+                        <option class="far medium">&#xf111 Medium</option>
+                        <option class="far low">&#xf111 Low</option>
+                    </select>
 				</div>
 			</div>
 			<div class="grid">
-				<div class="card">
-					<h3>Project 1</h3>
+				<div class="project-card">
+					<h3 class="project-name">Project Name</h3>
+					<h5 class="project-todo-count">Todo Count</h5>
+					<p class="project-description">Project Description</p>
+					<div class="project-footer">
+						<button class="add-todo">Add Todo</button>
+						<button class="delete-project">Delete Project</button>
+					</div>
 				</div>
-				<div class="card">
-					<h3>Project 2</h3>
+				<div class="project-card">
+					<h3 class="project-name">Project Name</h3>
+					<h5 class="project-todo-count">Todo Count</h5>
+					<p class="project-description">Project Description</p>
+					<div class="project-footer">
+						<button class="add-todo">Add Todo</button>
+						<button class="delete-project">Delete Project</button>
+					</div>
 				</div>
-				<div class="card">
-					<h3>Project 3</h3>
+				<div class="project-card">
+					<h3 class="project-name">Project Name</h3>
+					<h5 class="project-todo-count">Todo Count</h5>
+					<p class="project-description">Project Description</p>
+					<div class="project-footer">
+						<button class="add-todo">Add Todo</button>
+						<button class="delete-project">Delete Project</button>
+					</div>
+				</div>
+				<div class="project-card">
+					<h3 class="project-name">Project Name</h3>
+					<h5 class="project-todo-count">Todo Count</h5>
+					<p class="project-description">Project Description</p>
+					<div class="project-footer">
+						<button class="add-todo">Add Todo</button>
+						<button class="delete-project">Delete Project</button>
+					</div>
+				</div>
+				<div class="project-card">
+					<h3 class="project-name">Project Name</h3>
+					<h5 class="project-todo-count">Todo Count</h5>
+					<p class="project-description">Project Description</p>
+					<div class="project-footer">
+						<button class="add-todo">Add Todo</button>
+						<button class="delete-project">Delete Project</button>
+					</div>
+				</div>
+				<div class="project-card">
+					<h3 class="project-name">Project Name</h3>
+					<h5 class="project-todo-count">Todo Count</h5>
+					<p class="project-description">Project Description</p>
+					<div class="project-footer">
+						<button class="add-todo">Add Todo</button>
+						<button class="delete-project">Delete Project</button>
+					</div>
+				</div>
+				<div class="project-card">
+					<h3 class="project-name">Project Name</h3>
+					<h5 class="project-todo-count">Todo Count</h5>
+					<p class="project-description">Project Description</p>
+					<div class="project-footer">
+						<button class="add-todo">Add Todo</button>
+						<button class="delete-project">Delete Project</button>
+					</div>
+				</div>
+				<div class="project-card">
+					<h3 class="project-name">Project Name</h3>
+					<h5 class="project-todo-count">Todo Count</h5>
+					<p class="project-description">Project Description</p>
+					<div class="project-footer">
+						<button class="add-todo">Add Todo</button>
+						<button class="delete-project">Delete Project</button>
+					</div>
 				</div>
 			</div>
 			<form id="add-project-form">

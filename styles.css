@@ -145,7 +145,10 @@ input:focus {
 .main-container .grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 20px;
+	justify-content: center;
+	align-items: center;
+	grid-gap: 45px;
+	width: 100%;
 }
 .main-container .card {
 	/* border: 1px solid; */
@@ -206,3 +209,73 @@ input:focus {
 	color: var(--bg-color);
 	border-radius: 5px;
 }
+
+/* Project card */
+.project-card {
+	width: 100%;
+	min-height: 36rem;
+	margin: 0 auto;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.project-name {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.project-todo-count {
+	font-size: 16px;
+	color: #ccc;
+}
+
+.project-description {
+	font-size: 14px;
+}
+
+.project-footer {
+	display: flex;
+	justify-content: space-between;
+}
+
+.add-todo {
+	background-color: #000;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.delete-project {
+	background-color: #ccc;
+	color: #000;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.font-awesome .far {
+	font-family: 'Font Awesome 5 Free', Open Sans;
+	font-weight: lighter;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+.font-awesome .far .high {
+	color: red;
+}
+
+.font-awesome .far .medium {
+	color: orange;
+}
+
+.font-awesome .far .low {
+	color: yellow;
+}
+
+/* select option::before {
+	font-family: 'Font Awesome 5 Free';
+	content: '\f015';
+	margin-right: 10px;
+} */
