@@ -1,83 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Todo Application</title>
-  <style>
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 20px;
-    }
-    .card {
-      border: 1px solid #ccc;
-      padding: 10px;
-      border-radius: 5px;
-      background-color: #f1f1f1;
-    }
-    .card h3 {
-      margin-top: 0;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 20px;
-    }
-    form label {
-      margin-bottom: 5px;
-    }
-    form input[type="text"] {
-      padding: 5px;
-      margin-bottom: 10px;
-    }
-    form button[type="submit"] {
-      padding: 5px 10px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .todo-list {
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <button id="add-project-btn">Add Project</button>
-    <div class="grid">
-      <div class="card">
-        <h3>Project 1</h3>
-      </div>
-      <div class="card">
-        <h3>Project 2</h3>
-      </div>
-      <div class="card">
-        <h3>Project 3</h3>
-      </div>
-    </div>
-    <form id="add-project-form">
-      <h2>Add Project</h2>
-      <label for="project-name">Project Name:</label>
-      <input type="text" id="project-name" name="project-name">
-      <button type="submit">Add</button>
-    </form>
-    <div class="todo-list">
-      <h2>Todo List</h2>
-      <ul>
-        <li>Todo 1</li>
-        <li>Todo 2</li>
-        <li>Todo 3</li>
-      </ul>
-    </div>
-  </div>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Todo Application</title>
+		<style>
+			/* Reset default */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: inherit;
+				font-size: inherit;
+				line-height: inherit;
+				color: inherit;
+				background-color: transparent;
+				border: none;
+			}
+
+			html {
+				font-size: 62.5%;
+			}
+
+			body {
+				font-size: 1.6rem;
+				line-height: 1.5;
+				font-family: 'Norse Bold', sans-serif;
+				overflow-y: hidden;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			button {
+				display: flex;
+				flex-direction: row;
+				padding: 7px 9px;
+				font-size: 16px;
+				font-weight: bold;
+				text-align: center;
+				text-transform: uppercase;
+				color: #fff;
+				background-color: #4caf50;
+				border: none;
+				border-radius: 15px;
+				cursor: pointer;
+				box-shadow: rgb(0 0 0 / 16%) 0px 0px 6px, rgb(0 0 0 / 23%) 0px 0px 6px;
+			}
+
+			:root {
+				--primary-color: #1992d4;
+				--secondary-color: #f0b429;
+				--tertiary-color: #e2e8f0;
+				--main-text-color: #000000;
+				--secondary-text-color: #ffffff;
+				--input-focus-border-color: #2e5bdb;
+				--input-error-border-color: #d16868;
+				--box-shadow-color: #e8e9e9;
+			}
+			.nav {
+				position: relative;
+				display: flex;
+				height: 72px;
+				align-items: center;
+				flex-direction: row;
+				box-shadow: rgb(0 0 0 / 16%) 0px 0px 6px, rgb(0 0 0 / 23%) 0px 0px 6px;
+			}
+
+			.nav .logo,
+			.auth {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				width: 50%;
+				height: 100%;
+				padding: 0px 27px;
+			}
+
+			.nav .logo {
+				justify-content: flex-start;
+			}
+
+			.nav .logo a {
+				font-size: 36px;
+				font-weight: bolder;
+			}
+
+			.nav .auth {
+				justify-content: flex-end;
+			}
+
+			.nav .auth button {
+				margin-left: 15px;
+			}
+
+			.nav .auth button:hover {
+				background-color: #3e8e41;
+			}
+
+			.nav .auth button:active {
+				background-color: #2c6829;
+			}
+			.container {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				grid-gap: 20px;
+			}
+			.card {
+				border: 1px solid #ccc;
+				padding: 10px;
+				border-radius: 5px;
+				background-color: #f1f1f1;
+			}
+			.card h3 {
+				margin-top: 0;
+			}
+			form {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-top: 20px;
+			}
+			form label {
+				margin-bottom: 5px;
+			}
+			form input[type='text'] {
+				padding: 5px;
+				margin-bottom: 10px;
+			}
+			form button[type='submit'] {
+				padding: 5px 10px;
+				background-color: #4caf50;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			.todo-list {
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="nav-container">
+			<nav class="nav">
+				<div class="logo">
+					<a href="#">TASKIFY</a>
+				</div>
+				<div class="auth">
+					<button>Sign up</button>
+					<button>Sign in</button>
+				</div>
+			</nav>
+		</header>
+		<main class="container">
+			<button id="add-project-btn">Add Project</button>
+			<div class="grid">
+				<div class="card">
+					<h3>Project 1</h3>
+				</div>
+				<div class="card">
+					<h3>Project 2</h3>
+				</div>
+				<div class="card">
+					<h3>Project 3</h3>
+				</div>
+			</div>
+			<form id="add-project-form">
+				<h2>Add Project</h2>
+				<label for="project-name">Project Name:</label>
+				<input type="text" id="project-name" name="project-name" />
+				<button type="submit">Add</button>
+			</form>
+			<div class="todo-list">
+				<h2>Todo List</h2>
+				<ul>
+					<li>Todo 1</li>
+					<li>Todo 2</li>
+					<li>Todo 3</li>
+				</ul>
+			</div>
+		</main>
+	</body>
 </html>
