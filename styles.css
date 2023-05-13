@@ -467,6 +467,7 @@ input:focus {
 	justify-content: center;
 	background-color: var(--component-color);
 	padding: 27px 36px;
+	border-radius: var(--border-radius);
 }
 
 .todo-list-container h2 {
@@ -586,6 +587,8 @@ input:focus {
 .todo-item .delete-btn:hover {
 	background-color: var(--danger);
 }
+
+/* Add todo form */
 
 /* MIGHT BE USEFUL */
 .parent:hover .trigger ~ .target {
