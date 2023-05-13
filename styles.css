@@ -440,9 +440,9 @@ input:focus {
 	transition: transform 0.2s ease-in;
 }
 
-.project-delete-dialog-warning:hover {
+/* .project-delete-dialog-warning:hover {
 	animation: wobble 0.9s ease-in-out;
-}
+} */
 
 .project-delete-header {
 	width: 100%;
@@ -772,6 +772,22 @@ input:focus {
 
 .detailed-todo-footer .update-project:hover {
 	background-color: var(--success);
+}
+
+/* Resource delete dialog */
+.resource-delete-success {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 18px;
+	color: var(--danger);
+}
+
+.resource-delete-success h3 {
+	color: var(--success);
+	font-size: 27px;
 }
 
 /* MIGHT BE USEFUL */
