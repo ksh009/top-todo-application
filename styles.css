@@ -403,9 +403,78 @@ input:focus {
 }
 
 /* Todo list */
-.main-container .todo-list {
-	margin-top: 20px;
+.main-container .todo-list-container {
+	margin-top: 45px;
 	color: var(--text-color);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: var(--component-color);
+	padding: 27px 36px;
+}
+
+.main-container .todo-list-container h2 {
+	font-size: 27px;
+	font-weight: normal;
+	color: var(--text-color);
+}
+
+/* .main-container .todo-list table {
+	border-collapse: collapse;
+	border: 1px solid lightgray;
+	background-color: var(--component-color);
+}
+
+.main-container .todo-list th {
+	font-weight: bold;
+	background-color: darkgray;
+}
+
+.main-container .todo-list td {
+	background-color: var(--component-color);
+} */
+
+.todo-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(10, 1fr);
+	grid-row-gap: 10px;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.header {
+	font-weight: bold;
+}
+
+.todo-list span {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.todo-list span p {
+	margin-bottom: 9px;
+}
+
+.todo-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2em;
+}
+
+.todo-item.completed {
+	color: var(--primary-color);
+}
+
+/* Test CSS hover */
+.parent:hover .trigger ~ .target {
+	display: block;
+}
+.target {
+	display: none;
 }
 
 /* Animations */
