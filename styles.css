@@ -1,0 +1,582 @@
+/* Reset default */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+	background-color: transparent;
+	border: none;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	line-height: 1.5;
+	font-family: 'Norse Bold', sans-serif;
+	overflow: auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+:root {
+	--primary-color: #1d8cf8;
+	--primary-color-hover: #3f99f2;
+	--primary-color-active: #007dfa;
+	--danger: #ff2a2a;
+	--bg-color: #1e1e2f;
+	--component-color: #27293d;
+	--text-color: #ffffff;
+	--border-radius: 15px;
+	--border-radius-alt: 5px;
+	--border-color-primary: #ccc;
+	--box-shadow-col: rgb(0 0 0 / 16%) 0px 0px 6px, rgb(0 0 0 / 23%) 0px 0px 6px;
+	--box-shadow-col-alt: 0 1px 20px 0 rgb(0 0 0 / 10%);
+}
+
+button {
+	display: flex;
+	flex-direction: row;
+	padding: 7px 9px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	color: var(--text-color);
+	background-color: var(--primary-color);
+	border: none;
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	box-shadow: var(--box-shadow-col-alt);
+	min-width: 90px;
+	justify-content: center;
+}
+
+button:hover {
+	background-color: var(--primary-color-hover);
+}
+
+button:active {
+	border-color: var(--primary-color-active);
+}
+
+input {
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid;
+	/* border-color: var(--border-color-primary); */
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+input:focus {
+	border-color: var(--primary-color);
+}
+
+/* Navbar starts here */
+.nav {
+	position: relative;
+	display: flex;
+	height: 72px;
+	align-items: center;
+	flex-direction: row;
+	box-shadow: var(--box-shadow-col-alt);
+	background-color: var(--component-color);
+}
+
+.nav .logo,
+.auth {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 50%;
+	height: 100%;
+	padding: 0px 27px;
+	color: var(--text-color);
+}
+
+.nav .logo {
+	justify-content: flex-start;
+}
+
+.nav .logo a {
+	font-size: 36px;
+	font-weight: bolder;
+}
+
+.nav .auth {
+	justify-content: flex-end;
+}
+
+.nav .auth button {
+	margin-left: 15px;
+}
+
+/* .nav .auth button:hover {
+	background-color: var(--primary-color-hover);
+}
+
+.nav .auth button:active {
+	background-color: var(--primary-color-active);
+} */
+
+/* Component styles */
+.main-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 3%;
+	background-color: var(--bg-color);
+	min-height: 100vh;
+}
+.main-container .buttons-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	margin: 9px 0px 27px 0px;
+}
+.main-container .grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-content: center;
+	align-items: center;
+	grid-gap: 45px;
+	width: 100%;
+	margin-top: 18px;
+}
+
+.main-container .buttons-container button {
+	margin-top: 3px;
+}
+
+.main-container .card {
+	/* border: 1px solid; */
+	/* border-color: var(--border-color-primary); */
+	box-shadow: var(--box-shadow-col-alt);
+	padding: 10px;
+	border-radius: 5px;
+	background-color: var(--component-color);
+	color: var(--text-color);
+}
+.main-container .card h3 {
+	margin-top: 0;
+}
+
+.filter-menu {
+	width: 12%;
+	margin: 0 15px;
+	padding: 10px;
+	background-color: var(--component-color);
+	box-shadow: var(--box-shadow-col-alt);
+	border-radius: var(--border-radius);
+}
+
+.filter-menu select {
+	width: 100%;
+	height: 22px;
+	background: var(--text-color);
+	color: var(--bg-color);
+	border-radius: 5px;
+}
+
+.font-awesome .far .high {
+	color: red;
+}
+
+.font-awesome .far .medium {
+	color: orange;
+}
+
+.font-awesome .far .low {
+	color: yellow;
+}
+
+/* Project card */
+.project-card {
+	width: 100%;
+	min-height: 36rem;
+	margin: 0 auto;
+	padding: 27px 18px;
+	box-shadow: var(--box-shadow-col-alt);
+	border-radius: var(--border-radius);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--component-color);
+	transition: transform 0.2s ease-in;
+}
+
+.project-card:hover {
+	/* transform: translateY(-18px); */
+	animation: wobble 0.9s ease-in-out;
+}
+
+.project-header {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 18px;
+}
+
+.project-name {
+	font-size: 27px;
+	font-weight: normal;
+	color: var(--text-color);
+}
+
+.project-stats {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.project-stats #lowPriorityTodo {
+	color: yellow;
+	margin-right: 9px;
+}
+
+.project-stats #medPriorityTodo {
+	color: orange;
+	margin-right: 9px;
+}
+
+.project-stats #highPriorityTodo {
+	color: red;
+	margin-right: 9px;
+}
+
+.project-todo-count {
+	font-size: 16px;
+	color: var(--primary-color);
+	margin-top: 2px;
+}
+
+.project-hr {
+	border: 0.5px solid;
+	border-color: var(--bg-color);
+	width: 90%;
+	margin: 0 10px;
+}
+
+.project-body {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 20rem;
+	color: var(--text-color);
+	padding: 0 9px;
+}
+
+.project-description {
+	font-size: 16px;
+	font-weight: lighter;
+	margin-top: 18px;
+}
+
+.project-footer {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding: 0 9px;
+}
+
+.add-todo {
+	background-color: var(--primary-color);
+	color: var(--text-color);
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.delete-project {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	border: 1px solid;
+	border-color: var(--text-color);
+	padding: 10px 20px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in;
+}
+
+.delete-project:hover {
+	background-color: var(--danger);
+}
+
+.font-awesome .far {
+	font-family: 'Font Awesome 5 Free', Open Sans;
+	font-weight: lighter;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+/* Add Project modal form */
+.main-container .form-container {
+	margin-top: 45px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.main-container .form-container form {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	box-shadow: var(--box-shadow-col-alt);
+	background: var(--component-color);
+	color: var(--text-color);
+	padding: 27px 18px;
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow-col-alt);
+}
+
+.main-container .form-container form button {
+	margin: 18px 18px 9px 18px;
+}
+
+.main-container .form-container form h1 {
+	font-size: 27px;
+	font-weight: normal;
+	color: var(--text-color);
+}
+
+.main-container .form-container form label {
+	margin: 9px 0 9px 0;
+}
+
+.main-container .form-container form textarea {
+	color: var(--border-color-primary);
+	border-radius: var(--border-radius-alt);
+	border-color: var(--bg-color);
+	background-color: var(--bg-color);
+	height: 18rem;
+}
+
+.main-container .form-container form input {
+	color: var(--border-color-primary);
+	border-radius: var(--border-radius-alt);
+	border-color: var(--bg-color);
+}
+
+.main-container form .priority-levels-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 55% 0 0;
+}
+
+.main-container form .priority-levels-container label {
+	margin: 0px 0 9px 0;
+}
+
+.main-container form .priority-levels-container .priority-high {
+	color: red;
+}
+
+.main-container form .priority-levels-container .priority-medium {
+	color: orange;
+}
+
+.main-container form .priority-levels-container .priority-low {
+	color: yellow;
+}
+
+/* Delete Project modal warning */
+.project-delete-dialog-warning {
+	width: 50%;
+	max-height: 27rem;
+	margin: 45px 0 0 0;
+	padding: 27px 18px;
+	box-shadow: var(--box-shadow-col-alt);
+	border-radius: var(--border-radius);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--component-color);
+	transition: transform 0.2s ease-in;
+}
+
+.project-delete-dialog-warning:hover {
+	animation: wobble 0.9s ease-in-out;
+}
+
+.project-delete-header {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 18px;
+	color: var(--danger);
+}
+
+.project-delete-header h3 {
+	color: var(--danger);
+	font-size: 27px;
+}
+
+.project-delete-body {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 20rem;
+	color: var(--text-color);
+	padding: 0 9px;
+}
+
+.project-delete-body p {
+	font-size: 16px;
+	font-weight: lighter;
+	margin-top: 18px;
+}
+
+.project-delete-footer {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	padding: 0 9px;
+}
+
+.project-delete-footer button {
+	margin-right: 18px;
+}
+
+/* Todo list */
+.todo-list-container {
+	margin-top: 45px;
+	color: var(--text-color);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: var(--component-color);
+	padding: 27px 36px;
+}
+
+.todo-list-container h2 {
+	font-size: 27px;
+	font-weight: normal;
+	color: var(--text-color);
+}
+
+.todo-list {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(10, 1fr);
+	grid-row-gap: 10px;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.header {
+	font-weight: bold;
+}
+
+.todo-list span {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.todo-list span p {
+	margin-bottom: 9px;
+}
+
+.todo-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2em;
+	border: 1px solid var(--border-color);
+	padding: 10px;
+}
+
+.todo-item.date {
+	grid-column: 1 / span 1;
+}
+
+.todo-item.description {
+	grid-column: 2 / span 1;
+}
+
+.todo-item.priority {
+	grid-column: 3 / span 1;
+}
+
+.todo-item.completed {
+	color: var(--primary-color);
+	grid-column: 4 / span 1;
+}
+
+.todo-item.update {
+	grid-column: 5 / span 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.todo-item .delete-btn {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	border: 1px solid;
+	border-color: var(--text-color);
+	padding: 10px 20px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in;
+}
+
+.todo-item .delete-btn:hover {
+	background-color: var(--danger);
+}
+
+/* MIGHT BE USEFUL */
+.parent:hover .trigger ~ .target {
+	display: block;
+}
+.target {
+	display: none;
+}
+
+/* Animations */
+@keyframes wobble {
+	0% {
+		transform: scale(1);
+	}
+	15% {
+		transform: scale(1.015, 0.985);
+	}
+	30% {
+		transform: scale(0.985, 1.015);
+	}
+	45% {
+		transform: scale(1.005, 0.995);
+	}
+	60% {
+		transform: scale(0.995, 1.005);
+	}
+	75% {
+		transform: scale(1.0025, 0.9975);
+	}
+	90% {
+		transform: scale(0.9975, 1.0025);
+	}
+	100% {
+		transform: scale(1);
+	}
+}

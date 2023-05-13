@@ -1,0 +1,22 @@
+{
+  "name": "6.todo-app",
+  "version": "1.0.0",
+  "description": "Todo app built for the odin project ",
+  "main": "index.js",
+  "scripts": {
+    "test": "n/a"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksh009/top-todo-application.git"
+  },
+  "keywords": [
+    "n/a"
+  ],
+  "author": "KS Hughes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksh009/top-todo-application/issues"
+  },
+  "homepage": "https://github.com/ksh009/top-todo-application#readme"
+}
