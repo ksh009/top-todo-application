@@ -322,12 +322,6 @@ input:focus {
 	color: var(--text-color);
 }
 
-/* select option::before {
-	font-family: 'Font Awesome 5 Free';
-	content: '\f015';
-	margin-right: 10px;
-} */
-
 /* Add Project modal form */
 .main-container .form-container {
 	margin-top: 45px;
@@ -402,58 +396,68 @@ input:focus {
 	color: yellow;
 }
 
-/* Todo list */
-/* .todo-list-container {
-	margin-top: 45px;
-	color: var(--text-color);
+/* Delete Project modal warning */
+.project-delete-dialog-warning {
+	width: 50%;
+	max-height: 27rem;
+	margin: 45px 0 0 0;
+	padding: 27px 18px;
+	box-shadow: var(--box-shadow-col-alt);
+	border-radius: var(--border-radius);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--component-color);
+	transition: transform 0.2s ease-in;
+}
+
+.project-delete-dialog-warning:hover {
+	animation: wobble 0.9s ease-in-out;
+}
+
+.project-delete-header {
 	width: 100%;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	background-color: var(--component-color);
-	padding: 27px 36px;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 18px;
+	color: var(--danger);
 }
 
-.todo-list-container h2 {
+.project-delete-header h3 {
+	color: var(--danger);
 	font-size: 27px;
-	font-weight: normal;
-	color: var(--text-color);
 }
 
-.todo-list {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(10, 1fr);
-	grid-row-gap: 10px;
-	padding: 20px;
-	border-radius: 10px;
-}
-
-.header {
-	font-weight: bold;
-}
-
-.todo-list span {
+.project-delete-body {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.todo-list span p {
-	margin-bottom: 9px;
-}
-
-.todo-item {
-	display: flex;
-	align-items: center;
+	flex-direction: row;
 	justify-content: center;
-	font-size: 1.2em;
+	height: 20rem;
+	color: var(--text-color);
+	padding: 0 9px;
 }
 
-.todo-item.completed {
-	color: var(--primary-color);
-} */
+.project-delete-body p {
+	font-size: 16px;
+	font-weight: lighter;
+	margin-top: 18px;
+}
 
+.project-delete-footer {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	padding: 0 9px;
+}
+
+.project-delete-footer button {
+	margin-right: 18px;
+}
+
+/* Todo list */
 .todo-list-container {
 	margin-top: 45px;
 	color: var(--text-color);
@@ -527,34 +531,21 @@ input:focus {
 	align-items: center;
 }
 
-.todo-item.update button {
-	margin-right: 10px;
-	background-color: var(--primary-color);
-	color: #fff;
-	border: none;
-	border-radius: 5px;
-	padding: 5px 10px;
+.todo-item .delete-btn {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	border: 1px solid;
+	border-color: var(--text-color);
+	padding: 10px 20px;
 	cursor: pointer;
+	transition: background-color 0.2s ease-in;
 }
 
-.todo-item.update button:hover {
-	background-color: var(--primary-hover-color);
+.todo-item .delete-btn:hover {
+	background-color: var(--danger);
 }
 
-.todo-item.delete button {
-	background-color: var(--component-color);
-	color: #fff;
-	border: none;
-	border-radius: 5px;
-	padding: 5px 10px;
-	cursor: pointer;
-}
-
-.todo-item.delete button:hover {
-	background-color: var(--component-color);
-}
-
-/* Test CSS hover */
+/* MIGHT BE USEFUL */
 .parent:hover .trigger ~ .target {
 	display: block;
 }

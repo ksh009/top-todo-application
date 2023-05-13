@@ -83,3 +83,23 @@ const state = {
 	},
 };
 ```
+
+### Task 12 and 13 can be tracked using the Todo list length for each project
+
+#### 12 and 13 to be reused with Turnary from state
+
+12. Add a warning dialog box when deleting a project that has uncompleted todos inside
+
+- `Done`
+
+13. Add a success dialog box when a project has been deleted
+
+- `Done`
+
+14. Inside the Todo table opposite the header add a plus icon in green
+
+15. convert the update and delete buttons to icons instead and add an eye button as a details button so that each todo can be viewed in detail
+
+16. Build a todo details component
+
+17. `Note task 10 is last - webpack`
