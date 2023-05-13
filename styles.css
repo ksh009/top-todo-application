@@ -31,6 +31,7 @@ a {
 	--primary-color-hover: #3f99f2;
 	--primary-color-active: #007dfa;
 	--danger: #ff2a2a;
+	--success: #4caf50;
 	--bg-color: #1e1e2f;
 	--component-color: #27293d;
 	--text-color: #ffffff;
@@ -344,9 +345,9 @@ input:focus {
 	box-shadow: var(--box-shadow-col-alt);
 }
 
-.main-container .form-container form button {
+/* .main-container .form-container form button {
 	margin: 18px 18px 9px 18px;
-}
+} */
 
 .main-container .form-container form h1 {
 	font-size: 27px;
@@ -394,6 +395,33 @@ input:focus {
 
 .main-container form .priority-levels-container .priority-low {
 	color: yellow;
+}
+
+.main-container .form-container .form-footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	margin-top: 18px;
+}
+
+.main-container .form-container .form-footer button {
+	min-width: 189px;
+	margin: 0px 9px 0px 0px;
+}
+
+.main-container .form-container .form-footer .action-btn {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	border: 1px solid;
+	border-color: var(--text-color);
+	/* padding: 10px 20px; */
+	cursor: pointer;
+	transition: background-color 0.2s ease-in;
+}
+
+.main-container .form-container .form-footer .action-btn:hover {
+	background-color: var(--success);
 }
 
 /* Delete Project modal warning */
@@ -448,13 +476,17 @@ input:focus {
 
 .project-delete-footer {
 	display: flex;
+	flex-direction: row;
 	justify-content: flex-end;
+	align-items: center;
+	margin-top: 18px;
 	width: 100%;
-	padding: 0 9px;
 }
 
 .project-delete-footer button {
-	margin-right: 18px;
+	min-width: 189px;
+	margin: 0px 9px 0px 0px;
+	padding: 7px 9px;
 }
 
 /* Todo list */

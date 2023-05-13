@@ -105,8 +105,13 @@ const state = {
 - `Done buttons are now icons`
 
 16. Build a new Todo form to take new todos
+
+- `Done`
+
 17. Build a todo details component for viewing todo and add update and close button inside
-18. Build todo deleted feedback button
+18. Build todo deleted feedback modal
+
+- Will be something similar to the delete Project modal
 
 19. If a filter for todo list is added note that it can be restructed by the way the state is set.
 
