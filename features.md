@@ -109,6 +109,9 @@ const state = {
 - `Done`
 
 17. Build a todo details component for viewing todo and add update and close button inside
+
+- `Done`
+
 18. Build todo deleted feedback modal
 
 - Will be something similar to the delete Project modal

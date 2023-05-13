@@ -620,7 +620,100 @@ input:focus {
 	background-color: var(--danger);
 }
 
-/* Add todo form */
+/* Detailed todo view modal */
+.detailed-todo-container {
+	width: 50%;
+	max-height: 33rem;
+	margin: 45px 0 0 0;
+	padding: 27px 18px;
+	box-shadow: var(--box-shadow-col-alt);
+	border-radius: var(--border-radius);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--component-color);
+	transition: transform 0.2s ease-in;
+}
+
+.detailed-todo-header {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0;
+}
+
+.detailed-todo-header h3 {
+	color: var(--text-color);
+	font-size: 27px;
+}
+
+.detailed-todo-stats {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	color: var(--text-color);
+	margin-bottom: 18px;
+}
+
+.todo-stats-level {
+	display: flex;
+	flex-direction: row;
+}
+
+.todo-stats-level p {
+	color: var(--danger);
+	margin-left: 9px;
+}
+
+.detailed-todo-body {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 27rem;
+	color: var(--text-color);
+	padding: 0 9px;
+	margin-top: 18px;
+}
+
+.detailed-todo-footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	margin-top: 18px;
+	width: 100%;
+}
+
+.detailed-todo-footer button {
+	min-width: 189px;
+	margin: 0px 9px 0px 0px;
+	padding: 7px 9px;
+}
+
+.detailed-todo-footer button {
+	min-width: 189px;
+	margin: 0px 9px 0px 0px;
+	padding: 7px 9px;
+}
+
+.detailed-todo-footer .update-project {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	border: 1px solid;
+	border-color: var(--text-color);
+	/* padding: 10px 20px; */
+	cursor: pointer;
+	transition: background-color 0.2s ease-in;
+}
+
+.detailed-todo-footer .update-project:hover {
+	background-color: var(--success);
+}
 
 /* MIGHT BE USEFUL */
 .parent:hover .trigger ~ .target {
