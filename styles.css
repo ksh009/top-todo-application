@@ -519,6 +519,18 @@ input:focus {
 	grid-column: 3 / span 1;
 }
 
+.todo-list-container .todo-list #priorityHigh {
+	color: var(--danger);
+}
+
+.todo-list-container .todo-list #priorityMed {
+	color: orange;
+}
+
+.todo-list-container .todo-list #priorityLow {
+	color: yellow;
+}
+
 .todo-item.completed {
 	color: var(--primary-color);
 	grid-column: 4 / span 1;
