@@ -102,4 +102,17 @@ const state = {
 
 16. Build a todo details component
 
+17. If a filter for todo list is added note that it can be restructed by the way the state is set.
+
+- If by date
+  - Sort date in array then populate
+- If by priority
+  - Sort by priority then populate
+- If by completed
+
+  - Sort by completed then populate
+
+- `NOTE`
+  - When any state is updated the component function will need to be updated again. Similar behavior to React
+
 17. `Note task 10 is last - webpack`
