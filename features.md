@@ -98,11 +98,17 @@ const state = {
 
 14. Inside the Todo table opposite the header add a plus icon in green
 
+- `Done - Added new Todo button instead`
+
 15. convert the update and delete buttons to icons instead and add an eye button as a details button so that each todo can be viewed in detail
 
-16. Build a todo details component
+- `Done buttons are now icons`
 
-17. If a filter for todo list is added note that it can be restructed by the way the state is set.
+16. Build a new Todo form to take new todos
+17. Build a todo details component for viewing todo and add update and close button inside
+18. Build todo deleted feedback button
+
+19. If a filter for todo list is added note that it can be restructed by the way the state is set.
 
 - If by date
   - Sort date in array then populate
@@ -115,4 +121,4 @@ const state = {
 - `NOTE`
   - When any state is updated the component function will need to be updated again. Similar behavior to React
 
-17. `Note task 10 is last - webpack`
+20. `Note task 10 is last - webpack`

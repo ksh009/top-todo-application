@@ -533,6 +533,21 @@ input:focus {
 	grid-column: 3 / span 1;
 }
 
+.todo-item .fa-trash,
+.fa-eye {
+	cursor: pointer;
+}
+
+.todo-item .fa-trash,
+.fa-eye:hover {
+	box-shadow: var(--box-shadow-col);
+}
+
+.todo-item .fa-trash {
+	cursor: pointer;
+	color: var(--danger);
+}
+
 .todo-list-container .todo-list #priorityHigh {
 	color: var(--danger);
 }
@@ -545,7 +560,7 @@ input:focus {
 	color: yellow;
 }
 
-.todo-item .completed {
+.todo-item .fa-check {
 	color: var(--primary-color);
 	grid-column: 4 / span 1;
 }
