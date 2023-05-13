@@ -623,7 +623,7 @@ input:focus {
 /* Detailed todo view modal */
 .detailed-todo-container {
 	width: 50%;
-	max-height: 33rem;
+	max-height: fit-content;
 	margin: 45px 0 0 0;
 	padding: 27px 18px;
 	box-shadow: var(--box-shadow-col-alt);
@@ -637,17 +637,27 @@ input:focus {
 }
 
 .detailed-todo-header {
-	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 0;
+	align-self: flex-start;
+	background-color: var(--bg-color);
+	border-radius: var(--border-radius-alt);
+	padding: 0 9px;
 }
 
 .detailed-todo-header h3 {
 	color: var(--text-color);
 	font-size: 27px;
+	cursor: pointer;
+	width: fit-content;
+	transition: background-color 0.2 ease-in;
+}
+
+.detailed-todo-header i {
+	margin-left: 9px;
 }
 
 .detailed-todo-stats {
@@ -657,12 +667,31 @@ input:focus {
 	justify-content: space-between;
 	align-items: center;
 	color: var(--text-color);
-	margin-bottom: 18px;
+	margin: 18px 0 18px 0;
+}
+
+.detailed-todo-stats input {
+	padding: 5px;
+	border: none;
+	border-radius: var(--border-radius-alt);
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	margin: 0;
 }
 
 .todo-stats-level {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+}
+
+.todo-stats-level .filter-menu {
+	width: 45%;
+	margin: 0 15px;
+	padding: 3px;
+	background-color: var(--component-color);
+	box-shadow: var(--box-shadow-col-alt);
+	border-radius: var(--border-radius);
 }
 
 .todo-stats-level p {
@@ -672,12 +701,33 @@ input:focus {
 
 .detailed-todo-body {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
-	height: 27rem;
+	height: fit-content;
 	color: var(--text-color);
-	padding: 0 9px;
-	margin-top: 18px;
+	padding: 18px 15px;
+	margin: 18px 0 18px 0;
+	background-color: var(--bg-color);
+	border-radius: var(--border-radius-alt);
+}
+
+.detailed-todo-body p {
+	cursor: pointer;
+}
+
+.detailed-todo-body i {
+	align-self: flex-end;
+	margin: 18px 0 0 9px;
+	color: black;
+}
+
+.detailed-completed {
+	display: inline-block;
+	width: 100%;
+}
+
+.detailed-completed label {
+	color: var(--text-color);
 }
 
 .detailed-todo-footer {
