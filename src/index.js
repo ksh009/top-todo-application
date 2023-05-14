@@ -31,6 +31,7 @@ export function index() {
 
 // Ensure this only runs once on reload. Index will be triggered from other functions when state is updated. This is only fo initial load
 if (content.children.length === 1) {
+	console.log('I only run once on reload!!!');
 	// Later find a condition so that this function will only run once
 	index();
 }
