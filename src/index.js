@@ -1,6 +1,7 @@
 import './style.css';
 import { state } from '../src/state/state.js';
 import { createNav } from './nav';
+import { createProjectsGrid } from './views/projectsGrid';
 // Global state object will be created here
 // State object will be shared with each comp
 // // First persist to LS
@@ -26,6 +27,13 @@ export function index() {
 
 	// Components - Initialized sections/components here
 	const navBar = createNav(appState);
+	const projectsGrid = createProjectsGrid(appState);
+
+	// Event handlers
+	// const addTodoButton = projectsGrid.querySelector('.add-todo');
+	// addTodoButton.addEventListener('click', () => {
+	// 	console.log('ADD TODO BUTTON CLICKED');
+	// });
 
 	// Selectors
 	const headerContainer = document.createElement('header');
@@ -36,9 +44,9 @@ export function index() {
 	mainContainer.classList.add('main-container');
 
 	// Append
-	content.appendChild(headerContainer);
-	// Append components to main as needed then append main to content
 	headerContainer.appendChild(navBar);
+	mainContainer.appendChild(projectsGrid);
+	content.appendChild(headerContainer);
 	content.appendChild(mainContainer);
 }
 
