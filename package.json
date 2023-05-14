@@ -1,35 +1,33 @@
 {
-  "name": "6.todo-app",
-  "version": "1.0.0",
-  "description": "Todo app built for the odin project ",
-  "main": "index.js",
-  "scripts": {
-    "test": "n/a"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ksh009/top-todo-application.git"
-  },
-  "keywords": [
-    "n/a"
-  ],
-  "author": "KS Hughes",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ksh009/top-todo-application/issues"
-  },
-  "homepage": "https://github.com/ksh009/top-todo-application#readme",
-  "devDependencies": {
-    "css-loader": "^6.7.3",
-    "file-loader": "^6.2.0",
-    "gh-pages": "^5.0.0",
-    "html-loader": "^4.2.0",
-    "mini-css-extract-plugin": "^2.7.5",
-    "sass": "^1.62.1",
-    "sass-loader": "^13.2.2",
-    "style-loader": "^3.3.2",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.82.1",
-    "webpack-cli": "^5.1.1"
-  }
+	"name": "6.todo-app",
+	"version": "1.0.0",
+	"description": "Todo app built for the odin project ",
+	"main": "index.js",
+	"scripts": {
+		"test": "n/a",
+		"build": "webpack"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ksh009/top-todo-application"
+	},
+	"keywords": [
+		"n/a"
+	],
+	"author": "KS Hughes",
+	"license": "MIT",
+	"homepage": "https://github.com/ksh009/top-todo-application#readme",
+	"devDependencies": {
+		"css-loader": "^6.7.3",
+		"file-loader": "^6.2.0",
+		"gh-pages": "^5.0.0",
+		"html-loader": "^4.2.0",
+		"mini-css-extract-plugin": "^2.7.5",
+		"sass": "^1.62.1",
+		"sass-loader": "^13.2.2",
+		"style-loader": "^3.3.2",
+		"url-loader": "^4.1.1",
+		"webpack": "^5.82.1",
+		"webpack-cli": "^5.1.1"
+	}
 }
