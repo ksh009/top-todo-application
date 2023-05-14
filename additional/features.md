@@ -133,6 +133,7 @@ const state = {
 
 - 14/05/2023 => Tasks
 - configure webpack
+	- Done 14/05
 - For each section in HTML create dynamically with JS and webpack
 - Append each module to content id html element
 - Keep one default project card
