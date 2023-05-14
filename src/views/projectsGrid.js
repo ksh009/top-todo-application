@@ -22,17 +22,17 @@ function createButtonsContainer() {
 
 	const highOption = document.createElement('option');
 	highOption.classList.add('far', 'high');
-	highOption.textContent = '\uf111; High';
+	highOption.textContent = 'o High';
 	select.appendChild(highOption);
 
 	const mediumOption = document.createElement('option');
 	mediumOption.classList.add('far', 'medium');
-	mediumOption.textContent = '\uf111; Medium';
+	mediumOption.textContent = 'o Medium';
 	select.appendChild(mediumOption);
 
 	const lowOption = document.createElement('option');
 	lowOption.classList.add('far', 'low');
-	lowOption.textContent = '\uf111; Low';
+	lowOption.textContent = 'o Low';
 	select.appendChild(lowOption);
 
 	filterMenu.appendChild(select);
@@ -41,15 +41,21 @@ function createButtonsContainer() {
 	return buttonsContainer;
 }
 
-function createProjectsGrid(project) {
+function createProjectsGrid(projects) {
 	const projectGrid = document.createElement('div');
 	projectGrid.classList.add('grid');
-	projectGrid.append(project);
+
+	// Loop through projects
+	projects.forEach((project) => {
+		const newProject = createProjectCard(project);
+		projectGrid.append(newProject);
+	});
 
 	return projectGrid;
 }
 
-function createProjectCard() {
+function createProjectCard(project) {
+	console.log('project', project);
 	const cardDiv = document.createElement('div');
 	cardDiv.classList.add('project-card');
 
@@ -58,19 +64,19 @@ function createProjectCard() {
 
 	const projectName = document.createElement('h3');
 	projectName.classList.add('project-name');
-	projectName.textContent = 'Default Project';
+	projectName.textContent = project.name;
 
 	const projectStats = document.createElement('span');
 	projectStats.classList.add('project-stats');
 
-	const lowPriorityTodo = document.createElement('i');
-	lowPriorityTodo.id = 'lowPriorityTodo';
-	lowPriorityTodo.classList.add('far', 'fa-circle');
-	projectStats.appendChild(lowPriorityTodo);
+	const todoPriorityLevel = document.createElement('i');
+	todoPriorityLevel.id = project.priorityId;
+	todoPriorityLevel.classList.add('far', 'fa-circle');
+	projectStats.appendChild(todoPriorityLevel);
 
 	const todoCount = document.createElement('h5');
 	todoCount.classList.add('project-todo-count');
-	todoCount.textContent = `Todos: ${9}`;
+	todoCount.textContent = `Todos: ${project.todoCount}`;
 	projectStats.appendChild(todoCount);
 
 	headerDiv.appendChild(projectName);
@@ -84,8 +90,7 @@ function createProjectCard() {
 
 	const description = document.createElement('p');
 	description.classList.add('project-description');
-	description.textContent =
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue. Donec eget est ut velit vestibulum aliquet. Suspendisse non sagittis mauris. Sed imperdiet mi sit amet erat auctor aliquet.';
+	description.textContent = project.description;
 
 	bodyDiv.appendChild(description);
 
@@ -113,8 +118,8 @@ function createProjectCard() {
 
 export function createProjectsLayout() {
 	const buttonsContainer = createButtonsContainer();
-	const projectCard = createProjectCard();
-	const projectsGrid = createProjectsGrid(projectCard);
+	// const projectCard = createProjectCard();
+	const projectsGrid = createProjectsGrid(projectCards);
 	const containerDiv = document.createElement('div');
 	containerDiv.append(buttonsContainer);
 	containerDiv.append(projectsGrid);
