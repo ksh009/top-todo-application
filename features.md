@@ -98,8 +98,44 @@ const state = {
 
 14. Inside the Todo table opposite the header add a plus icon in green
 
+- `Done - Added new Todo button instead`
+
 15. convert the update and delete buttons to icons instead and add an eye button as a details button so that each todo can be viewed in detail
 
-16. Build a todo details component
+- `Done buttons are now icons`
 
-17. `Note task 10 is last - webpack`
+16. Build a new Todo form to take new todos
+
+- `Done`
+
+17. Build a todo details component for viewing todo and add update and close button inside
+
+- `Done`
+
+18. Build todo deleted feedback modal
+
+- Will be something similar to the delete Project modal
+
+19. If a filter for todo list is added note that it can be restructed by the way the state is set.
+
+- If by date
+  - Sort date in array then populate
+- If by priority
+  - Sort by priority then populate
+- If by completed
+
+  - Sort by completed then populate
+
+- `NOTE`
+  - When any state is updated the component function will need to be updated again. Similar behavior to React
+
+20. `Note task 10 is last - webpack`
+
+- 14/05/2023 => Tasks
+- configure webpack
+- For each section in HTML create dynamically with JS and webpack
+- Append each module to content id html element
+- Keep one default project card
+- Click "Add Project button"
+- Add Project via form in modal
+- New projects appears in grid
