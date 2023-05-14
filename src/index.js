@@ -1,4 +1,6 @@
 import './style.css';
+import { state } from '../src/state/state.js';
+import { createNav } from './nav';
 // Global state object will be created here
 // State object will be shared with each comp
 // // First persist to LS
@@ -6,14 +8,24 @@ import './style.css';
 // // state should probably be an object with getter and setter methods
 // Need to somehow check when the state changes so that the particular component can be rerendered
 
-// Components
-// Initialized sections/components here
-
 // Entry point element
 const content = document.getElementById('content');
 
 export function index() {
-	console.log('Check if webpack config working!!!');
+	// Check if state object exists in localStorage
+	if (!localStorage.getItem('state')) {
+		console.log('Default state set');
+		// If not, persist to localStorage
+		localStorage.setItem('state', JSON.stringify(state));
+	}
+
+	// This is passed down to index and index will pass it down to any child components.
+	// // If state is changed then update and overwrite old state with set state
+	const appState = JSON.parse(localStorage.getItem('state'));
+	console.log('globalState from inside index.js', appState);
+
+	// Components - Initialized sections/components here
+	const navBar = createNav(appState);
 
 	// Selectors
 	const headerContainer = document.createElement('header');
@@ -26,6 +38,7 @@ export function index() {
 	// Append
 	content.appendChild(headerContainer);
 	// Append components to main as needed then append main to content
+	headerContainer.appendChild(navBar);
 	content.appendChild(mainContainer);
 }
 
