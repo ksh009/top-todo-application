@@ -1,9 +1,47 @@
 import { projectCards } from '../variables/projectSeedData';
 
+function createButtonsContainer() {
+	const buttonsContainer = document.createElement('div');
+	buttonsContainer.classList.add('buttons-container');
+
+	const addProjectBtn = document.createElement('button');
+	addProjectBtn.setAttribute('id', 'add-project-btn');
+	addProjectBtn.textContent = '+ Add Project';
+	buttonsContainer.appendChild(addProjectBtn);
+
+	const filterMenu = document.createElement('div');
+	filterMenu.classList.add('filter-menu', 'font-awesome');
+
+	const select = document.createElement('select');
+	select.classList.add('far');
+
+	const allOption = document.createElement('option');
+	allOption.classList.add('far');
+	allOption.textContent = 'All';
+	select.appendChild(allOption);
+
+	const highOption = document.createElement('option');
+	highOption.classList.add('far', 'high');
+	highOption.textContent = '\uf111; High';
+	select.appendChild(highOption);
+
+	const mediumOption = document.createElement('option');
+	mediumOption.classList.add('far', 'medium');
+	mediumOption.textContent = '\uf111; Medium';
+	select.appendChild(mediumOption);
+
+	const lowOption = document.createElement('option');
+	lowOption.classList.add('far', 'low');
+	lowOption.textContent = '\uf111; Low';
+	select.appendChild(lowOption);
+
+	filterMenu.appendChild(select);
+	buttonsContainer.appendChild(filterMenu);
+
+	return buttonsContainer;
+}
+
 function createProjectsGrid(project) {
-	//   <div class="grid">
-	//     ${projectCard}
-	//   </div>
 	const projectGrid = document.createElement('div');
 	projectGrid.classList.add('grid');
 	projectGrid.append(project);
@@ -74,25 +112,11 @@ function createProjectCard() {
 }
 
 export function createProjectsLayout() {
+	const buttonsContainer = createButtonsContainer();
 	const projectCard = createProjectCard();
 	const projectsGrid = createProjectsGrid(projectCard);
 	const containerDiv = document.createElement('div');
-	// containerDiv.innerHTML = `
-	//   <div class="buttons-container">
-	//     <button id="add-project-btn">+ Add Project</button>
-	//     <div class="filter-menu font-awesome">
-	//       <select class="far">
-	//         <option class="far">All</option>
-	//         <option class="far high">&#xf111; High</option>
-	//         <option class="far medium">&#xf111; Medium</option>
-	//         <option class="far low">&#xf111; Low</option>
-	//       </select>
-	//     </div>
-	//   </div>
-	//   <div class="grid">
-	//     ${projectCard}
-	//   </div>
-	// `;
+	containerDiv.append(buttonsContainer);
 	containerDiv.append(projectsGrid);
 	// Event listeners
 	// const addTodoButton = containerDiv.querySelector('.add-todo');
