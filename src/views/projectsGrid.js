@@ -1,5 +1,16 @@
 import { projectCards } from '../variables/projectSeedData';
 
+function createProjectsGrid(project) {
+	//   <div class="grid">
+	//     ${projectCard}
+	//   </div>
+	const projectGrid = document.createElement('div');
+	projectGrid.classList.add('grid');
+	projectGrid.append(project);
+
+	return projectGrid;
+}
+
 function createProjectCard() {
 	const cardDiv = document.createElement('div');
 	cardDiv.classList.add('project-card');
@@ -62,9 +73,9 @@ function createProjectCard() {
 	return cardDiv;
 }
 
-const projectCard = createProjectCard();
-
-export function createProjectsGrid() {
+export function createProjectsLayout() {
+	const projectCard = createProjectCard();
+	const projectsGrid = createProjectsGrid(projectCard);
 	const containerDiv = document.createElement('div');
 	// containerDiv.innerHTML = `
 	//   <div class="buttons-container">
@@ -82,7 +93,7 @@ export function createProjectsGrid() {
 	//     ${projectCard}
 	//   </div>
 	// `;
-	containerDiv.append(projectCard);
+	containerDiv.append(projectsGrid);
 	// Event listeners
 	// const addTodoButton = containerDiv.querySelector('.add-todo');
 	// addTodoButton.addEventListener('click', () => {

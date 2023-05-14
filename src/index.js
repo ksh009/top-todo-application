@@ -1,7 +1,7 @@
 import './style.css';
 import { state } from '../src/state/state.js';
 import { createNav } from './nav';
-import { createProjectsGrid } from './views/projectsGrid';
+import { createProjectsLayout } from './views/projectsGrid';
 // Global state object will be created here
 // State object will be shared with each comp
 // // First persist to LS
@@ -27,7 +27,7 @@ export function index() {
 
 	// Components - Initialized sections/components here
 	const navBar = createNav(appState);
-	const projectsGrid = createProjectsGrid(appState);
+	const projectsGrid = createProjectsLayout(appState);
 
 	// Event handlers
 	// const addTodoButton = projectsGrid.querySelector('.add-todo');
