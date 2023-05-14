@@ -1,1 +1,1 @@
-console.log("Check if webpack config working!!!");
+(()=>{"use strict";(()=>{console.log("Check if webpack config working!!!");const e=document.getElementById("content"),n=document.createElement("header"),t=document.createElement("main");n.classList.add("header-container"),t.classList.add("main-container"),e.appendChild(n),e.appendChild(t)})()})();
