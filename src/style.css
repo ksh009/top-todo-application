@@ -72,7 +72,6 @@ input {
 	padding: 5px;
 	margin-bottom: 10px;
 	border: 1px solid;
-	/* border-color: var(--border-color-primary); */
 	background-color: var(--bg-color);
 	color: var(--text-color);
 }
@@ -120,14 +119,6 @@ input:focus {
 	margin-left: 15px;
 }
 
-/* .nav .auth button:hover {
-	background-color: var(--primary-color-hover);
-}
-
-.nav .auth button:active {
-	background-color: var(--primary-color-active);
-} */
-
 /* Component styles */
 .main-container {
 	display: flex;
@@ -161,8 +152,6 @@ input:focus {
 }
 
 .main-container .card {
-	/* border: 1px solid; */
-	/* border-color: var(--border-color-primary); */
 	box-shadow: var(--box-shadow-col-alt);
 	padding: 10px;
 	border-radius: 5px;
@@ -219,7 +208,6 @@ input:focus {
 }
 
 .project-card:hover {
-	/* transform: translateY(-18px); */
 	animation: wobble 0.9s ease-in-out;
 }
 
@@ -345,10 +333,6 @@ input:focus {
 	box-shadow: var(--box-shadow-col-alt);
 }
 
-/* .main-container .form-container form button {
-	margin: 18px 18px 9px 18px;
-} */
-
 .main-container .form-container form h1 {
 	font-size: 27px;
 	font-weight: normal;
@@ -415,7 +399,6 @@ input:focus {
 	color: var(--text-color);
 	border: 1px solid;
 	border-color: var(--text-color);
-	/* padding: 10px 20px; */
 	cursor: pointer;
 	transition: background-color 0.2s ease-in;
 }
@@ -439,10 +422,6 @@ input:focus {
 	background-color: var(--component-color);
 	transition: transform 0.2s ease-in;
 }
-
-/* .project-delete-dialog-warning:hover {
-	animation: wobble 0.9s ease-in-out;
-} */
 
 .project-delete-header {
 	width: 100%;
@@ -603,7 +582,6 @@ input:focus {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	/* padding: 0 5% 0 5%; */
 }
 
 .todo-item .delete-btn {
@@ -766,7 +744,6 @@ input:focus {
 	color: var(--text-color);
 	border: 1px solid;
 	border-color: var(--text-color);
-	/* padding: 10px 20px; */
 	cursor: pointer;
 	transition: background-color 0.2s ease-in;
 }
