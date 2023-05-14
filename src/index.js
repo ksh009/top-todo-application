@@ -9,13 +9,15 @@ import './style.css';
 // Components
 // Initialized sections/components here
 
-// Selectors
+// Entry point element
 const content = document.getElementById('content');
-const headerContainer = document.createElement('header');
-const mainContainer = document.createElement('main');
 
 export function index() {
 	console.log('Check if webpack config working!!!');
+
+	// Selectors
+	const headerContainer = document.createElement('header');
+	const mainContainer = document.createElement('main');
 
 	// Add classes
 	headerContainer.classList.add('header-container');
