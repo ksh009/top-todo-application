@@ -130,3 +130,12 @@ const state = {
   - When any state is updated the component function will need to be updated again. Similar behavior to React
 
 20. `Note task 10 is last - webpack`
+
+- 14/05/2023 => Tasks
+- configure webpack
+- For each section in HTML create dynamically with JS and webpack
+- Append each module to content id html element
+- Keep one default project card
+- Click "Add Project button"
+- Add Project via form in modal
+- New projects appears in grid
