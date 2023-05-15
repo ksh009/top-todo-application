@@ -132,9 +132,32 @@ const state = {
 20. `Note task 10 is last - webpack`
 
 - 15/05 tasks
+- 0. Convert the state to a class for the following
+  - The todo list
+  - The todo project
+  - The todo
 - 1. Click on Add project button and add project form appears in modal
   - Modal has glass morphic bg
+  - `Done`
 - 2. When Add project form submitted the global state is updated
+  - `Done`
 - 3. The page must be rerendered to take into account the new state update
+  - `Done`
 - 4. Get the new project to appear in the projects show grid
-- 5. Implement project filtering by priority render logic
+  - `Done `
+- 5. Delete a project and rerender
+- 7. Now implement modal which checks for
+  <!-- Leave these features for now -->
+  - If project has todos in it
+  - Success message if no Todos
+  - Success message if todos but proceeded with delete even after warn
+- 6. Implement project filtering by priority render logic
+
+```html
+<select class="far">
+	<option class="far">All</option>
+	<option class="far high">o High</option>
+	<option class="far medium">o Medium</option>
+	<option class="far low">o Low</option>
+</select>
+```

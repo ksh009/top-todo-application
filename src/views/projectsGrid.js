@@ -1,5 +1,4 @@
 import { index } from '..';
-import { projectCards } from '../variables/projectSeedData';
 
 function createButtonsContainer(appState) {
 	const buttonsContainer = document.createElement('div');
@@ -19,21 +18,25 @@ function createButtonsContainer(appState) {
 	const allOption = document.createElement('option');
 	allOption.classList.add('far');
 	allOption.textContent = 'All';
+	allOption.value = 'all';
 	select.appendChild(allOption);
 
 	const highOption = document.createElement('option');
 	highOption.classList.add('far', 'high');
 	highOption.textContent = 'o High';
+	highOption.value = 'high';
 	select.appendChild(highOption);
 
 	const mediumOption = document.createElement('option');
 	mediumOption.classList.add('far', 'medium');
 	mediumOption.textContent = 'o Medium';
+	mediumOption.value = 'medium';
 	select.appendChild(mediumOption);
 
 	const lowOption = document.createElement('option');
 	lowOption.classList.add('far', 'low');
 	lowOption.textContent = 'o Low';
+	lowOption.value = 'low';
 	select.appendChild(lowOption);
 
 	filterMenu.appendChild(select);
@@ -59,15 +62,15 @@ function createProjectsGrid(appState) {
 	const projectGrid = document.createElement('div');
 	projectGrid.classList.add('grid');
 
-	appState.todoData.projects.forEach((project, index) => {
-		const newProject = createProjectCard(project, index);
+	appState.todoData.projects.forEach((project, idx) => {
+		const newProject = createProjectCard(project, idx, appState);
 		projectGrid.append(newProject);
 	});
 
 	return projectGrid;
 }
 
-function createProjectCard(project, index) {
+function createProjectCard(project, idx, appState) {
 	const cardDiv = document.createElement('div');
 	cardDiv.classList.add('project-card');
 
@@ -126,8 +129,27 @@ function createProjectCard(project, index) {
 	cardDiv.appendChild(footerDiv);
 
 	// Event listeners
+	// // Add todo to project
 	addTodoBtn.addEventListener('click', () => {
-		console.log(`ADD TODO BUTTON CLICKED at index ${index}`);
+		console.log(`ADD TODO BUTTON CLICKED at index ${idx}`);
+	});
+
+	// // Add todo to project
+	deleteProjectBtn.addEventListener('click', () => {
+		console.log(`DELETE BUTTON CLICKED at index ${idx}`);
+
+		if (idx === 0) {
+			console.log('Default Project cannot be deleted!!');
+			return;
+		} else {
+			appState.todoData.projects.splice(idx, 1);
+			console.log('Project removed ad state updated', appState);
+			// Update state in LS
+			localStorage.setItem('state', JSON.stringify(appState));
+			index(
+				'I was rerendered because of a state update triggered by the projectsGrid:deleteProjectBtn elm!!!'
+			);
+		}
 	});
 
 	return cardDiv;
