@@ -17,7 +17,7 @@ const content = document.getElementById('content');
 const headerContainer = document.createElement('header');
 const mainContainer = document.createElement('main');
 
-export function index(renderMessage) {
+export function index(renderMessage, filterOption) {
 	// Check if state object exists in localStorage
 	if (!localStorage.getItem('state')) {
 		// console.log('Default state set');
@@ -30,20 +30,43 @@ export function index(renderMessage) {
 	const appState = JSON.parse(localStorage.getItem('state'));
 	// console.log('globalState from inside index.js', appState);
 
-	// Components - Initialized sections/components here
-	const navBar = createNav(appState);
-	const projectsGrid = createProjectsLayout(appState);
-	const addProjectModal = createAddProjectModal(appState);
-
 	// Check if index rerender was triggered by child comp
 	if (renderMessage) {
 		console.log(renderMessage);
+		// TEST
+		console.log('filterOption', filterOption);
+		if (filterOption && filterOption === 'high') {
+			appState.todoData.projects = appState.todoData.projects.filter(
+				(project) => {
+					return project.priority === 'high';
+				}
+			);
+		} else if (filterOption && filterOption === 'medium') {
+			appState.todoData.projects = appState.todoData.projects.filter(
+				(project) => {
+					return project.priority === 'medium';
+				}
+			);
+		} else if (filterOption && filterOption === 'low') {
+			appState.todoData.projects = appState.todoData.projects.filter(
+				(project) => {
+					return project.priority === 'low';
+				}
+			);
+		} else {
+			return appState.todoData.projects;
+		}
 		// Remove old appended child
 		headerContainer.innerHTML = '';
 		mainContainer.innerHTML = '';
 	} else {
 		console.log('This is my default render when app first starts up!');
 	}
+
+	// Components - Initialized sections/components here
+	const navBar = createNav(appState);
+	const projectsGrid = createProjectsLayout(appState);
+	const addProjectModal = createAddProjectModal(appState);
 
 	// Add classes
 	headerContainer.classList.add('header-container');

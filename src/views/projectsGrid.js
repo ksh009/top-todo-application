@@ -56,11 +56,18 @@ function createButtonsContainer(appState) {
 		);
 	});
 
-	// // Filter projects by option selected
-
 	select.addEventListener('change', (event) => {
 		const selectedOption = event.target.value;
 		console.log('selectedOption', selectedOption);
+
+		index(
+			'I was rerendered because of a state update triggered by the projectsGrid elm!!!',
+			selectedOption
+		);
+	});
+
+	allOption.addEventListener('click', () => {
+		console.log('clicked All');
 	});
 
 	return buttonsContainer;
@@ -146,7 +153,8 @@ function createProjectCard(project, idx, appState) {
 	deleteProjectBtn.addEventListener('click', () => {
 		console.log(`DELETE BUTTON CLICKED at index ${idx}`);
 
-		if (idx === 0) {
+		if (project.name === 'Default Project') {
+			alert('Default project cannot be deleted!!!');
 			console.log('Default Project cannot be deleted!!');
 			return;
 		} else {
