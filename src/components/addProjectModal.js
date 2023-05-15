@@ -103,7 +103,7 @@ export function createAddProjectModal(appState) {
 
 	const createProjectButton = document.createElement('button');
 	createProjectButton.classList.add('action-btn');
-	createProjectButton.setAttribute('type', 'submit');
+	createProjectButton.setAttribute('type', 'button');
 	createProjectButton.textContent = 'CREATE PROJECT';
 	formFooter.appendChild(createProjectButton);
 
@@ -112,23 +112,10 @@ export function createAddProjectModal(appState) {
 	formContainer.appendChild(form);
 
 	// Event listeners
-	// // Reset state to default on modal form cancel
-	cancelButton.addEventListener('click', () => {
-		appState.todoData.modalActive = false;
-		appState.todoData.modalComponent = '';
-		console.log('appState logged from addProjectBtn', appState);
-
-		// Update state in LS
-		localStorage.setItem('state', JSON.stringify(appState));
-		index(
-			'I was rerendered because of a state update triggered by the addProjectModal elm!!!'
-		);
-	});
-
-	// Get project name and desc value & track selected radio button values
+	// // Get project name and desc value & track selected radio button values
 	let projectNameValue;
 	let ProjectDescValue;
-	let selectedInputValue;
+	let priorityInputValue;
 
 	projectNameInput.addEventListener('blur', (event) => {
 		projectNameValue = event.target.value;
@@ -143,11 +130,69 @@ export function createAddProjectModal(appState) {
 	[priorityHighInput, priorityMediumInput, priorityLowInput].forEach(
 		(radioButton) => {
 			radioButton.addEventListener('click', (event) => {
-				selectedInputValue = event.target.value;
-				console.log('selectedInputValue', selectedInputValue);
+				priorityInputValue = event.target.value;
+				console.log('priorityInputValue', priorityInputValue);
 			});
 		}
 	);
+
+	// Reset state to default on modal form cancel
+	cancelButton.addEventListener('click', () => {
+		appState.todoData.modalActive = false;
+		appState.todoData.modalComponent = '';
+		console.log('appState updated from addProjectBtn:cancelButton', appState);
+
+		// Update state in LS
+		localStorage.setItem('state', JSON.stringify(appState));
+		index(
+			'I was rerendered because of a state update triggered by the addProjectBtn:cancelButton elm!!!'
+		);
+	});
+
+	// Create a new Todo and update state
+	createProjectButton.addEventListener('click', (event) => {
+		let priorityInputId =
+			priorityInputValue === 'high'
+				? 'highPriorityTodo'
+				: priorityInputValue === 'medium'
+				? 'medPriorityTodo'
+				: priorityInputValue === 'low'
+				? 'lowPriorityTodo'
+				: null;
+
+		if (
+			!projectNameValue &&
+			!ProjectDescValue &&
+			!priorityInputValue &&
+			!priorityInputId
+		) {
+			console.log('Do not have all form input values!');
+			return;
+		} else {
+			const newTodo = {
+				name: projectNameValue,
+				priority: priorityInputValue,
+				priorityId: priorityInputId,
+				todoCount: 0,
+				description: ProjectDescValue,
+				completed: false,
+			};
+			// console.log('newTodo', newTodo);
+			appState.todoData.modalActive = false;
+			appState.todoData.modalComponent = '';
+			appState.todoData.projects.push(newTodo);
+			console.log(
+				'appState logged from addProjectBtn:createProjectButton',
+				appState
+			);
+
+			// Update state in LS
+			localStorage.setItem('state', JSON.stringify(appState));
+			index(
+				'I was rerendered because of a state update triggered by the addProjectBtn:createProjectButton elm!!!'
+			);
+		}
+	});
 
 	return formContainer;
 }
