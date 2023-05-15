@@ -155,9 +155,9 @@ const state = {
 
 ```html
 <select class="far">
-	<option class="far">All</option>
-	<option class="far high">o High</option>
-	<option class="far medium">o Medium</option>
-	<option class="far low">o Low</option>
+	<option value="all" class="far">All</option>
+	<option value="high" class="far high">o High</option>
+	<option value="medium" class="far medium">o Medium</option>
+	<option value="low" class="far low">o Low</option>
 </select>
 ```

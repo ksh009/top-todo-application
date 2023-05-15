@@ -43,6 +43,7 @@ function createButtonsContainer(appState) {
 	buttonsContainer.appendChild(filterMenu);
 
 	// Event listeners
+	// // Open add project modal form
 	addProjectBtn.addEventListener('click', () => {
 		appState.todoData.modalActive = true;
 		appState.todoData.modalComponent = 'AddNewProject';
@@ -53,6 +54,13 @@ function createButtonsContainer(appState) {
 		index(
 			'I was rerendered because of a state update triggered by the projectsGrid elm!!!'
 		);
+	});
+
+	// // Filter projects by option selected
+
+	select.addEventListener('change', (event) => {
+		const selectedOption = event.target.value;
+		console.log('selectedOption', selectedOption);
 	});
 
 	return buttonsContainer;
