@@ -1,8 +1,16 @@
 export function createAddProjectModal(globalState) {
-	// console.log('globalState from addProjectModal', globalState);
+	console.log('globalState from addProjectModal', globalState);
 	const formContainer = document.createElement('div');
 	formContainer.classList.add('form-container', 'modal');
 	formContainer.id = 'addNewProjectModal';
+
+	// Check if state was updated and show modal
+	if (
+		globalState.todoData.modalActive &&
+		globalState.todoData.modalComponent === 'AddNewProject'
+	) {
+		formContainer.style.display = 'flex';
+	}
 
 	const form = document.createElement('form');
 	form.action = '#';
