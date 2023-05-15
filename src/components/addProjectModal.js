@@ -2,7 +2,7 @@ export function createAddProjectModal(globalState) {
 	console.log('globalState from addProjectModal', globalState);
 	const formContainer = document.createElement('div');
 	formContainer.classList.add('form-container', 'modal');
-	formContainer.id = 'addBookModal';
+	formContainer.id = 'addNewProjectModal';
 
 	const form = document.createElement('form');
 	form.action = '#';
