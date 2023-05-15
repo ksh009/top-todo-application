@@ -1,13 +1,13 @@
-export function createAddProjectModal(globalState) {
-	console.log('globalState from addProjectModal', globalState);
+export function createAddProjectModal(appState) {
+	console.log('globalState from addProjectModal', appState);
 	const formContainer = document.createElement('div');
 	formContainer.classList.add('form-container', 'modal');
 	formContainer.id = 'addNewProjectModal';
 
 	// Check if state was updated and show modal
 	if (
-		globalState.todoData.modalActive &&
-		globalState.todoData.modalComponent === 'AddNewProject'
+		appState.todoData.modalActive &&
+		appState.todoData.modalComponent === 'AddNewProject'
 	) {
 		formContainer.style.display = 'flex';
 	}
@@ -108,6 +108,20 @@ export function createAddProjectModal(globalState) {
 	form.appendChild(formFooter);
 
 	formContainer.appendChild(form);
+
+	// Event listeners
+	// // Reset state to default
+	cancelButton.addEventListener('click', () => {
+		appState.todoData.modalActive = false;
+		appState.todoData.modalComponent = '';
+		console.log('appState logged from addProjectBtn', appState);
+
+		// Update state in LS
+		localStorage.setItem('state', JSON.stringify(appState));
+		index(
+			'I was rerendered because of a state update triggered by the addProjectModal elm!!!'
+		);
+	});
 
 	return formContainer;
 }
