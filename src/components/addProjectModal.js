@@ -1,3 +1,5 @@
+import { index } from '..';
+
 export function createAddProjectModal(appState) {
 	console.log('globalState from addProjectModal', appState);
 	const formContainer = document.createElement('div');
@@ -95,7 +97,7 @@ export function createAddProjectModal(appState) {
 
 	const cancelButton = document.createElement('button');
 	cancelButton.classList.add('cancel-btn');
-	cancelButton.setAttribute('type', 'submit');
+	cancelButton.setAttribute('type', 'button');
 	cancelButton.textContent = 'CANCEL';
 	formFooter.appendChild(cancelButton);
 
@@ -110,7 +112,7 @@ export function createAddProjectModal(appState) {
 	formContainer.appendChild(form);
 
 	// Event listeners
-	// // Reset state to default
+	// // Reset state to default on modal form cancel
 	cancelButton.addEventListener('click', () => {
 		appState.todoData.modalActive = false;
 		appState.todoData.modalComponent = '';
