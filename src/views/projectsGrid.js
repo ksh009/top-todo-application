@@ -40,7 +40,12 @@ function createButtonsContainer(appState) {
 
 	// Event listeners
 	addProjectBtn.addEventListener('click', () => {
+		appState.todoData.modalActive = true;
+		appState.todoData.modalComponent = 'AddNewProject';
 		console.log('appState logged from addProjectBtn', appState);
+
+		// Update state in LS
+		localStorage.setItem('state', JSON.stringify(appState));
 	});
 
 	return buttonsContainer;
