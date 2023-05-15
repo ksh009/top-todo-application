@@ -125,5 +125,17 @@ export function createAddProjectModal(appState) {
 		);
 	});
 
+	// track selected radio button
+	let selectedValue;
+
+	[priorityHighInput, priorityMediumInput, priorityLowInput].forEach(
+		(radioButton) => {
+			radioButton.addEventListener('click', (event) => {
+				selectedValue = event.target.value;
+				console.log('selectedValue', selectedValue);
+			});
+		}
+	);
+
 	return formContainer;
 }
