@@ -1,7 +1,9 @@
 export const state = {
 	// Filter through this with select drop down
 	todoData: {
-		// Change this dynamically with onClick from projects grid
+		modalComponent: null,
+		dialogComponent: null,
+		defaultComponent: 'ProjectsGrid',
 		selectedProject: 'Default',
 		projects: [
 			{

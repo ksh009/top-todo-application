@@ -133,10 +133,21 @@ const state = {
 
 - 14/05/2023 => Tasks
 - configure webpack
-	- Done 14/05
+  - Done 14/05
 - For each section in HTML create dynamically with JS and webpack
 - Append each module to content id html element
 - Keep one default project card
 - Click "Add Project button"
 - Add Project via form in modal
 - New projects appears in grid
+
+Done so far
+
+1. Configured webpack
+2. Created a state object
+3. Persisted state object to Local Storage
+4. Create projects grid component which houses the:
+
+- Add projects button and filter projects by priority select input
+
+5.
