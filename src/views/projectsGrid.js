@@ -41,21 +41,19 @@ function createButtonsContainer() {
 	return buttonsContainer;
 }
 
-function createProjectsGrid(projects) {
+function createProjectsGrid(appState) {
 	const projectGrid = document.createElement('div');
 	projectGrid.classList.add('grid');
 
-	// Loop through projects
-	projects.forEach((project) => {
-		const newProject = createProjectCard(project);
+	appState.todoData.projects.forEach((project, index) => {
+		const newProject = createProjectCard(project, index);
 		projectGrid.append(newProject);
 	});
 
 	return projectGrid;
 }
 
-function createProjectCard(project) {
-	console.log('project', project);
+function createProjectCard(project, index) {
 	const cardDiv = document.createElement('div');
 	cardDiv.classList.add('project-card');
 
@@ -113,20 +111,21 @@ function createProjectCard(project) {
 	cardDiv.appendChild(bodyDiv);
 	cardDiv.appendChild(footerDiv);
 
+	// Event listeners
+	addTodoBtn.addEventListener('click', () => {
+		console.log(`ADD TODO BUTTON CLICKED at index ${index}`);
+	});
+
 	return cardDiv;
 }
 
-export function createProjectsLayout() {
+export function createProjectsLayout(appState) {
+	console.log('appState in createProjectsLayout', appState);
 	const buttonsContainer = createButtonsContainer();
-	// const projectCard = createProjectCard();
-	const projectsGrid = createProjectsGrid(projectCards);
+	const projectsGrid = createProjectsGrid(appState);
 	const containerDiv = document.createElement('div');
 	containerDiv.append(buttonsContainer);
 	containerDiv.append(projectsGrid);
-	// Event listeners
-	// const addTodoButton = containerDiv.querySelector('.add-todo');
-	// addTodoButton.addEventListener('click', () => {
-	// 	console.log('ADD TODO BUTTON CLICKED');
-	// });
+
 	return containerDiv;
 }

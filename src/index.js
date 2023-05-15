@@ -29,12 +29,6 @@ export function index() {
 	const navBar = createNav(appState);
 	const projectsGrid = createProjectsLayout(appState);
 
-	// Event handlers
-	// const addTodoButton = projectsGrid.querySelector('.add-todo');
-	// addTodoButton.addEventListener('click', () => {
-	// 	console.log('ADD TODO BUTTON CLICKED');
-	// });
-
 	// Selectors
 	const headerContainer = document.createElement('header');
 	const mainContainer = document.createElement('main');
