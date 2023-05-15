@@ -313,13 +313,12 @@ input:focus {
 
 /* Add Project modal form */
 .main-container .form-container {
-	margin-top: 45px;
+	/* margin-top: 45px; */
 	width: 100%;
 	display: none;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	/* position: absolute; */
 	height: 100vh;
 	width: 100%;
 	position: fixed;
@@ -327,7 +326,11 @@ input:focus {
 	left: 0;
 	top: 0;
 	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.4);
+	background: rgba(29, 140, 248, 0.1);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10.2px);
+	-webkit-backdrop-filter: blur(10.2px);
 }
 
 .main-container .form-container form {
