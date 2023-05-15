@@ -13,13 +13,11 @@ import { createAddProjectModal } from './components/addProjectModal';
 // Entry point element
 const content = document.getElementById('content');
 
-export function index(renderMessage) {
-	if (renderMessage) {
-		console.log(renderMessage);
-	} else {
-		console.log('This is my default render when app first starts up!');
-	}
+// Selectors
+const headerContainer = document.createElement('header');
+const mainContainer = document.createElement('main');
 
+export function index(renderMessage) {
 	// Check if state object exists in localStorage
 	if (!localStorage.getItem('state')) {
 		// console.log('Default state set');
@@ -37,9 +35,15 @@ export function index(renderMessage) {
 	const projectsGrid = createProjectsLayout(appState);
 	const addProjectModal = createAddProjectModal(appState);
 
-	// Selectors
-	const headerContainer = document.createElement('header');
-	const mainContainer = document.createElement('main');
+	// Check if index rerender was triggered by child comp
+	if (renderMessage) {
+		console.log(renderMessage);
+		// Remove old appended child
+		headerContainer.innerHTML = '';
+		mainContainer.innerHTML = '';
+	} else {
+		console.log('This is my default render when app first starts up!');
+	}
 
 	// Add classes
 	headerContainer.classList.add('header-container');

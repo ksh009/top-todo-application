@@ -47,7 +47,9 @@ function createButtonsContainer(appState) {
 
 		// Update state in LS
 		localStorage.setItem('state', JSON.stringify(appState));
-		index('I was rerendered because of a state update!!!');
+		index(
+			'I was rerendered because of a state update triggered by the projectsGrid elm!!!'
+		);
 	});
 
 	return buttonsContainer;
