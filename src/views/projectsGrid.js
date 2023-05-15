@@ -1,3 +1,4 @@
+import { index } from '..';
 import { projectCards } from '../variables/projectSeedData';
 
 function createButtonsContainer(appState) {
@@ -46,6 +47,7 @@ function createButtonsContainer(appState) {
 
 		// Update state in LS
 		localStorage.setItem('state', JSON.stringify(appState));
+		index('I was rerendered because of a state update!!!');
 	});
 
 	return buttonsContainer;
@@ -130,7 +132,7 @@ function createProjectCard(project, index) {
 }
 
 export function createProjectsLayout(appState) {
-	console.log('appState in createProjectsLayout', appState);
+	// console.log('appState in createProjectsLayout', appState);
 	const buttonsContainer = createButtonsContainer(appState);
 	const projectsGrid = createProjectsGrid(appState);
 	const containerDiv = document.createElement('div');

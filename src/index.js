@@ -13,10 +13,16 @@ import { createAddProjectModal } from './components/addProjectModal';
 // Entry point element
 const content = document.getElementById('content');
 
-export function index() {
+export function index(renderMessage) {
+	if (renderMessage) {
+		console.log(renderMessage);
+	} else {
+		console.log('This is my default render when app first starts up!');
+	}
+
 	// Check if state object exists in localStorage
 	if (!localStorage.getItem('state')) {
-		console.log('Default state set');
+		// console.log('Default state set');
 		// If not, persist to localStorage
 		localStorage.setItem('state', JSON.stringify(state));
 	}
@@ -24,7 +30,7 @@ export function index() {
 	// This is passed down to index and index will pass it down to any child components.
 	// // If state is changed then update and overwrite old state with set state
 	const appState = JSON.parse(localStorage.getItem('state'));
-	console.log('globalState from inside index.js', appState);
+	// console.log('globalState from inside index.js', appState);
 
 	// Components - Initialized sections/components here
 	const navBar = createNav(appState);
@@ -49,7 +55,7 @@ export function index() {
 
 // Ensure this only runs once on reload. Index will be triggered from other functions when state is updated. This is only fo initial load
 if (content.children.length === 1) {
-	console.log('I only run once on reload!!!');
+	// console.log('I only run once on reload!!!');
 	// Later find a condition so that this function will only run once
 	index();
 }
