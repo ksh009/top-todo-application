@@ -1,7 +1,8 @@
 import './style.css';
 import { state } from '../src/state/state.js';
-import { createNav } from './nav';
 import { createProjectsLayout } from './views/projectsGrid';
+import { createNav } from './components/nav';
+import { createAddProjectModal } from './components/addProjectModal';
 // Global state object will be created here
 // State object will be shared with each comp
 // // First persist to LS
@@ -28,6 +29,7 @@ export function index() {
 	// Components - Initialized sections/components here
 	const navBar = createNav(appState);
 	const projectsGrid = createProjectsLayout(appState);
+	const addProjectModal = createAddProjectModal(appState);
 
 	// Selectors
 	const headerContainer = document.createElement('header');
@@ -40,6 +42,7 @@ export function index() {
 	// Append
 	headerContainer.appendChild(navBar);
 	mainContainer.appendChild(projectsGrid);
+	mainContainer.appendChild(addProjectModal);
 	content.appendChild(headerContainer);
 	content.appendChild(mainContainer);
 }
