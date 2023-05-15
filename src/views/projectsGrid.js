@@ -1,6 +1,6 @@
 import { projectCards } from '../variables/projectSeedData';
 
-function createButtonsContainer() {
+function createButtonsContainer(appState) {
 	const buttonsContainer = document.createElement('div');
 	buttonsContainer.classList.add('buttons-container');
 
@@ -40,7 +40,7 @@ function createButtonsContainer() {
 
 	// Event listeners
 	addProjectBtn.addEventListener('click', () => {
-		console.log('addProjectBtn clicked and add project modal should open!!');
+		console.log('appState logged from addProjectBtn', appState);
 	});
 
 	return buttonsContainer;
@@ -126,7 +126,7 @@ function createProjectCard(project, index) {
 
 export function createProjectsLayout(appState) {
 	console.log('appState in createProjectsLayout', appState);
-	const buttonsContainer = createButtonsContainer();
+	const buttonsContainer = createButtonsContainer(appState);
 	const projectsGrid = createProjectsGrid(appState);
 	const containerDiv = document.createElement('div');
 	containerDiv.append(buttonsContainer);
