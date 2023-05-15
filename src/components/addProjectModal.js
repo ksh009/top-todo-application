@@ -125,14 +125,26 @@ export function createAddProjectModal(appState) {
 		);
 	});
 
-	// track selected radio button
-	let selectedValue;
+	// Get project name and desc value & track selected radio button values
+	let projectNameValue;
+	let ProjectDescValue;
+	let selectedInputValue;
+
+	projectNameInput.addEventListener('blur', (event) => {
+		projectNameValue = event.target.value;
+		console.log('projectNameValue', projectNameValue);
+	});
+
+	projectDescriptionTextarea.addEventListener('blur', (event) => {
+		ProjectDescValue = event.target.value;
+		console.log('ProjectDescValue', ProjectDescValue);
+	});
 
 	[priorityHighInput, priorityMediumInput, priorityLowInput].forEach(
 		(radioButton) => {
 			radioButton.addEventListener('click', (event) => {
-				selectedValue = event.target.value;
-				console.log('selectedValue', selectedValue);
+				selectedInputValue = event.target.value;
+				console.log('selectedInputValue', selectedInputValue);
 			});
 		}
 	);
