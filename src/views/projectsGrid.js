@@ -38,6 +38,11 @@ function createButtonsContainer() {
 	filterMenu.appendChild(select);
 	buttonsContainer.appendChild(filterMenu);
 
+	// Event listeners
+	addProjectBtn.addEventListener('click', () => {
+		console.log('addProjectBtn clicked and add project modal should open!!');
+	});
+
 	return buttonsContainer;
 }
 
