@@ -40,6 +40,7 @@ a {
 	--border-color-primary: #ccc;
 	--box-shadow-col: rgb(0 0 0 / 16%) 0px 0px 6px, rgb(0 0 0 / 23%) 0px 0px 6px;
 	--box-shadow-col-alt: 0 1px 20px 0 rgb(0 0 0 / 10%);
+	--box-shadow-light: 0 2px 4px 0 rgba(204, 204, 204, 0.2);
 }
 
 button {
@@ -132,7 +133,7 @@ input:focus {
 .main-container .buttons-container {
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
 	margin: 9px 0px 27px 0px;
@@ -192,6 +193,12 @@ input:focus {
 }
 
 /* Project card */
+.project-grid-layout {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
 .project-card {
 	width: 100%;
 	min-height: 36rem;
@@ -230,27 +237,51 @@ input:focus {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	cursor: pointer;
+	border-radius: var(--border-radius-alt);
+	box-shadow: var(--box-shadow-col);
+	width: 72px;
+}
+
+.project-stats:hover {
+	box-shadow: var(--box-shadow-light);
+}
+
+.project-stats i {
+	position: relative;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid var(--plain-white);
+	animation: pulse 1s ease infinite;
+	right: -3px;
+	bottom: -3px;
 }
 
 .project-stats #lowPriorityTodo {
 	color: yellow;
-	margin-right: 9px;
+	margin: 0 21px 3px 10px;
+	width: 20%;
 }
 
 .project-stats #medPriorityTodo {
 	color: orange;
-	margin-right: 9px;
+	margin: 0 21px 3px 10px;
+	width: 20%;
 }
 
 .project-stats #highPriorityTodo {
 	color: red;
-	margin-right: 9px;
+	margin: 0 21px 3px 10px;
+	width: 20%;
 }
 
 .project-todo-count {
 	font-size: 16px;
 	color: var(--primary-color);
-	margin-top: 2px;
+	margin: 5px 9px 0 0;
+	width: 80%;
 }
 
 .project-hr {
@@ -277,7 +308,7 @@ input:focus {
 
 .project-footer {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	width: 100%;
 	padding: 0 9px;
 }
@@ -288,6 +319,8 @@ input:focus {
 	border: none;
 	padding: 10px 20px;
 	cursor: pointer;
+	height: 41px;
+	margin-right: 18px;
 }
 
 .delete-project {
@@ -298,6 +331,7 @@ input:focus {
 	padding: 10px 20px;
 	cursor: pointer;
 	transition: background-color 0.2s ease-in;
+	height: 41px;
 }
 
 .delete-project:hover {
@@ -480,8 +514,14 @@ input:focus {
 }
 
 /* Todo list */
+
+.todo-list-layout {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
 .todo-list-container {
-	margin-top: 45px;
 	color: var(--text-color);
 	width: 100%;
 	display: flex;
@@ -501,9 +541,9 @@ input:focus {
 .todo-action-btns {
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	align-items: center;
-	margin-top: 18px;
+	margin-top: 45px;
 }
 
 .todo-action-btns div {
@@ -788,6 +828,7 @@ input:focus {
 }
 
 /* Animations */
+/* // Wobble */
 @keyframes wobble {
 	0% {
 		transform: scale(1);
@@ -812,6 +853,19 @@ input:focus {
 	}
 	100% {
 		transform: scale(1);
+	}
+}
+
+/* // pulse */
+@keyframes pulse {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(0.9);
 	}
 }
 

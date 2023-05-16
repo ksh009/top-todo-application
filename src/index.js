@@ -3,6 +3,7 @@ import { state } from '../src/state/state.js';
 import { createProjectsLayout } from './views/projectsGrid';
 import { createNav } from './components/nav';
 import { createAddProjectModal } from './components/addProjectModal';
+import { createTodoList } from './views/projectTodos';
 // Global state object will be created here
 // State object will be shared with each comp
 // // First persist to LS
@@ -33,29 +34,6 @@ export function index(renderMessage) {
 	// Check if index rerender was triggered by child comp
 	if (renderMessage) {
 		console.log(renderMessage);
-		// TEST
-		// console.log('filterOption', filterOption);
-		// if (filterOption && filterOption === 'high') {
-		// 	appState.todoData.projects = appState.todoData.projects.filter(
-		// 		(project) => {
-		// 			return project.priority === 'high';
-		// 		}
-		// 	);
-		// } else if (filterOption && filterOption === 'medium') {
-		// 	appState.todoData.projects = appState.todoData.projects.filter(
-		// 		(project) => {
-		// 			return project.priority === 'medium';
-		// 		}
-		// 	);
-		// } else if (filterOption && filterOption === 'low') {
-		// 	appState.todoData.projects = appState.todoData.projects.filter(
-		// 		(project) => {
-		// 			return project.priority === 'low';
-		// 		}
-		// 	);
-		// } else {
-		// 	return appState.todoData.projects;
-		// }
 		// Remove old appended child
 		headerContainer.innerHTML = '';
 		mainContainer.innerHTML = '';
@@ -67,6 +45,7 @@ export function index(renderMessage) {
 	const navBar = createNav(appState);
 	const projectsGrid = createProjectsLayout(appState);
 	const addProjectModal = createAddProjectModal(appState);
+	const todoList = createTodoList(appState);
 
 	// Add classes
 	headerContainer.classList.add('header-container');
@@ -75,6 +54,7 @@ export function index(renderMessage) {
 	// Append
 	headerContainer.appendChild(navBar);
 	mainContainer.appendChild(projectsGrid);
+	mainContainer.appendChild(todoList);
 	mainContainer.appendChild(addProjectModal);
 	content.appendChild(headerContainer);
 	content.appendChild(mainContainer);

@@ -4,6 +4,7 @@ export const state = {
 		modalActive: false,
 		modalComponent: '',
 		dialogComponent: null,
+		layoutComponent: 'ProjectsGridLayout',
 		defaultComponent: 'ProjectsGrid',
 		selectedProject: 'Default Project',
 		projects: [
