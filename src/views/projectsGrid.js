@@ -106,7 +106,7 @@ function createProjectCard(project, idx, appState) {
 
 	const todoCount = document.createElement('h5');
 	todoCount.classList.add('project-todo-count');
-	todoCount.textContent = `Todos: ${project.todoCount}`;
+	todoCount.textContent = project.todoCount;
 	projectStats.appendChild(todoCount);
 
 	headerDiv.appendChild(projectName);

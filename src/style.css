@@ -230,27 +230,50 @@ input:focus {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	cursor: pointer;
+	border-radius: var(--border-radius-alt);
+}
+
+.project-stats:hover {
+	background-color: var(--bg-color);
+	transition: background-color 0.2 ease-in;
+}
+
+.project-stats i {
+	position: relative;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid var(--plain-white);
+	animation: pulse 1s ease infinite;
+	right: -3px;
+	bottom: -3px;
 }
 
 .project-stats #lowPriorityTodo {
 	color: yellow;
-	margin-right: 9px;
+	margin-right: 20px;
+	width: 20%;
 }
 
 .project-stats #medPriorityTodo {
 	color: orange;
-	margin-right: 9px;
+	margin-right: 20px;
+	width: 20%;
 }
 
 .project-stats #highPriorityTodo {
 	color: red;
-	margin-right: 9px;
+	margin-right: 20px;
+	width: 20%;
 }
 
 .project-todo-count {
 	font-size: 16px;
 	color: var(--primary-color);
-	margin-top: 2px;
+	margin-top: 9px;
+	width: 80%;
 }
 
 .project-hr {
@@ -788,6 +811,7 @@ input:focus {
 }
 
 /* Animations */
+/* // Wobble */
 @keyframes wobble {
 	0% {
 		transform: scale(1);
@@ -812,5 +836,18 @@ input:focus {
 	}
 	100% {
 		transform: scale(1);
+	}
+}
+
+/* // pulse */
+@keyframes pulse {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(0.9);
 	}
 }
