@@ -6,47 +6,8 @@ function createButtonsContainer(appState) {
 
 	const addProjectBtn = document.createElement('button');
 	addProjectBtn.setAttribute('id', 'add-project-btn');
-	addProjectBtn.textContent = '+ Add Project';
+	addProjectBtn.textContent = 'Add Project';
 	buttonsContainer.appendChild(addProjectBtn);
-
-	const filterMenu = document.createElement('div');
-	filterMenu.classList.add('filter-menu', 'font-awesome');
-
-	const select = document.createElement('select');
-	select.classList.add('far');
-
-	const allOption = document.createElement('option');
-	allOption.classList.add('far');
-	allOption.textContent = 'All';
-	allOption.value = 'all';
-	select.appendChild(allOption);
-
-	const highOption = document.createElement('option');
-	highOption.classList.add('far', 'high');
-	highOption.textContent = 'o High';
-	highOption.value = 'high';
-	select.appendChild(highOption);
-
-	const mediumOption = document.createElement('option');
-	mediumOption.classList.add('far', 'medium');
-	mediumOption.textContent = 'o Medium';
-	mediumOption.value = 'medium';
-	select.appendChild(mediumOption);
-
-	const lowOption = document.createElement('option');
-	lowOption.classList.add('far', 'low');
-	lowOption.textContent = 'o Low';
-	lowOption.value = 'low';
-	select.appendChild(lowOption);
-
-	const resetOption = document.createElement('option');
-	resetOption.classList.add('far');
-	resetOption.textContent = 'Reset';
-	allOption.value = 'reset';
-	select.appendChild(resetOption);
-
-	filterMenu.appendChild(select);
-	buttonsContainer.appendChild(filterMenu);
 
 	// Event listeners
 	// // Open add project modal form
@@ -60,21 +21,6 @@ function createButtonsContainer(appState) {
 		index(
 			'I was rerendered because of a state update triggered by the projectsGrid elm!!!'
 		);
-	});
-
-	select.addEventListener('change', (event) => {
-		const selectedOption = event.target.value;
-		console.log('selectedOption', selectedOption);
-
-		// 16/05 - Pass select option into index when working on filter
-		index(
-			'I was rerendered because of a state update triggered by the projectsGrid elm!!!',
-			selectedOption
-		);
-	});
-
-	allOption.addEventListener('click', () => {
-		console.log('clicked All');
 	});
 
 	return buttonsContainer;
@@ -165,6 +111,7 @@ function createProjectCard(project, idx, appState) {
 			console.log('Default Project cannot be deleted!!');
 			return;
 		} else {
+			// <========= PROBLEM HERE
 			appState.todoData.projects.splice(idx, 1);
 			console.log('Project removed ad state updated', appState);
 			// Update state in LS

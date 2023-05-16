@@ -132,7 +132,7 @@ input:focus {
 .main-container .buttons-container {
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
 	margin: 9px 0px 27px 0px;
@@ -232,10 +232,13 @@ input:focus {
 	align-items: center;
 	cursor: pointer;
 	border-radius: var(--border-radius-alt);
+	box-shadow: var(--box-shadow-col);
+	width: 72px;
 }
 
 .project-stats:hover {
-	background-color: var(--bg-color);
+	/* background-color: var(--border-color-primary); */
+	opacity: 0.6;
 	transition: background-color 0.2 ease-in;
 }
 
@@ -253,26 +256,26 @@ input:focus {
 
 .project-stats #lowPriorityTodo {
 	color: yellow;
-	margin-right: 20px;
+	margin: 0 21px 3px 10px;
 	width: 20%;
 }
 
 .project-stats #medPriorityTodo {
 	color: orange;
-	margin-right: 20px;
+	margin: 0 21px 3px 10px;
 	width: 20%;
 }
 
 .project-stats #highPriorityTodo {
 	color: red;
-	margin-right: 20px;
+	margin: 0 21px 3px 10px;
 	width: 20%;
 }
 
 .project-todo-count {
 	font-size: 16px;
 	color: var(--primary-color);
-	margin-top: 9px;
+	margin: 5px 9px 0 0;
 	width: 80%;
 }
 
@@ -311,6 +314,7 @@ input:focus {
 	border: none;
 	padding: 10px 20px;
 	cursor: pointer;
+	height: 41px;
 }
 
 .delete-project {
@@ -321,6 +325,7 @@ input:focus {
 	padding: 10px 20px;
 	cursor: pointer;
 	transition: background-color 0.2s ease-in;
+	height: 41px;
 }
 
 .delete-project:hover {
