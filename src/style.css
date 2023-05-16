@@ -40,6 +40,7 @@ a {
 	--border-color-primary: #ccc;
 	--box-shadow-col: rgb(0 0 0 / 16%) 0px 0px 6px, rgb(0 0 0 / 23%) 0px 0px 6px;
 	--box-shadow-col-alt: 0 1px 20px 0 rgb(0 0 0 / 10%);
+	--box-shadow-light: 0 2px 4px 0 rgba(204, 204, 204, 0.2);
 }
 
 button {
@@ -238,8 +239,7 @@ input:focus {
 
 .project-stats:hover {
 	/* background-color: var(--border-color-primary); */
-	opacity: 0.6;
-	transition: background-color 0.2 ease-in;
+	box-shadow: var(--box-shadow-light);
 }
 
 .project-stats i {
