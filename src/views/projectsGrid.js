@@ -60,9 +60,9 @@ function createButtonsContainer(appState) {
 		const selectedOption = event.target.value;
 		console.log('selectedOption', selectedOption);
 
+		// 16/05 - Pass select option into index when working on filter
 		index(
-			'I was rerendered because of a state update triggered by the projectsGrid elm!!!',
-			selectedOption
+			'I was rerendered because of a state update triggered by the projectsGrid elm!!!'
 		);
 	});
 

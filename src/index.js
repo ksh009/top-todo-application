@@ -17,7 +17,7 @@ const content = document.getElementById('content');
 const headerContainer = document.createElement('header');
 const mainContainer = document.createElement('main');
 
-export function index(renderMessage, filterOption) {
+export function index(renderMessage) {
 	// Check if state object exists in localStorage
 	if (!localStorage.getItem('state')) {
 		// console.log('Default state set');
@@ -34,28 +34,28 @@ export function index(renderMessage, filterOption) {
 	if (renderMessage) {
 		console.log(renderMessage);
 		// TEST
-		console.log('filterOption', filterOption);
-		if (filterOption && filterOption === 'high') {
-			appState.todoData.projects = appState.todoData.projects.filter(
-				(project) => {
-					return project.priority === 'high';
-				}
-			);
-		} else if (filterOption && filterOption === 'medium') {
-			appState.todoData.projects = appState.todoData.projects.filter(
-				(project) => {
-					return project.priority === 'medium';
-				}
-			);
-		} else if (filterOption && filterOption === 'low') {
-			appState.todoData.projects = appState.todoData.projects.filter(
-				(project) => {
-					return project.priority === 'low';
-				}
-			);
-		} else {
-			return appState.todoData.projects;
-		}
+		// console.log('filterOption', filterOption);
+		// if (filterOption && filterOption === 'high') {
+		// 	appState.todoData.projects = appState.todoData.projects.filter(
+		// 		(project) => {
+		// 			return project.priority === 'high';
+		// 		}
+		// 	);
+		// } else if (filterOption && filterOption === 'medium') {
+		// 	appState.todoData.projects = appState.todoData.projects.filter(
+		// 		(project) => {
+		// 			return project.priority === 'medium';
+		// 		}
+		// 	);
+		// } else if (filterOption && filterOption === 'low') {
+		// 	appState.todoData.projects = appState.todoData.projects.filter(
+		// 		(project) => {
+		// 			return project.priority === 'low';
+		// 		}
+		// 	);
+		// } else {
+		// 	return appState.todoData.projects;
+		// }
 		// Remove old appended child
 		headerContainer.innerHTML = '';
 		mainContainer.innerHTML = '';
