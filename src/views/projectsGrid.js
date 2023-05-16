@@ -82,7 +82,7 @@ function createProjectCard(project, idx, appState) {
 
 	const addTodoBtn = document.createElement('button');
 	addTodoBtn.classList.add('add-todo');
-	addTodoBtn.textContent = 'Add Todo';
+	addTodoBtn.textContent = 'Todos';
 
 	const deleteProjectBtn = document.createElement('button');
 	deleteProjectBtn.classList.add('delete-project');

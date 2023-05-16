@@ -303,7 +303,7 @@ input:focus {
 
 .project-footer {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	width: 100%;
 	padding: 0 9px;
 }
@@ -315,6 +315,7 @@ input:focus {
 	padding: 10px 20px;
 	cursor: pointer;
 	height: 41px;
+	margin-right: 18px;
 }
 
 .delete-project {
