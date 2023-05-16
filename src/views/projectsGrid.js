@@ -98,8 +98,16 @@ function createProjectCard(project, idx, appState) {
 
 	// Event listeners
 	// // Add todo to project
-	addTodoBtn.addEventListener('click', () => {
-		console.log(`ADD TODO BUTTON CLICKED at index ${idx}`);
+	[addTodoBtn, projectStats].forEach((button) => {
+		button.addEventListener('click', () => {
+			console.log(`ADD TODO BUTTON CLICKED at index ${idx}`);
+			appState.todoData.layoutComponent = 'TodosLayout';
+			// Update state in LS
+			localStorage.setItem('state', JSON.stringify(appState));
+			index(
+				'I was rerendered because of a state update triggered by the projectsGrid:addTodoBtn||projectStats elm!!!'
+			);
+		});
 	});
 
 	// // Add todo to project
@@ -126,10 +134,15 @@ function createProjectCard(project, idx, appState) {
 }
 
 export function createProjectsLayout(appState) {
-	// console.log('appState in createProjectsLayout', appState);
+	const containerDiv = document.createElement('div');
+	containerDiv.classList.add('project-grid-layout');
+	if (appState.todoData.layoutComponent === 'ProjectsGridLayout') {
+		containerDiv.style.display = 'flex';
+	} else {
+		containerDiv.style.display = 'none';
+	}
 	const buttonsContainer = createButtonsContainer(appState);
 	const projectsGrid = createProjectsGrid(appState);
-	const containerDiv = document.createElement('div');
 	containerDiv.append(buttonsContainer);
 	containerDiv.append(projectsGrid);
 

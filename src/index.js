@@ -45,7 +45,7 @@ export function index(renderMessage) {
 	const navBar = createNav(appState);
 	const projectsGrid = createProjectsLayout(appState);
 	const addProjectModal = createAddProjectModal(appState);
-	const todoList = createTodoList(appState, 'Sample Project');
+	const todoList = createTodoList(appState);
 
 	// Add classes
 	headerContainer.classList.add('header-container');

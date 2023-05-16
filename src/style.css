@@ -193,6 +193,12 @@ input:focus {
 }
 
 /* Project card */
+.project-grid-layout {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
 .project-card {
 	width: 100%;
 	min-height: 36rem;
@@ -238,7 +244,6 @@ input:focus {
 }
 
 .project-stats:hover {
-	/* background-color: var(--border-color-primary); */
 	box-shadow: var(--box-shadow-light);
 }
 
@@ -509,6 +514,7 @@ input:focus {
 }
 
 /* Todo list */
+
 .todo-list-layout {
 	display: flex;
 	flex-direction: column;
