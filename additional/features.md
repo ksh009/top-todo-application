@@ -131,23 +131,33 @@ const state = {
 
 20. `Note task 10 is last - webpack`
 
-- 14/05/2023 => Tasks
-- configure webpack
-  - Done 14/05
-- For each section in HTML create dynamically with JS and webpack
-- Append each module to content id html element
-- Keep one default project card
-- Click "Add Project button"
-- Add Project via form in modal
-- New projects appears in grid
+- 15/05 tasks
+- 0. Convert the state to a class for the following
+  - The todo list
+  - The todo project
+  - The todo
+- 1. Click on Add project button and add project form appears in modal
+  - Modal has glass morphic bg
+  - `Done`
+- 2. When Add project form submitted the global state is updated
+  - `Done`
+- 3. The page must be rerendered to take into account the new state update
+  - `Done`
+- 4. Get the new project to appear in the projects show grid
+  - `Done `
+- 5. Delete a project and rerender
+- 7. Now implement modal which checks for
+  <!-- Leave these features for now -->
+  - If project has todos in it
+  - Success message if no Todos
+  - Success message if todos but proceeded with delete even after warn
+- 6. Implement project filtering by priority render logic
 
-Done so far
-
-1. Configured webpack
-2. Created a state object
-3. Persisted state object to Local Storage
-4. Create projects grid component which houses the:
-
-- Add projects button and filter projects by priority select input
-
-5.
+```html
+<select class="far">
+	<option value="all" class="far">All</option>
+	<option value="high" class="far high">o High</option>
+	<option value="medium" class="far medium">o Medium</option>
+	<option value="low" class="far low">o Low</option>
+</select>
+```
