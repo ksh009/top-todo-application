@@ -39,6 +39,12 @@ function createButtonsContainer(appState) {
 	lowOption.value = 'low';
 	select.appendChild(lowOption);
 
+	const resetOption = document.createElement('option');
+	resetOption.classList.add('far');
+	resetOption.textContent = 'Reset';
+	allOption.value = 'reset';
+	select.appendChild(resetOption);
+
 	filterMenu.appendChild(select);
 	buttonsContainer.appendChild(filterMenu);
 
@@ -62,7 +68,8 @@ function createButtonsContainer(appState) {
 
 		// 16/05 - Pass select option into index when working on filter
 		index(
-			'I was rerendered because of a state update triggered by the projectsGrid elm!!!'
+			'I was rerendered because of a state update triggered by the projectsGrid elm!!!',
+			selectedOption
 		);
 	});
 

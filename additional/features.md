@@ -161,3 +161,21 @@ const state = {
 	<option value="low" class="far low">o Low</option>
 </select>
 ```
+
+2/2 Features:
+
+- Added a modal on add project click
+- The modal can be canceled
+- A new project can be added with associate priority level
+- A project can be removed
+- The default project cannot be removed
+
+- 16/05/2023 Tasks
+  2/2 Tasks:
+- 1. Functionality to filter switch
+- 2. Click Add todo btn on project cards and Add todo form will open in modal
+- 3. Cancel logic on add todo form modal
+- 4. Submit logic on add todo form modal
+- 5. Add animation to todo count color to indicate that it is clickable
+  - `Done`
+- 6. When clicking on todo animation open todos table for particular project
