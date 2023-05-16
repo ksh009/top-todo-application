@@ -509,8 +509,13 @@ input:focus {
 }
 
 /* Todo list */
+.todo-list-layout {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
 .todo-list-container {
-	margin-top: 45px;
 	color: var(--text-color);
 	width: 100%;
 	display: flex;
@@ -530,9 +535,9 @@ input:focus {
 .todo-action-btns {
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	align-items: center;
-	margin-top: 18px;
+	margin-top: 45px;
 }
 
 .todo-action-btns div {

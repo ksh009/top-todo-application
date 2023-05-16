@@ -3,6 +3,7 @@ import { state } from '../src/state/state.js';
 import { createProjectsLayout } from './views/projectsGrid';
 import { createNav } from './components/nav';
 import { createAddProjectModal } from './components/addProjectModal';
+import { createTodoList } from './views/projectTodos';
 // Global state object will be created here
 // State object will be shared with each comp
 // // First persist to LS
@@ -44,6 +45,7 @@ export function index(renderMessage) {
 	const navBar = createNav(appState);
 	const projectsGrid = createProjectsLayout(appState);
 	const addProjectModal = createAddProjectModal(appState);
+	const todoList = createTodoList(appState, 'Sample Project');
 
 	// Add classes
 	headerContainer.classList.add('header-container');
@@ -52,6 +54,7 @@ export function index(renderMessage) {
 	// Append
 	headerContainer.appendChild(navBar);
 	mainContainer.appendChild(projectsGrid);
+	mainContainer.appendChild(todoList);
 	mainContainer.appendChild(addProjectModal);
 	content.appendChild(headerContainer);
 	content.appendChild(mainContainer);
