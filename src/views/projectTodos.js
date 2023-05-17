@@ -29,7 +29,7 @@ function createTodoHeader(className, headerTitle) {
 	return todoListHeader;
 }
 
-function createTodo(date, title, priority) {
+function createTodo(date, title, priority, completed) {
 	// create the todo item date element
 	const todoItemDate = document.createElement('div');
 	todoItemDate.classList.add('todo-item', 'date');
@@ -58,7 +58,10 @@ function createTodo(date, title, priority) {
 	todoItemCompleted.classList.add('todo-item', 'completed');
 	const checkIcon = document.createElement('i');
 	checkIcon.classList.add('fas', 'fa-check');
-	todoItemCompleted.appendChild(checkIcon);
+
+	if (completed) {
+		todoItemCompleted.appendChild(checkIcon);
+	}
 
 	// create the todo item update element
 	const todoItemUpdate = document.createElement('div');
@@ -137,7 +140,12 @@ export function createTodoList(appState) {
 	appState.todoData.projects[
 		appState.todoData.selectedProjectIndex
 	].todos.forEach((todo) => {
-		const createHtmlTodo = createTodo(todo.date, todo.title, todo.priority);
+		const createHtmlTodo = createTodo(
+			todo.date,
+			todo.title,
+			todo.priority,
+			todo.completed
+		);
 		createHtmlTodo.forEach((todoItems) => {
 			todoList.appendChild(todoItems);
 		});
