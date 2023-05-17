@@ -101,6 +101,7 @@ function createProjectCard(project, idx, appState) {
 		button.addEventListener('click', () => {
 			console.log(`ADD TODO BUTTON CLICKED at index ${idx}`);
 			appState.todoData.layoutComponent = 'TodosLayout';
+			appState.todoData.selectedProject = project.name;
 			// Update state in LS
 			localStorage.setItem('state', JSON.stringify(appState));
 			index(
