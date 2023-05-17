@@ -63,7 +63,7 @@ export function createAddTodoModal(appState) {
 	const highRadioInput = document.createElement('input');
 	highRadioInput.setAttribute('type', 'radio');
 	highRadioInput.setAttribute('name', 'priority');
-	highRadioInput.setAttribute('value', 'high');
+	highRadioInput.setAttribute('value', 'High');
 	highRadioInput.setAttribute('id', 'priority_high');
 	priorityLevelsContainerDiv.appendChild(highRadioInput);
 
@@ -76,7 +76,7 @@ export function createAddTodoModal(appState) {
 	const mediumRadioInput = document.createElement('input');
 	mediumRadioInput.setAttribute('type', 'radio');
 	mediumRadioInput.setAttribute('name', 'priority');
-	mediumRadioInput.setAttribute('value', 'medium');
+	mediumRadioInput.setAttribute('value', 'Medium');
 	mediumRadioInput.setAttribute('id', 'priority_medium');
 	priorityLevelsContainerDiv.appendChild(mediumRadioInput);
 
@@ -89,7 +89,7 @@ export function createAddTodoModal(appState) {
 	const lowRadioInput = document.createElement('input');
 	lowRadioInput.setAttribute('type', 'radio');
 	lowRadioInput.setAttribute('name', 'priority');
-	lowRadioInput.setAttribute('value', 'low');
+	lowRadioInput.setAttribute('value', 'Low');
 	lowRadioInput.setAttribute('id', 'priority_low');
 	priorityLevelsContainerDiv.appendChild(lowRadioInput);
 
@@ -121,6 +121,7 @@ export function createAddTodoModal(appState) {
 	formContainer.appendChild(form);
 
 	// Event Listeners
+	// // Cancel button
 	cancelButton.addEventListener('click', () => {
 		appState.todoData.modalActive = false;
 
@@ -129,6 +130,72 @@ export function createAddTodoModal(appState) {
 		index(
 			'I was rerendered because of a state update triggered by the addProjectBtn:cancelButton elm!!!'
 		);
+	});
+
+	// // Submit button
+	let todoDateValue;
+	let todoTitleValue;
+	let todoDescriptionValue;
+	let todoPriorityValue;
+	let todoCompletedValue = false;
+
+	// Get todo date input value
+	dateInput.addEventListener('blur', (event) => {
+		todoDateValue = event.target.value;
+		console.log('todoDateValue', todoDateValue);
+	});
+
+	// Get todo title input value
+	titleInput.addEventListener('blur', (event) => {
+		todoTitleValue = event.target.value;
+		console.log('todoTitleValue', todoTitleValue);
+	});
+
+	// Get todo description input value
+	descriptionTextarea.addEventListener('blur', (event) => {
+		todoDescriptionValue = event.target.value;
+		console.log('todoDescriptionValue', todoDescriptionValue);
+	});
+
+	// Get todo priority value input
+	[highRadioInput, mediumRadioInput, lowRadioInput].forEach((radioButton) => {
+		radioButton.addEventListener('click', (event) => {
+			todoPriorityValue = event.target.value;
+			console.log('priorityInputValue', todoPriorityValue);
+		});
+	});
+
+	// Create a new project and update state
+	createTodoBtn.addEventListener('click', (event) => {
+		if (
+			!todoDateValue &&
+			!todoTitleValue &&
+			!todoDescriptionValue &&
+			!todoPriorityValue
+		) {
+			console.log('Do not have all form input values!');
+			return;
+		} else {
+			const newTodo = {
+				date: todoDateValue,
+				title: todoTitleValue,
+				description: todoDescriptionValue,
+				priority: todoPriorityValue,
+				completed: false,
+			};
+			// console.log('newTodo', newTodo);
+			appState.todoData.modalActive = false;
+			appState.todoData.projects[
+				appState.todoData.selectedProjectIndex
+			].todos.push(newTodo);
+			console.log('appState logged from addProjectBtn:createTodoBtn', appState);
+
+			// Update state in LS
+			localStorage.setItem('state', JSON.stringify(appState));
+			index(
+				'I was rerendered because of a state update triggered by the addProjectBtn:createProjectButton elm!!!'
+			);
+		}
 	});
 
 	return formContainer;

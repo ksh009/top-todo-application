@@ -109,6 +109,18 @@ export function createAddProjectModal(appState) {
 	formContainer.appendChild(form);
 
 	// Event listeners
+	// Reset state to default on modal form cancel
+	cancelButton.addEventListener('click', () => {
+		appState.todoData.modalActive = false;
+		console.log('appState updated from addProjectBtn:cancelButton', appState);
+
+		// Update state in LS
+		localStorage.setItem('state', JSON.stringify(appState));
+		index(
+			'I was rerendered because of a state update triggered by the addProjectBtn:cancelButton elm!!!'
+		);
+	});
+
 	// // Get project name and desc value & track selected radio button values
 	let projectNameValue;
 	let ProjectDescValue;
@@ -133,19 +145,7 @@ export function createAddProjectModal(appState) {
 		}
 	);
 
-	// Reset state to default on modal form cancel
-	cancelButton.addEventListener('click', () => {
-		appState.todoData.modalActive = false;
-		console.log('appState updated from addProjectBtn:cancelButton', appState);
-
-		// Update state in LS
-		localStorage.setItem('state', JSON.stringify(appState));
-		index(
-			'I was rerendered because of a state update triggered by the addProjectBtn:cancelButton elm!!!'
-		);
-	});
-
-	// Create a new Todo and update state
+	// Create a new project and update state
 	createProjectButton.addEventListener('click', (event) => {
 		let priorityInputId =
 			priorityInputValue === 'high'
@@ -165,7 +165,7 @@ export function createAddProjectModal(appState) {
 			console.log('Do not have all form input values!');
 			return;
 		} else {
-			const newTodo = {
+			const newTodoProject = {
 				name: projectNameValue,
 				priority: priorityInputValue,
 				priorityId: priorityInputId,
@@ -177,7 +177,7 @@ export function createAddProjectModal(appState) {
 			// console.log('newTodo', newTodo);
 			appState.todoData.modalActive = false;
 			appState.todoData.modalComponent = '';
-			appState.todoData.projects.push(newTodo);
+			appState.todoData.projects.push(newTodoProject);
 			console.log(
 				'appState logged from addProjectBtn:createProjectButton',
 				appState

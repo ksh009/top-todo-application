@@ -18,54 +18,72 @@ export const state = {
 					{
 						date: '2/19/2023',
 						title: 'Take a nap',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
 						completed: true,
 					},
 					{
 						date: '1/13/2023',
 						title: 'Learn a new skill',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'High',
 						completed: false,
 					},
 					{
 						date: '11/17/2023',
 						title: 'Read a book',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
 						completed: true,
 					},
 					{
 						date: '11/6/2023',
 						title: 'Read a book',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Medium',
 						completed: true,
 					},
 					{
 						date: '12/1/2023',
 						title: 'Finish homework',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'High',
 						completed: true,
 					},
 					{
 						date: '11/25/2023',
 						title: 'Go for a run',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
 						completed: false,
 					},
 					{
 						date: '1/26/2023',
 						title: 'Organize closet',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Medium',
 						completed: false,
 					},
 					{
 						date: '9/26/2023',
 						title: 'Clean the kitchen',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'High',
 						completed: true,
 					},
 					{
 						date: '1/11/2023',
 						title: 'Take a nap',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
 						completed: false,
 					},
@@ -83,18 +101,24 @@ export const state = {
 					{
 						date: '12/17/2023',
 						title: 'Fix a leaky faucet',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
 						completed: true,
 					},
 					{
 						date: '8/26/2023',
 						title: 'Go for a run',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Medium',
 						completed: false,
 					},
 					{
 						date: '1/20/2023',
 						title: 'Organize closet',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
 						completed: false,
 					},
@@ -112,36 +136,48 @@ export const state = {
 					{
 						date: '1/28/2023',
 						title: 'Organize closet',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Medium',
 						completed: true,
 					},
 					{
 						date: '9/14/2023',
 						title: 'Start a new project',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Medium',
 						completed: true,
 					},
 					{
 						date: '5/16/2023',
 						title: 'Try a new recipe',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'High',
 						completed: false,
 					},
 					{
 						date: '4/3/2023',
 						title: 'Plan a trip',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
 						completed: true,
 					},
 					{
 						date: '7/12/2023',
 						title: 'Learn a new language',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
 						completed: true,
 					},
 					{
 						date: '6/9/2023',
 						title: 'Walk the dog',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
 						completed: true,
 					},
@@ -159,24 +195,32 @@ export const state = {
 					{
 						date: '8/3/2023',
 						title: 'Start a new project',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
 						completed: false,
 					},
 					{
 						date: '6/18/2023',
 						title: 'Walk the dog',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'High',
 						completed: true,
 					},
 					{
 						date: '12/1/2023',
 						title: 'Call mom',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Medium',
 						completed: false,
 					},
 					{
 						date: '7/7/2023',
 						title: 'Clean the kitchen',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'High',
 						completed: false,
 					},
@@ -194,18 +238,24 @@ export const state = {
 					{
 						date: '10/10/2023',
 						title: 'Learn a new skill',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
 						completed: true,
 					},
 					{
 						date: '8/31/2023',
 						title: 'Finish homework',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Medium',
 						completed: false,
 					},
 					{
 						date: '8/18/2023',
 						title: 'Buy groceries',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
 						completed: true,
 					},
@@ -223,12 +273,16 @@ export const state = {
 					{
 						date: '5/30/2023',
 						title: 'Try a new recipe',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Medium',
 						completed: true,
 					},
 					{
 						date: '9/8/2023',
 						title: 'Take a nap',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Medium',
 						completed: false,
 					},
