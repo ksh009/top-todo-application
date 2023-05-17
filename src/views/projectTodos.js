@@ -43,7 +43,14 @@ function createTodo(date, title, priority) {
 	// create the todo item priority element
 	const todoItemPriority = document.createElement('div');
 	todoItemPriority.classList.add('todo-item', 'priority');
-	todoItemPriority.id = 'priorityHigh';
+	todoItemPriority.id =
+		priority === 'High'
+			? 'priorityHigh'
+			: priority === 'Medium'
+			? 'priorityMed'
+			: priority === 'Low'
+			? 'priorityLow'
+			: null;
 	todoItemPriority.textContent = `${priority}`;
 
 	// create the todo item completed element
@@ -115,9 +122,6 @@ export function createTodoList(appState) {
 	const priorityHeader = createTodoHeader('priority', 'Priority');
 	const completedHeader = createTodoHeader('completed', 'Completed');
 	const updatedHeader = createTodoHeader('update', 'Update');
-	const sampleTodo1 = createTodo('05/01/2023', 'Buy groceries', 'High');
-	const sampleTodo2 = createTodo('05/02/2023', 'Buy item 2', 'High');
-	const sampleTodo3 = createTodo('05/03/2023', 'Buy item 3', 'High');
 	// Create table headers
 	[
 		dateHeader,
@@ -130,9 +134,13 @@ export function createTodoList(appState) {
 	});
 
 	// Create table items
-
-	sampleTodo1.forEach((todoItems) => {
-		todoList.appendChild(todoItems);
+	appState.todoData.projects[
+		appState.todoData.selectedProjectIndex
+	].todos.forEach((todo) => {
+		const createHtmlTodo = createTodo(todo.date, todo.title, todo.priority);
+		createHtmlTodo.forEach((todoItems) => {
+			todoList.appendChild(todoItems);
+		});
 	});
 
 	// // // create the new todo button element

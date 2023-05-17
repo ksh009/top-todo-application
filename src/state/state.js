@@ -7,6 +7,7 @@ export const state = {
 		layoutComponent: 'ProjectsGridLayout',
 		defaultComponent: 'ProjectsGrid',
 		selectedProject: 'Default Project',
+		selectedProjectIndex: 0,
 		projects: [
 			{
 				name: 'Default Project',
