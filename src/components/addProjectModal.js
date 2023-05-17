@@ -157,12 +157,12 @@ export function createAddProjectModal(appState) {
 				: null;
 
 		if (
-			!projectNameValue &&
-			!ProjectDescValue &&
-			!priorityInputValue &&
+			!projectNameValue ||
+			!ProjectDescValue ||
+			!priorityInputValue ||
 			!priorityInputId
 		) {
-			console.log('Do not have all form input values!');
+			alert('Do not have all form input values!');
 			return;
 		} else {
 			const newTodoProject = {

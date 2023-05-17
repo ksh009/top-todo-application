@@ -153,8 +153,6 @@ const state = {
   - Success message if todos but proceeded with delete even after warn
 - 6. Implement project filtering by priority render logic
 
-```
-
 2/2 Features:
 
 - Added a modal on add project click
@@ -199,7 +197,8 @@ const state = {
   - 4.  Cancel btn on new todo modal form closes modal
   - 5.  Update todo list title based on project card clicked
   - 6.  Todo count in project cards based to todo array length in state
-    - `Bug here`
+    - `Bug Encountered here`
       - When new project is created and deleted then program crashes
+      - Fixed
   - 7.  Can create new project and add Todos to it
-```
+  - 8. Display warning alert when not all inputs on both forms complete

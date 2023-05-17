@@ -161,19 +161,19 @@ export function createAddTodoModal(appState) {
 	[highRadioInput, mediumRadioInput, lowRadioInput].forEach((radioButton) => {
 		radioButton.addEventListener('click', (event) => {
 			todoPriorityValue = event.target.value;
-			console.log('priorityInputValue', todoPriorityValue);
+			console.log('todoPriorityValue', todoPriorityValue);
 		});
 	});
 
 	// Create a new project and update state
-	createTodoBtn.addEventListener('click', (event) => {
+	createTodoBtn.addEventListener('click', () => {
 		if (
-			!todoDateValue &&
-			!todoTitleValue &&
-			!todoDescriptionValue &&
+			!todoDateValue ||
+			!todoTitleValue ||
+			!todoDescriptionValue ||
 			!todoPriorityValue
 		) {
-			console.log('Do not have all form input values!');
+			alert('Do not have all form input values!');
 			return;
 		} else {
 			const newTodo = {

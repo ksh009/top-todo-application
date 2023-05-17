@@ -142,7 +142,7 @@ export function createTodoList(appState) {
 		appState.todoData.selectedProjectIndex
 	].todos.forEach((todo) => {
 		const createHtmlTodo = createTodo(
-			convertDate(todo.date),
+			todo.date,
 			todo.title,
 			todo.priority,
 			todo.completed
@@ -173,6 +173,8 @@ export function createTodoList(appState) {
 	backButton.addEventListener('click', () => {
 		console.log('back to projects btn clicked');
 		appState.todoData.layoutComponent = 'ProjectsGridLayout';
+		appState.todoData.selectedProject = 'Default Project';
+		appState.todoData.selectedProjectIndex = 0;
 
 		// Update state in LS
 		localStorage.setItem('state', JSON.stringify(appState));

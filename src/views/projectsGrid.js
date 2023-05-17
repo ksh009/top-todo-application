@@ -120,8 +120,10 @@ function createProjectCard(project, idx, appState) {
 			console.log('Default Project cannot be deleted!!');
 			return;
 		} else {
-			// <========= PROBLEM HERE
 			appState.todoData.projects.splice(idx, 1);
+			appState.todoData.selectedProject = 'Default Project';
+			appState.todoData.selectedProjectIndex = 0;
+
 			console.log('Project removed ad state updated', appState);
 			// Update state in LS
 			localStorage.setItem('state', JSON.stringify(appState));

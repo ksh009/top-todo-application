@@ -16,7 +16,7 @@ export const state = {
 				todoCount: 9,
 				todos: [
 					{
-						date: '2/19/2023',
+						date: '2023-02-19',
 						title: 'Take a nap',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
@@ -24,7 +24,7 @@ export const state = {
 						completed: true,
 					},
 					{
-						date: '1/13/2023',
+						date: '2023-01-13',
 						title: 'Learn a new skill',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
@@ -32,7 +32,7 @@ export const state = {
 						completed: false,
 					},
 					{
-						date: '11/17/2023',
+						date: '2023-11-17',
 						title: 'Read a book',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
@@ -40,7 +40,7 @@ export const state = {
 						completed: true,
 					},
 					{
-						date: '11/6/2023',
+						date: '2023-11-06',
 						title: 'Read a book',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
@@ -48,7 +48,7 @@ export const state = {
 						completed: true,
 					},
 					{
-						date: '12/1/2023',
+						date: '2023-12-01',
 						title: 'Finish homework',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
@@ -56,7 +56,7 @@ export const state = {
 						completed: true,
 					},
 					{
-						date: '11/25/2023',
+						date: '2023-11-25',
 						title: 'Go for a run',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
@@ -64,7 +64,7 @@ export const state = {
 						completed: false,
 					},
 					{
-						date: '1/26/2023',
+						date: '2023-01-26',
 						title: 'Organize closet',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
@@ -72,7 +72,7 @@ export const state = {
 						completed: false,
 					},
 					{
-						date: '9/26/2023',
+						date: '2023-09-26',
 						title: 'Clean the kitchen',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
@@ -80,7 +80,7 @@ export const state = {
 						completed: true,
 					},
 					{
-						date: '1/11/2023',
+						date: '2023-01-11',
 						title: 'Take a nap',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
@@ -99,7 +99,7 @@ export const state = {
 				todoCount: 3,
 				todos: [
 					{
-						date: '12/17/2023',
+						date: '2023-12-17',
 						title: 'Fix a leaky faucet',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
@@ -107,7 +107,7 @@ export const state = {
 						completed: true,
 					},
 					{
-						date: '8/26/2023',
+						date: '2023-08-26',
 						title: 'Go for a run',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
@@ -115,7 +115,7 @@ export const state = {
 						completed: false,
 					},
 					{
-						date: '1/20/2023',
+						date: '2023-01-20',
 						title: 'Organize closet',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
@@ -134,52 +134,52 @@ export const state = {
 				todoCount: 6,
 				todos: [
 					{
-						date: '1/28/2023',
-						title: 'Organize closet',
-						description:
-							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
-						priority: 'Medium',
-						completed: true,
-					},
-					{
-						date: '9/14/2023',
-						title: 'Start a new project',
-						description:
-							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
-						priority: 'Medium',
-						completed: true,
-					},
-					{
-						date: '5/16/2023',
-						title: 'Try a new recipe',
+						date: '2023-01-13',
+						title: 'Learn a new skill',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'High',
 						completed: false,
 					},
 					{
-						date: '4/3/2023',
-						title: 'Plan a trip',
+						date: '2023-11-17',
+						title: 'Read a book',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
 						completed: true,
 					},
 					{
-						date: '7/12/2023',
-						title: 'Learn a new language',
+						date: '2023-11-06',
+						title: 'Read a book',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
-						priority: 'Low',
+						priority: 'Medium',
 						completed: true,
 					},
 					{
-						date: '6/9/2023',
-						title: 'Walk the dog',
+						date: '2023-12-01',
+						title: 'Finish homework',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
+						priority: 'High',
+						completed: true,
+					},
+					{
+						date: '2023-11-25',
+						title: 'Go for a run',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
-						completed: true,
+						completed: false,
+					},
+					{
+						date: '2023-01-26',
+						title: 'Organize closet',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
+						priority: 'Medium',
+						completed: false,
 					},
 				],
 				description:
@@ -193,35 +193,35 @@ export const state = {
 				todoCount: 4,
 				todos: [
 					{
-						date: '8/3/2023',
-						title: 'Start a new project',
+						date: '2023-12-17',
+						title: 'Fix a leaky faucet',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
-						completed: false,
-					},
-					{
-						date: '6/18/2023',
-						title: 'Walk the dog',
-						description:
-							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
-						priority: 'High',
 						completed: true,
 					},
 					{
-						date: '12/1/2023',
-						title: 'Call mom',
+						date: '2023-08-26',
+						title: 'Go for a run',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Medium',
 						completed: false,
 					},
 					{
-						date: '7/7/2023',
-						title: 'Clean the kitchen',
+						date: '2023-01-20',
+						title: 'Organize closet',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
-						priority: 'High',
+						priority: 'Low',
+						completed: false,
+					},
+					{
+						date: '2023-11-25',
+						title: 'Go for a run',
+						description:
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
+						priority: 'Low',
 						completed: false,
 					},
 				],
@@ -236,27 +236,27 @@ export const state = {
 				todoCount: 3,
 				todos: [
 					{
-						date: '10/10/2023',
-						title: 'Learn a new skill',
+						date: '2023-11-25',
+						title: 'Go for a run',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Low',
-						completed: true,
+						completed: false,
 					},
 					{
-						date: '8/31/2023',
-						title: 'Finish homework',
+						date: '2023-01-26',
+						title: 'Organize closet',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Medium',
 						completed: false,
 					},
 					{
-						date: '8/18/2023',
-						title: 'Buy groceries',
+						date: '2023-09-26',
+						title: 'Clean the kitchen',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
-						priority: 'Low',
+						priority: 'High',
 						completed: true,
 					},
 				],
@@ -271,16 +271,16 @@ export const state = {
 				todoCount: 2,
 				todos: [
 					{
-						date: '5/30/2023',
-						title: 'Try a new recipe',
+						date: '2023-11-25',
+						title: 'Go for a run',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
-						priority: 'Medium',
-						completed: true,
+						priority: 'Low',
+						completed: false,
 					},
 					{
-						date: '9/8/2023',
-						title: 'Take a nap',
+						date: '2023-01-26',
+						title: 'Organize closet',
 						description:
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas volutpat orci et congue blandit. Vivamus varius vestibulum augue',
 						priority: 'Medium',
