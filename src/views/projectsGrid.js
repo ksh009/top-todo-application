@@ -13,7 +13,6 @@ function createButtonsContainer(appState) {
 	// // Open add project modal form
 	addProjectBtn.addEventListener('click', () => {
 		appState.todoData.modalActive = true;
-		appState.todoData.modalComponent = 'AddNewProject';
 		console.log('appState logged from addProjectBtn', appState);
 
 		// Update state in LS
@@ -59,7 +58,7 @@ function createProjectCard(project, idx, appState) {
 
 	const todoCount = document.createElement('h5');
 	todoCount.classList.add('project-todo-count');
-	todoCount.textContent = project.todoCount;
+	todoCount.textContent = project.todos.length;
 	projectStats.appendChild(todoCount);
 
 	headerDiv.appendChild(projectName);
@@ -102,6 +101,8 @@ function createProjectCard(project, idx, appState) {
 		button.addEventListener('click', () => {
 			console.log(`ADD TODO BUTTON CLICKED at index ${idx}`);
 			appState.todoData.layoutComponent = 'TodosLayout';
+			appState.todoData.selectedProject = project.name;
+			appState.todoData.selectedProjectIndex = idx;
 			// Update state in LS
 			localStorage.setItem('state', JSON.stringify(appState));
 			index(
@@ -119,8 +120,10 @@ function createProjectCard(project, idx, appState) {
 			console.log('Default Project cannot be deleted!!');
 			return;
 		} else {
-			// <========= PROBLEM HERE
 			appState.todoData.projects.splice(idx, 1);
+			appState.todoData.selectedProject = 'Default Project';
+			appState.todoData.selectedProjectIndex = 0;
+
 			console.log('Project removed ad state updated', appState);
 			// Update state in LS
 			localStorage.setItem('state', JSON.stringify(appState));

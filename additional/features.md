@@ -153,15 +153,6 @@ const state = {
   - Success message if todos but proceeded with delete even after warn
 - 6. Implement project filtering by priority render logic
 
-```html
-<select class="far">
-	<option value="all" class="far">All</option>
-	<option value="high" class="far high">o High</option>
-	<option value="medium" class="far medium">o Medium</option>
-	<option value="low" class="far low">o Low</option>
-</select>
-```
-
 2/2 Features:
 
 - Added a modal on add project click
@@ -182,5 +173,32 @@ const state = {
 - 6. When clicking on todo animation open todos table for particular project
 
 - ISSUE
+
   - When deleting a project in filter mode all projects aside from the default projects is deleted from state
   - When deletign outside of filter and then filtering projects get filtered as per normal
+
+  2/2 Tasks completed:
+
+- 1. Added some animations to the project card
+- 2. Moved "Add project" btn to left of layout
+- 3. Added event listeners to btns in project card to swap layouts
+- 4. Added back btn to Todos layout to get back to projects layout
+
+2/2 Tasks:
+
+- 1. Generate todo table component dynamically with JS
+- 2. Click on add todo btn and form pops up in modal
+- 3. Cancel and submit logic on add todo form
+
+- 17/05 Features completed
+  - 1.  Generate todo table component dynamically with JS
+  - 2.  When switching layouts update state to render modal form applicable to layout
+  - 3.  Click on new todo btn and form pops up in modal
+  - 4.  Cancel btn on new todo modal form closes modal
+  - 5.  Update todo list title based on project card clicked
+  - 6.  Todo count in project cards based to todo array length in state
+    - `Bug Encountered here`
+      - When new project is created and deleted then program crashes
+      - Fixed
+  - 7.  Can create new project and add Todos to it
+  - 8. Display warning alert when not all inputs on both forms complete

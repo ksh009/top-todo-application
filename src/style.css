@@ -635,6 +635,14 @@ input:focus {
 	align-items: center;
 }
 
+.update-icon:hover {
+	transform: scale(1.2);
+}
+
+.delete-icon:hover {
+	transform: scale(1.2);
+}
+
 .todo-item .delete-btn {
 	background-color: var(--bg-color);
 	color: var(--text-color);
