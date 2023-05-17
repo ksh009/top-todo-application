@@ -30,10 +30,6 @@ function createTodoHeader(className, headerTitle) {
 }
 
 function createTodo(date, title, priority) {
-	// create the todo item container element
-	// const todoItemContainer = document.createElement('div');
-	// todoItemContainer.classList.add('todo-item-container');
-
 	// create the todo item date element
 	const todoItemDate = document.createElement('div');
 	todoItemDate.classList.add('todo-item', 'date');
@@ -68,13 +64,6 @@ function createTodo(date, title, priority) {
 	deleteIcon.classList.add('fa', 'fa-trash');
 	todoItemUpdate.appendChild(updateIcon);
 	todoItemUpdate.appendChild(deleteIcon);
-
-	// append all todo item elements to the container
-	// todoItemContainer.appendChild(todoItemDate);
-	// todoItemContainer.appendChild(todoItemDescription);
-	// todoItemContainer.appendChild(todoItemPriority);
-	// todoItemContainer.appendChild(todoItemCompleted);
-	// todoItemContainer.appendChild(todoItemUpdate);
 
 	return [
 		todoItemDate,
@@ -112,7 +101,7 @@ export function createTodoList(appState) {
 	// // create the h2 element
 	const myH2 = document.createElement('h2');
 	myH2.classList.add('my-h2');
-	myH2.textContent = '(Selected Project) Todo List';
+	myH2.textContent = appState.todoData.selectedProject;
 
 	// // create the todo action buttons element
 	const todoActionBtns = document.createElement('div');
