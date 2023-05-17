@@ -1,4 +1,5 @@
 import { index } from '..';
+import { convertDate } from '../utils/convertDate';
 
 // Todolist table headers
 function createTodoHeader(className, headerTitle) {
@@ -141,7 +142,7 @@ export function createTodoList(appState) {
 		appState.todoData.selectedProjectIndex
 	].todos.forEach((todo) => {
 		const createHtmlTodo = createTodo(
-			todo.date,
+			convertDate(todo.date),
 			todo.title,
 			todo.priority,
 			todo.completed
