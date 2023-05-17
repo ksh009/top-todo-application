@@ -1,5 +1,90 @@
 import { index } from '..';
 
+// Todolist table headers
+function createTodoHeader(className, headerTitle) {
+	// create the todo list header element
+	const todoListHeader = document.createElement('div');
+	todoListHeader.classList.add('header', `${className}`);
+
+	// create the span element
+	const headerSpan = document.createElement('span');
+	headerSpan.classList.add('header-span');
+
+	// create the p element
+	const headerText = document.createElement('p');
+	headerText.textContent = `${headerTitle}`;
+
+	// create the hr element
+	const headerHr = document.createElement('hr');
+	headerHr.classList.add('project-hr');
+
+	// append the p and hr elements to the span element
+	headerSpan.appendChild(headerText);
+	headerSpan.appendChild(headerHr);
+
+	// append the span element to the todo list header element
+	todoListHeader.appendChild(headerSpan);
+
+	// return the todo list header element
+	return todoListHeader;
+}
+
+function createTodo(date, title, priority) {
+	// create the todo item container element
+	// const todoItemContainer = document.createElement('div');
+	// todoItemContainer.classList.add('todo-item-container');
+
+	// create the todo item date element
+	const todoItemDate = document.createElement('div');
+	todoItemDate.classList.add('todo-item', 'date');
+	todoItemDate.textContent = `${date}`;
+
+	// create the todo item description element
+	const todoItemDescription = document.createElement('div');
+	todoItemDescription.classList.add('todo-item', 'description');
+	todoItemDescription.textContent = `${title}`;
+
+	// create the todo item priority element
+	const todoItemPriority = document.createElement('div');
+	todoItemPriority.classList.add('todo-item', 'priority');
+	todoItemPriority.id = 'priorityHigh';
+	todoItemPriority.textContent = `${priority}`;
+
+	// create the todo item completed element
+	const todoItemCompleted = document.createElement('div');
+	todoItemCompleted.classList.add('todo-item', 'completed');
+	const checkIcon = document.createElement('i');
+	checkIcon.classList.add('fas', 'fa-check');
+	todoItemCompleted.appendChild(checkIcon);
+
+	// create the todo item update element
+	const todoItemUpdate = document.createElement('div');
+	todoItemUpdate.classList.add('todo-item', 'update');
+	const updateIcon = document.createElement('i');
+	updateIcon.title = 'Update todo';
+	updateIcon.classList.add('fa', 'fa-eye');
+	const deleteIcon = document.createElement('i');
+	deleteIcon.title = 'Delete todo';
+	deleteIcon.classList.add('fa', 'fa-trash');
+	todoItemUpdate.appendChild(updateIcon);
+	todoItemUpdate.appendChild(deleteIcon);
+
+	// append all todo item elements to the container
+	// todoItemContainer.appendChild(todoItemDate);
+	// todoItemContainer.appendChild(todoItemDescription);
+	// todoItemContainer.appendChild(todoItemPriority);
+	// todoItemContainer.appendChild(todoItemCompleted);
+	// todoItemContainer.appendChild(todoItemUpdate);
+
+	return [
+		todoItemDate,
+		todoItemDescription,
+		todoItemPriority,
+		todoItemCompleted,
+		todoItemUpdate,
+	];
+}
+
 export function createTodoList(appState) {
 	// Create the form container element
 	const todoListLayout = document.createElement('div');
@@ -36,92 +121,29 @@ export function createTodoList(appState) {
 	// // create the todo table
 	const todoList = document.createElement('div');
 	todoList.classList.add('todo-list');
-	todoList.innerHTML = `
-    <div class="header date">
-						<span class="header-span">
-							<p>Date</p>
-							<hr class="project-hr" />
-						</span>
-					</div>
-					<div class="header description">
-						<span class="header-span">
-							<p>Title</p>
-							<hr class="project-hr" />
-						</span>
-					</div>
-					<div class="header priority">
-						<span class="header-span">
-							<p>Priority</p>
-							<hr class="project-hr" />
-						</span>
-					</div>
-					<div class="header completed">
-						<span class="header-span">
-							<p>Completed</p>
-							<hr class="project-hr" />
-						</span>
-					</div>
-					<div class="header update">
-						<span class="header-span">
-							<p>Update</p>
-							<hr class="project-hr" />
-						</span>
-					</div>
+	const dateHeader = createTodoHeader('date', 'Date');
+	const titleHeader = createTodoHeader('description', 'Title');
+	const priorityHeader = createTodoHeader('priority', 'Priority');
+	const completedHeader = createTodoHeader('completed', 'Completed');
+	const updatedHeader = createTodoHeader('update', 'Update');
+	const sampleTodo1 = createTodo('May 1, 2023', 'Buy groceries', 'High');
+	const sampleTodo2 = createTodo('May 2, 2023', 'Buy item 2', 'High');
+	const sampleTodo3 = createTodo('May 3, 2023', 'Buy item 3', 'High');
+	// Create table headers
+	[
+		dateHeader,
+		titleHeader,
+		priorityHeader,
+		completedHeader,
+		updatedHeader,
+	].forEach((child) => {
+		todoList.appendChild(child);
+	});
 
-					<div class="todo-item date">May 1, 2023</div>
-					<div class="todo-item description">Buy groceries</div>
-					<div id="priorityHigh" class="todo-item priority">High</div>
-					<div class="todo-item completed"><i class="fas fa-check"></i></div>
-					<div class="todo-item update">
-						<i title="Update todo" class="fa fa-eye"></i>
-						<i title="Delete todo" class="fa fa-trash"></i>
-					</div>
-
-					<div class="todo-item date">May 2, 2023</div>
-					<div class="todo-item description">Pay bills</div>
-					<div id="priorityMed" class="todo-item priority medium">Medium</div>
-					<div class="todo-item completed"><i class="fas fa-check"></i></div>
-					<div class="todo-item update">
-						<i title="Update todo" class="fa fa-eye"></i>
-						<i title="Delete todo" class="fa fa-trash"></i>
-					</div>
-
-					<div class="todo-item date">May 3, 2023</div>
-					<div class="todo-item description">Do laundry</div>
-					<div id="priorityLow" class="todo-item priority low">Low</div>
-					<div class="todo-item completed"><i class="fas fa-check"></i></div>
-					<div class="todo-item update">
-						<i title="Update todo" class="fa fa-eye"></i>
-						<i title="Delete todo" class="fa fa-trash"></i>
-					</div>
-
-					<div class="todo-item date">May 5, 2023</div>
-					<div class="todo-item description">Wash dogs</div>
-					<div id="priorityMed" class="todo-item priority medium">Medium</div>
-					<div class="todo-item completed"></div>
-					<div class="todo-item update">
-						<i title="Update todo" class="fa fa-eye"></i>
-						<i title="Delete todo" class="fa fa-trash"></i>
-					</div>
-
-					<div class="todo-item date">May 7, 2023</div>
-					<div class="todo-item description">Change tyres</div>
-					<div id="priorityHigh" class="todo-item priority">High</div>
-					<div class="todo-item completed"></div>
-					<div class="todo-item update">
-						<i title="Update todo" class="fa fa-eye"></i>
-						<i title="Delete todo" class="fa fa-trash"></i>
-					</div>
-
-					<div class="todo-item date">May 9, 2023</div>
-					<div class="todo-item description">Replant seeds</div>
-					<div id="priorityLow" class="todo-item priority low">Low</div>
-					<div class="todo-item completed"></div>
-					<div class="todo-item update">
-						<i title="Update todo" class="fa fa-eye"></i>
-						<i title="Delete todo" class="fa fa-trash"></i>
-					</div>
-    `;
+	// Create table items
+	sampleTodo1.forEach((todo) => {
+		todoList.appendChild(todo);
+	});
 
 	// // // create the new todo button element
 	const newTodoBtn = document.createElement('button');
@@ -135,7 +157,7 @@ export function createTodoList(appState) {
 	todoListContainer.appendChild(todoActionBtns);
 	todoListContainer.appendChild(todoList);
 
-	// Append to top most parent (TOP LEVEL PARENT)
+	//* Append to top most parent (TOP LEVEL PARENT)
 	todoListLayout.appendChild(buttonsContainer);
 	todoListLayout.appendChild(todoListContainer);
 
