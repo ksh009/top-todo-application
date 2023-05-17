@@ -3,13 +3,8 @@ import { state } from '../src/state/state.js';
 import { createProjectsLayout } from './views/projectsGrid';
 import { createNav } from './components/nav';
 import { createAddProjectModal } from './components/addProjectModal';
+import { createAddTodoModal } from './components/addTodoModal';
 import { createTodoList } from './views/projectTodos';
-// Global state object will be created here
-// State object will be shared with each comp
-// // First persist to LS
-// // then create var pointing to LS
-// // state should probably be an object with getter and setter methods
-// Need to somehow check when the state changes so that the particular component can be rerendered
 
 // Entry point element
 const content = document.getElementById('content');
@@ -45,6 +40,7 @@ export function index(renderMessage) {
 	const navBar = createNav(appState);
 	const projectsGrid = createProjectsLayout(appState);
 	const addProjectModal = createAddProjectModal(appState);
+	const addTodoModal = createAddTodoModal(appState);
 	const todoList = createTodoList(appState);
 
 	// Add classes
@@ -55,7 +51,13 @@ export function index(renderMessage) {
 	headerContainer.appendChild(navBar);
 	mainContainer.appendChild(projectsGrid);
 	mainContainer.appendChild(todoList);
-	mainContainer.appendChild(addProjectModal);
+	mainContainer.appendChild(
+		appState.todoData.modalActive &&
+			appState.todoData.layoutComponent === 'ProjectsGridLayout'
+			? addProjectModal
+			: addTodoModal
+	);
+	// mainContainer.appendChild(addTodoModal);
 	content.appendChild(headerContainer);
 	content.appendChild(mainContainer);
 }

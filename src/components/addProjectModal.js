@@ -7,10 +7,7 @@ export function createAddProjectModal(appState) {
 	formContainer.id = 'addNewProjectModal';
 
 	// Check if state was updated and show modal
-	if (
-		appState.todoData.modalActive &&
-		appState.todoData.modalComponent === 'AddNewProject'
-	) {
+	if (appState.todoData.modalActive) {
 		formContainer.style.display = 'flex';
 	}
 
@@ -139,7 +136,6 @@ export function createAddProjectModal(appState) {
 	// Reset state to default on modal form cancel
 	cancelButton.addEventListener('click', () => {
 		appState.todoData.modalActive = false;
-		appState.todoData.modalComponent = '';
 		console.log('appState updated from addProjectBtn:cancelButton', appState);
 
 		// Update state in LS

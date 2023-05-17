@@ -13,7 +13,6 @@ function createButtonsContainer(appState) {
 	// // Open add project modal form
 	addProjectBtn.addEventListener('click', () => {
 		appState.todoData.modalActive = true;
-		appState.todoData.modalComponent = 'AddNewProject';
 		console.log('appState logged from addProjectBtn', appState);
 
 		// Update state in LS
