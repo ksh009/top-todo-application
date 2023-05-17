@@ -58,10 +58,10 @@ function createTodo(date, title, priority) {
 	todoItemUpdate.classList.add('todo-item', 'update');
 	const updateIcon = document.createElement('i');
 	updateIcon.title = 'Update todo';
-	updateIcon.classList.add('fa', 'fa-eye');
+	updateIcon.classList.add('fa', 'fa-eye', 'update-icon');
 	const deleteIcon = document.createElement('i');
 	deleteIcon.title = 'Delete todo';
-	deleteIcon.classList.add('fa', 'fa-trash');
+	deleteIcon.classList.add('fa', 'fa-trash', 'delete-icon');
 	todoItemUpdate.appendChild(updateIcon);
 	todoItemUpdate.appendChild(deleteIcon);
 
