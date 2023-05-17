@@ -115,9 +115,9 @@ export function createTodoList(appState) {
 	const priorityHeader = createTodoHeader('priority', 'Priority');
 	const completedHeader = createTodoHeader('completed', 'Completed');
 	const updatedHeader = createTodoHeader('update', 'Update');
-	const sampleTodo1 = createTodo('May 1, 2023', 'Buy groceries', 'High');
-	const sampleTodo2 = createTodo('May 2, 2023', 'Buy item 2', 'High');
-	const sampleTodo3 = createTodo('May 3, 2023', 'Buy item 3', 'High');
+	const sampleTodo1 = createTodo('05/01/2023', 'Buy groceries', 'High');
+	const sampleTodo2 = createTodo('05/02/2023', 'Buy item 2', 'High');
+	const sampleTodo3 = createTodo('05/03/2023', 'Buy item 3', 'High');
 	// Create table headers
 	[
 		dateHeader,
@@ -130,8 +130,9 @@ export function createTodoList(appState) {
 	});
 
 	// Create table items
-	sampleTodo1.forEach((todo) => {
-		todoList.appendChild(todo);
+
+	sampleTodo1.forEach((todoItems) => {
+		todoList.appendChild(todoItems);
 	});
 
 	// // // create the new todo button element

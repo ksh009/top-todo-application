@@ -182,5 +182,27 @@ const state = {
 - 6. When clicking on todo animation open todos table for particular project
 
 - ISSUE
+
   - When deleting a project in filter mode all projects aside from the default projects is deleted from state
   - When deletign outside of filter and then filtering projects get filtered as per normal
+
+  2/2 Tasks completed:
+
+- 1. Added some animations to the project card
+- 2. Moved "Add project" btn to left of layout
+- 3. Added event listeners to btns in project card to swap layouts
+- 4. Added back btn to Todos layout to get back to projects layout
+
+2/2 Tasks:
+
+- 1. Generate todo table component dynamically with JS
+- 2. Click on add todo btn and form pops up in modal
+- 3. Cancel and submit logic on add todo form
+
+- 17/05 Features completed
+  - 1.  Generate todo table component dynamically with JS
+  - 2.  When switching layouts update state to render modal form applicable to layout
+  - 3.  Click on new todo btn and form pops up in modal
+  - 4.  Cancel btn on new todo modal form closes modal
+  - 5.  Update todo list title based on project card clicked
+  - 6.  Todo count in project cards based to todo array length in state

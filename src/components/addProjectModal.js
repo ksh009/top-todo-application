@@ -170,6 +170,7 @@ export function createAddProjectModal(appState) {
 				priority: priorityInputValue,
 				priorityId: priorityInputId,
 				todoCount: 0,
+				todos: [],
 				description: ProjectDescValue,
 				completed: false,
 			};

@@ -111,7 +111,7 @@ export function createAddTodoModal(appState) {
 
 	const createTodoBtn = document.createElement('button');
 	createTodoBtn.classList.add('action-btn');
-	createTodoBtn.setAttribute('type', 'submit');
+	createTodoBtn.setAttribute('type', 'button');
 	createTodoBtn.textContent = 'CREATE TODO';
 
 	formFooterDiv.appendChild(cancelButton);
