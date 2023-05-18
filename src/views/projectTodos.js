@@ -78,6 +78,22 @@ function createTodo(date, title, priority, completed, idx, appState) {
 
 	// Event Listeners
 	// // Delete Todos
+	todoItemUpdate.addEventListener('click', () => {
+		console.log('Update this todo by idx', idx);
+		// appState.todoData.projects[
+		// 	appState.todoData.selectedProjectIndex
+		// ].todos.splice(idx, 1);
+		appState.todoData.modalCompVariantTodo = 'Update';
+		appState.todoData.modalActive = true;
+
+		// Update state in LS
+		localStorage.setItem('state', JSON.stringify(appState));
+		index(
+			'I was rerendered because of a state update triggered by the projectsGrid:todoItemUpdate elm!!!'
+		);
+	});
+
+	// // Delete Todos
 	deleteIcon.addEventListener('click', () => {
 		console.log('Delete this todo by idx', idx);
 		appState.todoData.projects[

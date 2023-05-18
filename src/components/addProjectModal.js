@@ -1,7 +1,6 @@
 import { index } from '..';
 
 export function createAddProjectModal(appState) {
-	console.log('globalState from addProjectModal', appState);
 	const formContainer = document.createElement('div');
 	formContainer.classList.add('form-container', 'modal');
 	formContainer.id = 'addNewProjectModal';
@@ -174,9 +173,7 @@ export function createAddProjectModal(appState) {
 				description: ProjectDescValue,
 				completed: false,
 			};
-			// console.log('newTodo', newTodo);
 			appState.todoData.modalActive = false;
-			appState.todoData.modalComponent = '';
 			appState.todoData.projects.push(newTodoProject);
 			console.log(
 				'appState logged from addProjectBtn:createProjectButton',

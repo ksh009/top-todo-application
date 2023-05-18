@@ -49,7 +49,9 @@ export function index(renderMessage) {
 		appState.todoData.modalActive &&
 			appState.todoData.layoutComponent === 'ProjectsGridLayout'
 			? addProjectModal
-			: addTodoModal
+			: appState.todoData.modalCompVariantTodo === 'Create'
+			? addTodoModal
+			: addProjectModal
 	);
 	content.appendChild(headerContainer);
 	content.appendChild(mainContainer);
