@@ -80,9 +80,6 @@ function createTodo(date, title, priority, completed, idx, appState) {
 	// // Delete Todos
 	todoItemUpdate.addEventListener('click', () => {
 		console.log('Update this todo by idx', idx);
-		// appState.todoData.projects[
-		// 	appState.todoData.selectedProjectIndex
-		// ].todos.splice(idx, 1);
 		appState.todoData.modalCompVariantTodo = 'Update';
 		appState.todoData.modalActive = true;
 
@@ -220,6 +217,7 @@ export function createTodoList(appState) {
 	// // Open add project modal form
 	newTodoBtn.addEventListener('click', () => {
 		appState.todoData.modalActive = true;
+		appState.todoData.modalCompVariantTodo = 'Create';
 
 		// Update state in LS
 		localStorage.setItem('state', JSON.stringify(appState));

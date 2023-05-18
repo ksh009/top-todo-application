@@ -5,6 +5,7 @@ import { createNav } from './components/nav';
 import { createAddProjectModal } from './components/addProjectModal';
 import { createAddTodoModal } from './components/addTodoModal';
 import { createTodoList } from './views/projectTodos';
+import { createUpdateModal } from './components/updateTodoModal';
 
 // Entry point element
 const content = document.getElementById('content');
@@ -36,6 +37,7 @@ export function index(renderMessage) {
 	const addProjectModal = createAddProjectModal(appState);
 	const addTodoModal = createAddTodoModal(appState);
 	const todoList = createTodoList(appState);
+	const updateTodoModal = createUpdateModal(appState);
 
 	// Add classes
 	headerContainer.classList.add('header-container');
@@ -51,7 +53,7 @@ export function index(renderMessage) {
 			? addProjectModal
 			: appState.todoData.modalCompVariantTodo === 'Create'
 			? addTodoModal
-			: addProjectModal
+			: updateTodoModal
 	);
 	content.appendChild(headerContainer);
 	content.appendChild(mainContainer);
