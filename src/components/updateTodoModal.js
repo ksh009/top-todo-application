@@ -199,31 +199,39 @@ export function createUpdateModal(appState) {
 	});
 
 	// Update todo
+	let updatedTitle;
+	let updatedDate;
+	let updatedPriority;
+	let updatedDescription;
+	let updatedCompletion;
+
 	titleElement.addEventListener('blur', (e) => {
-		console.log('Updated Todo title', e.target.textContent);
+		updatedTitle = e.target.textContent;
+		console.log('updatedTitle', updatedTitle);
 	});
 
 	dateInput.addEventListener('blur', (e) => {
-		// todoDateValue = event.target.value;
-		console.log('Updated Todo date', e.target.value);
+		updatedDate = e.target.value;
+		console.log('updatedDate', updatedDate);
 	});
 
 	selectElement.addEventListener('change', (e) => {
-		const selectedOption = e.target.value;
-		console.log(`Selected option: ${selectedOption}`);
+		updatedPriority = e.target.value;
+		console.log('updatedPriority', updatedPriority);
 	});
 
 	descriptionParagraph.addEventListener('blur', (e) => {
-		console.log('Updated Todo description', e.target.textContent);
+		updatedDescription = e.target.textContent;
+		console.log('updatedDescription', updatedDescription);
 	});
 
 	completedCheckbox.addEventListener('change', function () {
 		if (completedCheckbox.checked) {
-			// Checkbox is checked
-			console.log('Checkbox is checked', true);
+			updatedCompletion = true;
+			console.log('updatedCompletion', updatedCompletion);
 		} else {
-			// Checkbox is not checked
-			console.log('Checkbox is not checked', false);
+			updatedCompletion = false;
+			console.log('updatedCompletion', updatedCompletion);
 		}
 	});
 
