@@ -68,16 +68,19 @@ export function createUpdateModal(appState) {
 	// Create the priority options
 	const highOption = document.createElement('option');
 	highOption.classList.add('far', 'high');
+	highOption.value = 'High';
 	highOption.textContent = 'High';
 	selectElement.appendChild(highOption);
 
 	const mediumOption = document.createElement('option');
 	mediumOption.classList.add('far', 'medium');
+	mediumOption.value = 'Medium';
 	mediumOption.textContent = 'Medium';
 	selectElement.appendChild(mediumOption);
 
 	const lowOption = document.createElement('option');
 	lowOption.classList.add('far', 'low');
+	lowOption.value = 'Low';
 	lowOption.textContent = 'Low';
 	selectElement.appendChild(lowOption);
 
@@ -198,6 +201,16 @@ export function createUpdateModal(appState) {
 	// Update todo
 	titleElement.addEventListener('blur', (e) => {
 		console.log('Updated Todo title', e.target.textContent);
+	});
+
+	dateInput.addEventListener('blur', (e) => {
+		// todoDateValue = event.target.value;
+		console.log('Updated Todo date', e.target.value);
+	});
+
+	selectElement.addEventListener('change', (e) => {
+		const selectedOption = e.target.value;
+		console.log(`Selected option: ${selectedOption}`);
 	});
 
 	// Return the created HTML structure

@@ -141,26 +141,22 @@ export function createAddTodoModal(appState) {
 	// Get todo date input value
 	dateInput.addEventListener('blur', (event) => {
 		todoDateValue = event.target.value;
-		console.log('todoDateValue', todoDateValue);
 	});
 
 	// Get todo title input value
 	titleInput.addEventListener('blur', (event) => {
 		todoTitleValue = event.target.value;
-		console.log('todoTitleValue', todoTitleValue);
 	});
 
 	// Get todo description input value
 	descriptionTextarea.addEventListener('blur', (event) => {
 		todoDescriptionValue = event.target.value;
-		console.log('todoDescriptionValue', todoDescriptionValue);
 	});
 
 	// Get todo priority value input
 	[highRadioInput, mediumRadioInput, lowRadioInput].forEach((radioButton) => {
 		radioButton.addEventListener('click', (event) => {
 			todoPriorityValue = event.target.value;
-			console.log('todoPriorityValue', todoPriorityValue);
 		});
 	});
 
