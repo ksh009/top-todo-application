@@ -137,7 +137,6 @@ export function createAddTodoModal(appState) {
 	let todoTitleValue;
 	let todoDescriptionValue;
 	let todoPriorityValue;
-	let todoCompletedValue = false;
 
 	// Get todo date input value
 	dateInput.addEventListener('blur', (event) => {
@@ -183,7 +182,6 @@ export function createAddTodoModal(appState) {
 				priority: todoPriorityValue,
 				completed: false,
 			};
-			// console.log('newTodo', newTodo);
 			appState.todoData.modalActive = false;
 			appState.todoData.projects[
 				appState.todoData.selectedProjectIndex

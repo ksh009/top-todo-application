@@ -30,7 +30,7 @@ function createTodoHeader(className, headerTitle) {
 	return todoListHeader;
 }
 
-function createTodo(date, title, priority, completed) {
+function createTodo(date, title, priority, completed, idx, appState) {
 	// create the todo item date element
 	const todoItemDate = document.createElement('div');
 	todoItemDate.classList.add('todo-item', 'date');
@@ -75,6 +75,21 @@ function createTodo(date, title, priority, completed) {
 	deleteIcon.classList.add('fa', 'fa-trash', 'delete-icon');
 	todoItemUpdate.appendChild(updateIcon);
 	todoItemUpdate.appendChild(deleteIcon);
+
+	// Event Listeners
+	// // Delete Todos
+	deleteIcon.addEventListener('click', () => {
+		console.log('Delete this todo by idx', idx);
+		appState.todoData.projects[
+			appState.todoData.selectedProjectIndex
+		].todos.splice(idx, 1);
+
+		// Update state in LS
+		localStorage.setItem('state', JSON.stringify(appState));
+		index(
+			'I was rerendered because of a state update triggered by the projectsGrid:deleteIcon elm!!!'
+		);
+	});
 
 	return [
 		todoItemDate,
@@ -140,12 +155,14 @@ export function createTodoList(appState) {
 	// Create table items
 	appState.todoData.projects[
 		appState.todoData.selectedProjectIndex
-	].todos.forEach((todo) => {
+	].todos.forEach((todo, idx) => {
 		const createHtmlTodo = createTodo(
 			todo.date,
 			todo.title,
 			todo.priority,
-			todo.completed
+			todo.completed,
+			idx,
+			appState
 		);
 		createHtmlTodo.forEach((todoItems) => {
 			todoList.appendChild(todoItems);
