@@ -54,7 +54,12 @@ export function createUpdateModal(appState) {
 	dateInput.setAttribute('id', 'date');
 	dateInput.setAttribute('name', 'date');
 	dateInput.setAttribute('required', true);
-	dateInput.setAttribute('value', '2023-05-13');
+	dateInput.setAttribute(
+		'value',
+		appState.todoData.projects[appState.todoData.selectedProjectIndex].todos[
+			appState.todoData.selectedTodoIdx
+		].date
+	);
 	statsDiv.appendChild(dateInput);
 
 	// Create the priority span
@@ -125,7 +130,9 @@ export function createUpdateModal(appState) {
 	const descriptionParagraph = document.createElement('p');
 	descriptionParagraph.setAttribute('contenteditable', true);
 	descriptionParagraph.textContent =
-		'This is a detailed description of what groceries to buy, where to buy them. What store has the best deals and what stock is currently short etc...';
+		appState.todoData.projects[appState.todoData.selectedProjectIndex].todos[
+			appState.todoData.selectedTodoIdx
+		].description;
 	bodyDiv.appendChild(descriptionParagraph);
 
 	// Append the body div to the container div
@@ -145,6 +152,14 @@ export function createUpdateModal(appState) {
 	completedCheckbox.setAttribute('type', 'checkbox');
 	completedCheckbox.setAttribute('id', 'completed');
 	completedCheckbox.setAttribute('name', 'completed');
+
+	if (
+		appState.todoData.projects[appState.todoData.selectedProjectIndex].todos[
+			appState.todoData.selectedTodoIdx
+		].completed
+	) {
+		completedCheckbox.setAttribute('checked', 'checked');
+	}
 
 	// Append the label and checkbox to the completed div
 	completedDiv.appendChild(completedLabel);
