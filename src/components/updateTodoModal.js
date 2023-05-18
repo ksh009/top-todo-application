@@ -213,6 +213,10 @@ export function createUpdateModal(appState) {
 		console.log(`Selected option: ${selectedOption}`);
 	});
 
+	descriptionParagraph.addEventListener('blur', (e) => {
+		console.log('Updated Todo description', e.target.textContent);
+	});
+
 	// Return the created HTML structure
 	return formContainer;
 }
