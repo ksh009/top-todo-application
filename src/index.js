@@ -5,6 +5,7 @@ import { createNav } from './components/nav';
 import { createAddProjectModal } from './components/addProjectModal';
 import { createAddTodoModal } from './components/addTodoModal';
 import { createTodoList } from './views/projectTodos';
+import { createUpdateModal } from './components/updateTodoModal';
 
 // Entry point element
 const content = document.getElementById('content');
@@ -14,17 +15,11 @@ const headerContainer = document.createElement('header');
 const mainContainer = document.createElement('main');
 
 export function index(renderMessage) {
-	// Check if state object exists in localStorage
 	if (!localStorage.getItem('state')) {
-		// console.log('Default state set');
-		// If not, persist to localStorage
 		localStorage.setItem('state', JSON.stringify(state));
 	}
 
-	// This is passed down to index and index will pass it down to any child components.
-	// // If state is changed then update and overwrite old state with set state
 	const appState = JSON.parse(localStorage.getItem('state'));
-	// console.log('globalState from inside index.js', appState);
 
 	// Check if index rerender was triggered by child comp
 	if (renderMessage) {
@@ -42,6 +37,7 @@ export function index(renderMessage) {
 	const addProjectModal = createAddProjectModal(appState);
 	const addTodoModal = createAddTodoModal(appState);
 	const todoList = createTodoList(appState);
+	const updateTodoModal = createUpdateModal(appState);
 
 	// Add classes
 	headerContainer.classList.add('header-container');
@@ -55,16 +51,15 @@ export function index(renderMessage) {
 		appState.todoData.modalActive &&
 			appState.todoData.layoutComponent === 'ProjectsGridLayout'
 			? addProjectModal
-			: addTodoModal
+			: appState.todoData.modalCompVariantTodo === 'Create'
+			? addTodoModal
+			: updateTodoModal
 	);
-	// mainContainer.appendChild(addTodoModal);
 	content.appendChild(headerContainer);
 	content.appendChild(mainContainer);
 }
 
-// Ensure this only runs once on reload. Index will be triggered from other functions when state is updated. This is only fo initial load
+// Ensure this only runs once on reload.
 if (content.children.length === 1) {
-	// console.log('I only run once on reload!!!');
-	// Later find a condition so that this function will only run once
 	index();
 }

@@ -1,5 +1,4 @@
 export function createNav(globalState) {
-	// console.log('globalState from nav.js', globalState);
 	const nav = document.createElement('nav');
 	nav.classList.add('nav');
 

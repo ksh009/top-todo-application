@@ -1,8 +1,6 @@
 import { index } from '..';
 
 export function createAddTodoModal(appState) {
-	console.log('Logging appState from createTodoModal', appState);
-
 	const formContainer = document.createElement('div');
 	formContainer.classList.add('form-container', 'modal');
 
@@ -137,31 +135,26 @@ export function createAddTodoModal(appState) {
 	let todoTitleValue;
 	let todoDescriptionValue;
 	let todoPriorityValue;
-	let todoCompletedValue = false;
 
 	// Get todo date input value
 	dateInput.addEventListener('blur', (event) => {
 		todoDateValue = event.target.value;
-		console.log('todoDateValue', todoDateValue);
 	});
 
 	// Get todo title input value
 	titleInput.addEventListener('blur', (event) => {
 		todoTitleValue = event.target.value;
-		console.log('todoTitleValue', todoTitleValue);
 	});
 
 	// Get todo description input value
 	descriptionTextarea.addEventListener('blur', (event) => {
 		todoDescriptionValue = event.target.value;
-		console.log('todoDescriptionValue', todoDescriptionValue);
 	});
 
 	// Get todo priority value input
 	[highRadioInput, mediumRadioInput, lowRadioInput].forEach((radioButton) => {
 		radioButton.addEventListener('click', (event) => {
 			todoPriorityValue = event.target.value;
-			console.log('todoPriorityValue', todoPriorityValue);
 		});
 	});
 
@@ -183,12 +176,10 @@ export function createAddTodoModal(appState) {
 				priority: todoPriorityValue,
 				completed: false,
 			};
-			// console.log('newTodo', newTodo);
 			appState.todoData.modalActive = false;
 			appState.todoData.projects[
 				appState.todoData.selectedProjectIndex
 			].todos.push(newTodo);
-			console.log('appState logged from addProjectBtn:createTodoBtn', appState);
 
 			// Update state in LS
 			localStorage.setItem('state', JSON.stringify(appState));

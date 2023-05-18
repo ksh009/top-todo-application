@@ -13,7 +13,6 @@ function createButtonsContainer(appState) {
 	// // Open add project modal form
 	addProjectBtn.addEventListener('click', () => {
 		appState.todoData.modalActive = true;
-		console.log('appState logged from addProjectBtn', appState);
 
 		// Update state in LS
 		localStorage.setItem('state', JSON.stringify(appState));
@@ -99,7 +98,6 @@ function createProjectCard(project, idx, appState) {
 	// // Add todo to project
 	[addTodoBtn, projectStats].forEach((button) => {
 		button.addEventListener('click', () => {
-			console.log(`ADD TODO BUTTON CLICKED at index ${idx}`);
 			appState.todoData.layoutComponent = 'TodosLayout';
 			appState.todoData.selectedProject = project.name;
 			appState.todoData.selectedProjectIndex = idx;
@@ -113,18 +111,14 @@ function createProjectCard(project, idx, appState) {
 
 	// // Add todo to project
 	deleteProjectBtn.addEventListener('click', () => {
-		console.log(`DELETE BUTTON CLICKED at index ${idx}`);
-
 		if (project.name === 'Default Project') {
 			alert('Default project cannot be deleted!!!');
-			console.log('Default Project cannot be deleted!!');
 			return;
 		} else {
 			appState.todoData.projects.splice(idx, 1);
 			appState.todoData.selectedProject = 'Default Project';
 			appState.todoData.selectedProjectIndex = 0;
 
-			console.log('Project removed ad state updated', appState);
 			// Update state in LS
 			localStorage.setItem('state', JSON.stringify(appState));
 			index(

@@ -30,7 +30,7 @@ function createTodoHeader(className, headerTitle) {
 	return todoListHeader;
 }
 
-function createTodo(date, title, priority, completed) {
+function createTodo(date, title, priority, completed, idx, appState) {
 	// create the todo item date element
 	const todoItemDate = document.createElement('div');
 	todoItemDate.classList.add('todo-item', 'date');
@@ -75,6 +75,33 @@ function createTodo(date, title, priority, completed) {
 	deleteIcon.classList.add('fa', 'fa-trash', 'delete-icon');
 	todoItemUpdate.appendChild(updateIcon);
 	todoItemUpdate.appendChild(deleteIcon);
+
+	// Event Listeners
+	// // Update Todos
+	updateIcon.addEventListener('click', () => {
+		appState.todoData.modalCompVariantTodo = 'Update';
+		appState.todoData.selectedTodoIdx = idx;
+		appState.todoData.modalActive = true;
+
+		// Update state in LS
+		localStorage.setItem('state', JSON.stringify(appState));
+		index(
+			'I was rerendered because of a state update triggered by the projectsGrid:todoItemUpdate elm!!!'
+		);
+	});
+
+	// // Delete Todos
+	deleteIcon.addEventListener('click', () => {
+		appState.todoData.projects[
+			appState.todoData.selectedProjectIndex
+		].todos.splice(idx, 1);
+
+		// Update state in LS
+		localStorage.setItem('state', JSON.stringify(appState));
+		index(
+			'I was rerendered because of a state update triggered by the projectsGrid:deleteIcon elm!!!'
+		);
+	});
 
 	return [
 		todoItemDate,
@@ -140,12 +167,14 @@ export function createTodoList(appState) {
 	// Create table items
 	appState.todoData.projects[
 		appState.todoData.selectedProjectIndex
-	].todos.forEach((todo) => {
+	].todos.forEach((todo, idx) => {
 		const createHtmlTodo = createTodo(
 			todo.date,
 			todo.title,
 			todo.priority,
-			todo.completed
+			todo.completed,
+			idx,
+			appState
 		);
 		createHtmlTodo.forEach((todoItems) => {
 			todoList.appendChild(todoItems);
@@ -171,7 +200,6 @@ export function createTodoList(appState) {
 	// Event Listeners
 	// Back to Project layout
 	backButton.addEventListener('click', () => {
-		console.log('back to projects btn clicked');
 		appState.todoData.layoutComponent = 'ProjectsGridLayout';
 		appState.todoData.selectedProject = 'Default Project';
 		appState.todoData.selectedProjectIndex = 0;
@@ -187,6 +215,7 @@ export function createTodoList(appState) {
 	// // Open add project modal form
 	newTodoBtn.addEventListener('click', () => {
 		appState.todoData.modalActive = true;
+		appState.todoData.modalCompVariantTodo = 'Create';
 
 		// Update state in LS
 		localStorage.setItem('state', JSON.stringify(appState));

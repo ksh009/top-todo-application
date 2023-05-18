@@ -1,7 +1,6 @@
 import { index } from '..';
 
 export function createAddProjectModal(appState) {
-	console.log('globalState from addProjectModal', appState);
 	const formContainer = document.createElement('div');
 	formContainer.classList.add('form-container', 'modal');
 	formContainer.id = 'addNewProjectModal';
@@ -112,7 +111,6 @@ export function createAddProjectModal(appState) {
 	// Reset state to default on modal form cancel
 	cancelButton.addEventListener('click', () => {
 		appState.todoData.modalActive = false;
-		console.log('appState updated from addProjectBtn:cancelButton', appState);
 
 		// Update state in LS
 		localStorage.setItem('state', JSON.stringify(appState));
@@ -128,19 +126,16 @@ export function createAddProjectModal(appState) {
 
 	projectNameInput.addEventListener('blur', (event) => {
 		projectNameValue = event.target.value;
-		console.log('projectNameValue', projectNameValue);
 	});
 
 	projectDescriptionTextarea.addEventListener('blur', (event) => {
 		ProjectDescValue = event.target.value;
-		console.log('ProjectDescValue', ProjectDescValue);
 	});
 
 	[priorityHighInput, priorityMediumInput, priorityLowInput].forEach(
 		(radioButton) => {
 			radioButton.addEventListener('click', (event) => {
 				priorityInputValue = event.target.value;
-				console.log('priorityInputValue', priorityInputValue);
 			});
 		}
 	);
@@ -174,14 +169,8 @@ export function createAddProjectModal(appState) {
 				description: ProjectDescValue,
 				completed: false,
 			};
-			// console.log('newTodo', newTodo);
 			appState.todoData.modalActive = false;
-			appState.todoData.modalComponent = '';
 			appState.todoData.projects.push(newTodoProject);
-			console.log(
-				'appState logged from addProjectBtn:createProjectButton',
-				appState
-			);
 
 			// Update state in LS
 			localStorage.setItem('state', JSON.stringify(appState));

@@ -190,15 +190,42 @@ const state = {
 - 2. Click on add todo btn and form pops up in modal
 - 3. Cancel and submit logic on add todo form
 
-- 17/05 Features completed
-  - 1.  Generate todo table component dynamically with JS
-  - 2.  When switching layouts update state to render modal form applicable to layout
-  - 3.  Click on new todo btn and form pops up in modal
-  - 4.  Cancel btn on new todo modal form closes modal
-  - 5.  Update todo list title based on project card clicked
-  - 6.  Todo count in project cards based to todo array length in state
-    - `Bug Encountered here`
-      - When new project is created and deleted then program crashes
-      - Fixed
-  - 7.  Can create new project and add Todos to it
-  - 8. Display warning alert when not all inputs on both forms complete
+- 18/05/2023
+
+2/3 Tasks:
+
+1.  Todo table component dynamically with JS
+2.  Pop up form type based on layout switch
+3.  Click on new todo btn and form pops up in modal
+4.  Cancel btn on new todo modal form closes modal
+5.  Update todo list title based on project card clicked
+
+3/3 Tasks: 6. Todo count in project cards based to todo array length in state
+
+- "Bug"
+- When new project created with Todos & deleted then program crashes
+- Fixed
+
+7.  Can create new project and add Todos to it
+8.  Display warning alert when all inputs on both forms not complete
+
+1/3 Day 22 of #365DaysofCode and #buildinpublic. Managed to get more done in this session for the Todo app using Webpack on #theodinproject: ⤵️
+
+#####
+
+1/2 In this session of the Webpack Todo List on #theodinproject and #buildinpublic I want to implement these features: ⤵️
+
+2/2 Tasks (For existing and new projects)
+
+- 1. Implement update todo modal to show todo details
+  - Created comp with JS
+- 2. Implement cancel update logic
+  - `Done`
+- 3. Dynamically populate update comp based on Todo
+- 4. Implement update todo logic
+- 5. Delete a todo from the todo list
+  - `Done`
+    - Demonstrate by deleting all todos in projs and refresh
+- 6. Updated webpack config - no longer need rule for image loading
+
+`FIX UPDATE Click`
