@@ -217,6 +217,16 @@ export function createUpdateModal(appState) {
 		console.log('Updated Todo description', e.target.textContent);
 	});
 
+	completedCheckbox.addEventListener('change', function () {
+		if (completedCheckbox.checked) {
+			// Checkbox is checked
+			console.log('Checkbox is checked', true);
+		} else {
+			// Checkbox is not checked
+			console.log('Checkbox is not checked', false);
+		}
+	});
+
 	// Return the created HTML structure
 	return formContainer;
 }
