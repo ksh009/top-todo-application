@@ -77,8 +77,8 @@ function createTodo(date, title, priority, completed, idx, appState) {
 	todoItemUpdate.appendChild(deleteIcon);
 
 	// Event Listeners
-	// // Delete Todos
-	todoItemUpdate.addEventListener('click', () => {
+	// // Update Todos
+	updateIcon.addEventListener('click', () => {
 		console.log('Update this todo by idx', idx);
 		appState.todoData.modalCompVariantTodo = 'Update';
 		appState.todoData.modalActive = true;

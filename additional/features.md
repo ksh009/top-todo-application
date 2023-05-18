@@ -218,8 +218,14 @@ const state = {
 2/2 Tasks (For existing and new projects)
 
 - 1. Implement update todo modal to show todo details
+  - Created comp with JS
 - 2. Implement cancel update logic
-- 3. Implement update todo logic
-- 4. Delete a todo from the todo list
+  - `Done`
+- 3. Dynamically populate update comp based on Todo
+- 4. Implement update todo logic
+- 5. Delete a todo from the todo list
   - `Done`
     - Demonstrate by deleting all todos in projs and refresh
+- 6. Updated webpack config - no longer need rule for image loading
+
+`FIX UPDATE Click`
