@@ -6,6 +6,7 @@ export const state = {
 		defaultComponent: 'ProjectsGrid',
 		selectedProject: 'Default Project',
 		selectedProjectIndex: 0,
+		selectedTodoIdx: 0,
 		projects: [
 			{
 				name: 'Default Project',

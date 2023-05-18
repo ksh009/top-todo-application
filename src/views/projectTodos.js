@@ -81,6 +81,7 @@ function createTodo(date, title, priority, completed, idx, appState) {
 	updateIcon.addEventListener('click', () => {
 		console.log('Update this todo by idx', idx);
 		appState.todoData.modalCompVariantTodo = 'Update';
+		appState.todoData.selectedTodoIdx = idx;
 		appState.todoData.modalActive = true;
 
 		// Update state in LS

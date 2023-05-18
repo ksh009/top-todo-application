@@ -1,6 +1,16 @@
 import { index } from '..';
 
 export function createUpdateModal(appState) {
+	// Get Todos associated to this modal
+	// const todoToUpdate =
+	// 	appState.todoData.projects[appState.todoData.selectedProjectIndex].todos[
+	// 		appState.todoData.selectedTodoIdx
+	// 	];
+	// console.log(
+	// 	'This projects todos list triggered in update comp',
+	// 	todoToUpdate
+	// );
+
 	// Create container
 	const formContainer = document.createElement('div');
 	formContainer.classList.add('form-container', 'modal');
@@ -20,7 +30,10 @@ export function createUpdateModal(appState) {
 	// Create the title element
 	const titleElement = document.createElement('h3');
 	titleElement.setAttribute('contenteditable', true);
-	titleElement.textContent = 'Buy Groceries';
+	titleElement.textContent =
+		appState.todoData.projects[appState.todoData.selectedProjectIndex].todos[
+			appState.todoData.selectedTodoIdx
+		].title;
 	headerDiv.appendChild(titleElement);
 
 	// Create the edit icon
@@ -167,6 +180,8 @@ export function createUpdateModal(appState) {
 	// // Cancel button
 	cancelButton.addEventListener('click', () => {
 		appState.todoData.modalActive = false;
+		// Apply same on update
+		appState.todoData.selectedTodoIdx = 0;
 
 		// Update state in LS
 		localStorage.setItem('state', JSON.stringify(appState));
