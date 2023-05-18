@@ -1,16 +1,6 @@
 import { index } from '..';
 
 export function createUpdateModal(appState) {
-	// Get Todos associated to this modal
-	// const todoToUpdate =
-	// 	appState.todoData.projects[appState.todoData.selectedProjectIndex].todos[
-	// 		appState.todoData.selectedTodoIdx
-	// 	];
-	// console.log(
-	// 	'This projects todos list triggered in update comp',
-	// 	todoToUpdate
-	// );
-
 	// Create container
 	const formContainer = document.createElement('div');
 	formContainer.classList.add('form-container', 'modal');
@@ -33,7 +23,7 @@ export function createUpdateModal(appState) {
 	titleElement.textContent =
 		appState.todoData.projects[appState.todoData.selectedProjectIndex].todos[
 			appState.todoData.selectedTodoIdx
-		].title;
+		]?.title;
 	headerDiv.appendChild(titleElement);
 
 	// Create the edit icon
@@ -58,7 +48,7 @@ export function createUpdateModal(appState) {
 		'value',
 		appState.todoData.projects[appState.todoData.selectedProjectIndex].todos[
 			appState.todoData.selectedTodoIdx
-		].date
+		]?.date
 	);
 	statsDiv.appendChild(dateInput);
 
@@ -132,7 +122,7 @@ export function createUpdateModal(appState) {
 	descriptionParagraph.textContent =
 		appState.todoData.projects[appState.todoData.selectedProjectIndex].todos[
 			appState.todoData.selectedTodoIdx
-		].description;
+		]?.description;
 	bodyDiv.appendChild(descriptionParagraph);
 
 	// Append the body div to the container div
@@ -156,7 +146,7 @@ export function createUpdateModal(appState) {
 	if (
 		appState.todoData.projects[appState.todoData.selectedProjectIndex].todos[
 			appState.todoData.selectedTodoIdx
-		].completed
+		]?.completed
 	) {
 		completedCheckbox.setAttribute('checked', 'checked');
 	}
@@ -203,6 +193,11 @@ export function createUpdateModal(appState) {
 		index(
 			'I was rerendered because of a state update triggered by the addProjectBtn:cancelButton elm!!!'
 		);
+	});
+
+	// Update todo
+	titleElement.addEventListener('blur', (e) => {
+		console.log('Updated Todo title', e.target.textContent);
 	});
 
 	// Return the created HTML structure
