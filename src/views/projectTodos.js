@@ -79,7 +79,6 @@ function createTodo(date, title, priority, completed, idx, appState) {
 	// Event Listeners
 	// // Update Todos
 	updateIcon.addEventListener('click', () => {
-		console.log('Update this todo by idx', idx);
 		appState.todoData.modalCompVariantTodo = 'Update';
 		appState.todoData.selectedTodoIdx = idx;
 		appState.todoData.modalActive = true;
@@ -93,7 +92,6 @@ function createTodo(date, title, priority, completed, idx, appState) {
 
 	// // Delete Todos
 	deleteIcon.addEventListener('click', () => {
-		console.log('Delete this todo by idx', idx);
 		appState.todoData.projects[
 			appState.todoData.selectedProjectIndex
 		].todos.splice(idx, 1);
@@ -202,7 +200,6 @@ export function createTodoList(appState) {
 	// Event Listeners
 	// Back to Project layout
 	backButton.addEventListener('click', () => {
-		console.log('back to projects btn clicked');
 		appState.todoData.layoutComponent = 'ProjectsGridLayout';
 		appState.todoData.selectedProject = 'Default Project';
 		appState.todoData.selectedProjectIndex = 0;

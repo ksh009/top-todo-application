@@ -66,6 +66,13 @@ export function createUpdateModal(appState) {
 	selectElement.classList.add('far');
 
 	// Create the priority options
+	const allOption = document.createElement('option');
+	allOption.classList.add('far', 'all');
+	allOption.value = '';
+	allOption.textContent = 'Select';
+	selectElement.appendChild(allOption);
+
+	// Create the priority options
 	const highOption = document.createElement('option');
 	highOption.classList.add('far', 'high');
 	highOption.value = 'High';
@@ -207,32 +214,66 @@ export function createUpdateModal(appState) {
 
 	titleElement.addEventListener('blur', (e) => {
 		updatedTitle = e.target.textContent;
-		console.log('updatedTitle', updatedTitle);
 	});
 
 	dateInput.addEventListener('blur', (e) => {
 		updatedDate = e.target.value;
-		console.log('updatedDate', updatedDate);
 	});
 
 	selectElement.addEventListener('change', (e) => {
 		updatedPriority = e.target.value;
-		console.log('updatedPriority', updatedPriority);
 	});
 
 	descriptionParagraph.addEventListener('blur', (e) => {
 		updatedDescription = e.target.textContent;
-		console.log('updatedDescription', updatedDescription);
 	});
 
-	completedCheckbox.addEventListener('change', function () {
+	completedCheckbox.addEventListener('change', () => {
 		if (completedCheckbox.checked) {
-			updatedCompletion = true;
-			console.log('updatedCompletion', updatedCompletion);
+			updatedCompletion = 'checked';
+			console.log('updatedCompletion changed to true', updatedCompletion);
 		} else {
-			updatedCompletion = false;
-			console.log('updatedCompletion', updatedCompletion);
+			updatedCompletion = 'unchecked';
+			console.log('updatedCompletion changed to false', updatedCompletion);
 		}
+	});
+
+	// Update old Todo
+	updateButton.addEventListener('click', () => {
+		const updatedTodo = {
+			date: updatedDate
+				? updatedDate
+				: appState.todoData.projects[appState.todoData.selectedProjectIndex]
+						.todos[appState.todoData.selectedTodoIdx]?.date,
+			title: updatedTitle
+				? updatedTitle
+				: appState.todoData.projects[appState.todoData.selectedProjectIndex]
+						.todos[appState.todoData.selectedTodoIdx]?.title,
+			description: updatedDescription
+				? updatedDescription
+				: appState.todoData.projects[appState.todoData.selectedProjectIndex]
+						.todos[appState.todoData.selectedTodoIdx]?.description,
+			priority: updatedPriority
+				? updatedPriority
+				: appState.todoData.projects[appState.todoData.selectedProjectIndex]
+						.todos[appState.todoData.selectedTodoIdx]?.priority,
+			completed: updatedCompletion === 'checked' ? true : false,
+		};
+		appState.todoData.projects[appState.todoData.selectedProjectIndex].todos[
+			appState.todoData.selectedTodoIdx
+		] = updatedTodo;
+
+		console.log('updatedTodo', updatedTodo);
+
+		appState.todoData.modalActive = false;
+
+		// Update state in LS
+		localStorage.setItem('state', JSON.stringify(appState));
+		index(
+			'I was rerendered because of a state update triggered by the addProjectBtn:createProjectButton elm!!!',
+			'Your Todo has been updated!'
+		);
+		alert('Your Todo has been updated!');
 	});
 
 	// Return the created HTML structure

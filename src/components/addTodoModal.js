@@ -1,8 +1,6 @@
 import { index } from '..';
 
 export function createAddTodoModal(appState) {
-	console.log('Logging appState from createTodoModal', appState);
-
 	const formContainer = document.createElement('div');
 	formContainer.classList.add('form-container', 'modal');
 
@@ -182,7 +180,6 @@ export function createAddTodoModal(appState) {
 			appState.todoData.projects[
 				appState.todoData.selectedProjectIndex
 			].todos.push(newTodo);
-			console.log('appState logged from addProjectBtn:createTodoBtn', appState);
 
 			// Update state in LS
 			localStorage.setItem('state', JSON.stringify(appState));
